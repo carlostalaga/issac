@@ -1,0 +1,38 @@
+---
+description: ISSAC Assessment plugin — architecture and conventions
+alwaysApply: true
+---
+
+# ISSAC build conventions
+
+Authoritative spec: DEVELOPMENT.md at the repo root. Follow its schema, file
+structure and milestones. Implement ONE milestone per session.
+
+## Stack
+- PHP 8.1+, PSR-12. Namespace `Issac\`, PSR-4 from `plugins/issac-assessment/src/`.
+- WordPress + ACF Pro + mPDF (Composer). No form plugins (NinjaForms etc.) — ever.
+
+## Data boundaries (critical)
+- Instrument content (domains, subsections, items, descriptors) lives in the CPTs
+  `issac_domain`, `issac_subsection`, `issac_item` with ACF fields. Read it ONLY
+  through the cached `InstrumentRepository` — never scatter `get_field()` calls.
+- Transactional data (assessments, responses, events) lives ONLY in the custom
+  tables `wp_issac_*`. Never store interactions in `wp_posts`/`wp_postmeta`.
+- Responses reference the stable `item_code` ("1.1".."5.18"), never post IDs.
+- Totals/percentages are always computed live from the instrument tree — never hard-coded.
+- Items use an `is_active` toggle; never hard-delete content that has responses.
+
+## Security (non-negotiable)
+- All SQL through `$wpdb->prepare()`; cast ints with `absint()`.
+- Every REST route under `issac/v1` has a `permission_callback` and requires the
+  nonce. Resolve the user's assessment from `get_current_user_id()`, never from input.
+- Escape all output: `esc_html` / `esc_attr` / `wp_kses_post`.
+- Validate score is 1–5 server-side; validate `item_code` exists and is active.
+
+## ACF & content integrity
+- Field groups live in `acf-json/` (Local JSON), committed to Git.
+- NEVER regenerate ISSAC question/descriptor text from memory. Content comes only
+  from the import JSON (extracted from the source DOCX) or from wp-admin edits.
+
+## Scoring
+- Keep `ScoringService` pure PHP (no WP functions) so it can be unit-tested.

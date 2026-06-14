@@ -1,4 +1,9 @@
 {
+    "autoload": {
+        "psr-4": {
+            "Issac\\": "src/"
+        }
+    },
     "require": {
         "mpdf/mpdf": "^8.3"
     }
