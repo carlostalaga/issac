@@ -1,0 +1,171 @@
+{
+    "key": "group_issac_item",
+    "title": "Item",
+    "fields": [
+        {
+            "key": "field_issac_item_code",
+            "label": "Item code",
+            "name": "item_code",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "Stable code in the form domain.sequence, e.g. \"1.1\" or \"5.18\". Unique across all items. The number before the dot is the domain; the number after restarts at 1 for each domain.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "1.1",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_issac_item_prompt",
+            "label": "Prompt",
+            "name": "prompt",
+            "aria-label": "",
+            "type": "textarea",
+            "instructions": "The item statement shown to participants.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "rows": 3,
+            "placeholder": "",
+            "new_lines": ""
+        },
+        {
+            "key": "field_issac_item_descriptor_1",
+            "label": "Descriptor 1 \u2014 Exploring",
+            "name": "descriptor_1",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Anchor descriptor for a score of 1 (Exploring).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_issac_item_descriptor_3",
+            "label": "Descriptor 3 \u2014 Implementing",
+            "name": "descriptor_3",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Anchor descriptor for a score of 3 (Implementing).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_issac_item_descriptor_5",
+            "label": "Descriptor 5 \u2014 Sustained Action",
+            "name": "descriptor_5",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "Anchor descriptor for a score of 5 (Sustained Action). Scores 2 and 4 are valid midpoints with no descriptor paragraph, mirroring the source document.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        },
+        {
+            "key": "field_issac_item_subsection",
+            "label": "Subsection",
+            "name": "subsection",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "The subsection this item belongs to.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "issac_subsection"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        },
+        {
+            "key": "field_issac_item_is_active",
+            "label": "Active",
+            "name": "is_active",
+            "aria-label": "",
+            "type": "true_false",
+            "instructions": "Inactive items are excluded from rendering and completion totals, but existing responses are retained. Deactivate instead of deleting.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": ""
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "issac_item"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1781500398
+}

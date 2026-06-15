@@ -1,0 +1,65 @@
+{
+    "key": "group_issac_domain",
+    "title": "Domain",
+    "fields": [
+        {
+            "key": "field_issac_domain_code",
+            "label": "Domain code",
+            "name": "domain_code",
+            "aria-label": "",
+            "type": "text",
+            "instructions": "A single digit 1\u20135, unique across all domains. The integer before the dot in every item code (e.g. \"3.1\") refers to this number.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "maxlength": "",
+            "placeholder": "1",
+            "prepend": "",
+            "append": ""
+        },
+        {
+            "key": "field_issac_domain_description",
+            "label": "Description",
+            "name": "description",
+            "aria-label": "",
+            "type": "wysiwyg",
+            "instructions": "The domain's intro paragraph.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "issac_domain"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1781500398
+}

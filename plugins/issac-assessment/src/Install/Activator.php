@@ -3,6 +3,12 @@ namespace Issac\Install;
 
 defined('ABSPATH') || exit;
 
+/**
+ * Plugin activation handler.
+ *
+ * Creates the three custom tables (assessments, responses, events) via
+ * dbDelta and delegates role/capability creation to Capabilities.
+ */
 class Activator
 {
     /** Bump this string whenever the schema changes (the Migrator will use it later). */
@@ -11,7 +17,7 @@ class Activator
     public static function activate(): void
     {
         self::createTables();
-        self::createRoles();
+        Capabilities::install();
         update_option('issac_db_version', self::DB_VERSION);
     }
 
@@ -62,22 +68,5 @@ class Activator
         dbDelta($assessments);
         dbDelta($responses);
         dbDelta($events);
-    }
-
-    private static function createRoles(): void
-    {
-        // People who take the assessment.
-        add_role('issac_participant', 'ISSAC Participant', [
-            'read'                  => true,
-            'issac_take_assessment' => true,
-        ]);
-
-        // Administrators get the management capabilities.
-        $admin = get_role('administrator');
-        if ($admin) {
-            $admin->add_cap('issac_view_admin');
-            $admin->add_cap('issac_edit_instrument');
-            $admin->add_cap('issac_take_assessment'); // so you can test as admin too
-        }
     }
 }

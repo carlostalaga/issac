@@ -1,0 +1,51 @@
+{
+    "key": "group_issac_subsection",
+    "title": "Subsection",
+    "fields": [
+        {
+            "key": "field_issac_subsection_domain",
+            "label": "Domain",
+            "name": "domain",
+            "aria-label": "",
+            "type": "post_object",
+            "instructions": "The domain this subsection belongs to.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "post_type": [
+                "issac_domain"
+            ],
+            "post_status": "",
+            "taxonomy": "",
+            "return_format": "id",
+            "multiple": 0,
+            "allow_null": 0,
+            "bidirectional": 0,
+            "ui": 1,
+            "bidirectional_target": []
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "issac_subsection"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1781500398
+}

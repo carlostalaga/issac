@@ -5,7 +5,7 @@ alwaysApply: true
 
 # ISSAC build conventions
 
-Authoritative spec: DEVELOPMENT.md at the repo root. Follow its schema, file
+Authoritative spec: ISSAC-development-plan.md at the repo root. Follow its schema, file
 structure and milestones. Implement ONE milestone per session.
 
 ## Stack
@@ -31,6 +31,10 @@ structure and milestones. Implement ONE milestone per session.
 
 ## ACF & content integrity
 - Field groups live in `acf-json/` (Local JSON), committed to Git.
+- When editing any `acf-json/*.json` file, ALWAYS update the `"modified"` value
+  to the current Unix timestamp (`date +%s`). ACF compares this against the DB
+  copy; if it isn't bumped, ACF won't show the "Sync" option and the change is
+  silently ignored at runtime.
 - NEVER regenerate ISSAC question/descriptor text from memory. Content comes only
   from the import JSON (extracted from the source DOCX) or from wp-admin edits.
 
