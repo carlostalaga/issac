@@ -1,6 +1,7 @@
 <?php
 namespace Issac;
 
+use Issac\Cli\ImportCommand;
 use Issac\Content\Guards;
 use Issac\Content\PostTypes;
 use Issac\Content\Validation;
@@ -11,9 +12,6 @@ defined('ABSPATH') || exit;
 
 /**
  * Central wiring point: registers all hooks for the plugin.
- *
- * Milestone 1 boots only the content model (CPTs, ACF field groups,
- * validation, trash guards) and the cached instrument read model.
  */
 final class Plugin
 {
@@ -26,6 +24,7 @@ final class Plugin
         Validation::register();
         Guards::register();
         InstrumentRepository::register();
+        ImportCommand::register();
     }
 
     /**

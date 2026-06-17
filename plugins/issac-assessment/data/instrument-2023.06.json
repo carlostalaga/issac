@@ -1,0 +1,610 @@
+[
+  {
+    "domain_code": "1",
+    "title": "Inclusive Site Culture",
+    "description": "This section is designed to help you reflect on the extent to which there is an embedded, whole-school culture of inclusion at your site.  Items relate to shared inclusive values, environment and access, and meaningful, inclusive involvement of all students and families/caregivers.",
+    "subsections": [
+      {
+        "title": "Inclusive Values",
+        "items": [
+          {
+            "item_code": "1.1",
+            "prompt": "There is a shared site vision for the progress, achievement and belonging of every student as an equally valued member of the community.",
+            "descriptor_1": "Staff are beginning to discuss a vision for inclusion at the site. Some groups of students (e.g. students with intellectual disability and more complex needs) may not yet be fully considered in an inclusive vision.",
+            "descriptor_3": "A vision for inclusive outcomes is embraced by some leaders and staff, but not yet deeply shared by all staff in relation to all students.",
+            "descriptor_5": "A shared (and collectively developed) vision for the progress, achievement and belonging of every student is known and embraced by all leaders and staff, and regularly reviewed."
+          },
+          {
+            "item_code": "1.2",
+            "prompt": "There is a clearly articulated set of values reflecting an inclusive vision at the site.",
+            "descriptor_1": "Staff are beginning to develop a set of site values that reflect an inclusive vision.",
+            "descriptor_3": "Inclusive values exist but may not be posted, are infrequently reviewed with staff and students, and may not be consistently followed.",
+            "descriptor_5": "Inclusive values are posted in high traffic areas physically and digitally, are known and regularly reviewed with staff and students, and consistently followed."
+          },
+          {
+            "item_code": "1.3",
+            "prompt": "Inclusive language is used and expected at the site.",
+            "descriptor_1": "The site leadership team and staff are exploring more inclusive language to be used across the site, including in interactions with students and families.",
+            "descriptor_3": "Leaders, teachers, other staff and community members have been consulted and have agreed upon a common language to reflect inclusive values.",
+            "descriptor_5": "There is a common inclusive language used across the site, including in policy documents, and these are reviewed regularly."
+          },
+          {
+            "item_code": "1.4",
+            "prompt": "Processes including staff evaluation, hiring practices, enrolment processes and information to families/carers explicitly reflect inclusive values.",
+            "descriptor_1": "Processes for staff evaluation, hiring practices, new staff induction, student enrolment and communication with families are being examined for the extent to which they reflect inclusive values.",
+            "descriptor_3": "Processes for staff evaluation, hiring, induction, enrolment and communication consistently foreground inclusive values.",
+            "descriptor_5": "Processes for staff evaluation, hiring, induction, enrolment and communication consistently and explicitly foreground inclusive values and are reviewed regularly and updated across the site."
+          }
+        ]
+      },
+      {
+        "title": "Environment and Access",
+        "items": [
+          {
+            "item_code": "1.5",
+            "prompt": "The physical environment of the site is accessible to all students, staff and community members.",
+            "descriptor_1": "The leadership team is aware of a scope of works required to make all areas of the site physically accessible to all students, staff and community members.",
+            "descriptor_3": "Barriers to access in the physical environment have been identified, and work is being undertaken to make all areas accessible to all students, staff and community members.",
+            "descriptor_5": "All areas of the site are physically accessible to all students, staff and community members. Procedures are in place to review and maintain access for all."
+          },
+          {
+            "item_code": "1.6",
+            "prompt": "All students at the site have access to inclusive extracurricular activities.",
+            "descriptor_1": "Staff are beginning to consider how a range of extracurricular activities could be adjusted or expanded to ensure access for all students, including those with complex support requirements.",
+            "descriptor_3": "Most students have access to a full range of extracurricular activities. However, there is additional scope for removing barriers to access for some students or activities.",
+            "descriptor_5": "All students at the site have access to a wide variety of inclusive extracurricular activities that reflect different interests. Where necessary, adjustments are implemented to support participation and social connection for all students, and these are regularly reviewed."
+          }
+        ]
+      },
+      {
+        "title": "Involvement of students, parents/ carers and families",
+        "items": [
+          {
+            "item_code": "1.7",
+            "prompt": "There are explicit, structured opportunities for students to initiate ideas, offer feedback and to be involved in key decisions.",
+            "descriptor_1": "Staff are considering ways for students to have a genuine voice in school decision making.",
+            "descriptor_3": "There are some established avenues for student voice, but scope for more representative and embedded opportunities that include diverse students, including students with disability.",
+            "descriptor_5": "Students have ongoing, planned opportunities to have a voice in school decisions, and these are regularly reviewed. Students with disability are represented in decision making that affects them."
+          },
+          {
+            "item_code": "1.8",
+            "prompt": "The principal/director and site leadership team encourage open communication and support families/carers to contribute to school decisions.",
+            "descriptor_1": "Site decisions and policies are managed primarily by the executive team, but leaders are considering constructive avenues for family/carer contributions.",
+            "descriptor_3": "There are some opportunities for family/carer input in decision making, such as through surveys.",
+            "descriptor_5": "Families/carers are surveyed regularly and can serve on committees/teams that are empowered to make decisions. Feedback from families is incorporated into site governance decisions. There are established processes for seeking representation from culturally diverse families and families of children across achievement levels."
+          },
+          {
+            "item_code": "1.9",
+            "prompt": "The site provides all families/carers with resources to participate in decision-making about their child’s education.",
+            "descriptor_1": "Staff are exploring ways to enhance resources/information for families and carers regarding their child’s education.",
+            "descriptor_3": "Information is available for families/carers about their child’s education and they are actively involved in making key decisions.",
+            "descriptor_5": "There are clear procedures for informing families/carers about academic and behavioural supports, student progress, and key committee decisions. Resources are respectful of families’/carers’ knowledge, culture and language backgrounds and accessible to all. Leaders monitor and review communication with families."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "domain_code": "2",
+    "title": "Leadership and Organisational Support for Inclusive Practice",
+    "description": "This section is designed to help you reflect on the extent to which there is strong, whole-school leadership driving an inclusive vision at your site, and effective organisational support for inclusive practices.  Items relate to focused and engaged leadership, a cohesive leadership team, and collective data-informed decision making related to inclusive practices.",
+    "subsections": [
+      {
+        "title": "Focused and Engaged Leadership",
+        "items": [
+          {
+            "item_code": "2.1",
+            "prompt": "The site principal/director articulates and models site-wide commitment to inclusive values and evidence-based practice.",
+            "descriptor_1": "The site principal/director ensures familiarity with Disability Discrimination Act requirements and encourages attention to required action for the inclusion of all students.",
+            "descriptor_3": "The site principal/director leads staff and community members in creating site-based principles for inclusion of all students.",
+            "descriptor_5": "The site leader has an evidence-based understanding of the purposes and practices of inclusion and models commitment beyond basic adherence to legislative requirements."
+          },
+          {
+            "item_code": "2.2",
+            "prompt": "The site principal/director leads the development of an inclusion policy which provides clarity of expectations for all site and community members.",
+            "descriptor_1": "The site principal/director engages staff and community members in purposeful dialogue and commitment to site-wide inclusion and explore the use of teaching resources that reflect the diversity of the site population.",
+            "descriptor_3": "The site principal leads the development and application of site-developed inclusive policies and practices. Resources that positively represent disability and diversity of students are incorporated in teaching and learning.",
+            "descriptor_5": "The site leader ensures that all staff and community members understand and enact the site’s inclusion policy and practices, including the use of contemporary resources that positively represent disability and diversity of students and the wider community."
+          },
+          {
+            "item_code": "2.3",
+            "prompt": "The site principal/director establishes key annual accountability measures to determine the success of the site’s inclusion policy.",
+            "descriptor_1": "The site principal /director and inclusive education team are beginning to engage with staff and community members to discuss priorities for annual key accountability measures aligned to the site’s inclusion policy.",
+            "descriptor_3": "The site leader and inclusive education team collect relevant data to report on established annual key accountability measures.",
+            "descriptor_5": "The site leader and inclusive education team monitor, evaluate and act on data and have a clear plan for continued improvement in inclusive education for all."
+          }
+        ]
+      },
+      {
+        "title": "Cohesive Leadership Team",
+        "items": [
+          {
+            "item_code": "2.4",
+            "prompt": "Inclusion is prioritised through the appointment of a dedicated site inclusion leader and site inclusion team.",
+            "descriptor_1": "The site leadership team is considering a role/s for a leader in inclusive practices.Opportunities are provided for staff members to become part of the inclusion team.",
+            "descriptor_3": "A dedicated inclusion leader has been appointed and meets regularly with the broader (now established) inclusion team (e.g.  Principal, special educator, Aboriginal Educator and other site services.)",
+            "descriptor_5": "Regular meetings of the inclusion team led by the site inclusion leader generates enhanced professional knowledge for all staff and evidence of an inclusive site environment."
+          },
+          {
+            "item_code": "2.5",
+            "prompt": "The inclusion leader facilitates a parent/carer consultative committee focused on enhancing inclusive practices at the site.",
+            "descriptor_1": "The inclusion leader engages with all parents/carers to share the vision of the site’s inclusion principles and policies and invites feedback from parents/carers.",
+            "descriptor_3": "Together with parents/carers, the inclusion leader facilities a consultative committee that meets 3-4 times a year to review current progress towards inclusive practices and to recommend key accountability measures.",
+            "descriptor_5": "The inclusion leader, together with a parent/carer leader, chairs a proactive consultative committee focused on enhancing and evaluating inclusive practices at the site and reporting against key accountability measures."
+          },
+          {
+            "item_code": "2.6",
+            "prompt": "The inclusion team ensures that relevant inclusion-focused professional learning opportunities are provided for all site personnel.",
+            "descriptor_1": "The site is developing a plan to provide inclusion-focused professional learning opportunities to educators and site personnel.",
+            "descriptor_3": "All educators and site personnel receive professional learning in the use of evidence-based practices in inclusion-focused practices.",
+            "descriptor_5": "Ongoing professional learning such as coaching, teaching demonstrations, classroom observations and feedback are provided consistently and evaluated regularly by the inclusive education team."
+          }
+        ]
+      },
+      {
+        "title": "Data-Driven Decision Making",
+        "items": [
+          {
+            "item_code": "2.7",
+            "prompt": "The site leader/director and inclusion leader prioritise the use of data (student progress, wellbeing measures, suspension data, parent/carer survey responses etc.) in decision making.",
+            "descriptor_1": "Leaders are exploring a range of available data sources to determine their relevance in supporting decision-making related to inclusive practices.",
+            "descriptor_3": "Data are collected from various sources to enable reporting about key aspects of inclusive education.",
+            "descriptor_5": "Site leaders prioritise and act on appropriate data (student progress, wellbeing measures, suspension data, parent/carer survey responses etc.) to make decisions about resourcing, programs and supports for individuals and groups of students, and to monitor impact on student outcomes."
+          },
+          {
+            "item_code": "2.8",
+            "prompt": "Evaluation, feedback and reporting processes are supported by high-quality data gathering and analysis.",
+            "descriptor_1": "Site leaders are exploring data and reporting processes that will support effective evaluation of the site’s inclusive education policies and practices.",
+            "descriptor_3": "Data gathering and reporting related to inclusive outcomes is primarily managed informally by the inclusive education team but may not yet be an integral part of school-wide accountability and reporting.",
+            "descriptor_5": "Evaluation, feedback and reporting processes are supported by high-quality data gathering, analysis and reporting processes which are shared with all site members and serve to inform achievement of, and future planning for, key accountability measures."
+          },
+          {
+            "item_code": "2.9",
+            "prompt": "Data are used to inform targeted professional learning/coaching/mentoring for site personnel, with a focus on improving learning opportunities and outcomes for all students.",
+            "descriptor_1": "The inclusive education team seeks feedback from all site members to assist in planning for targeted professional learning.",
+            "descriptor_3": "Data (e.g. from staff surveys observations/ performance reviews) are used to plan targeted professional learning, including coaching and mentoring to enhance inclusive education practice.",
+            "descriptor_5": "All staff members access differentiated, targeted professional learning and show evidence of implementation resulting in improved learning opportunities and outcomes for all students, aligned to key accountability measures."
+          }
+        ]
+      },
+      {
+        "title": "Team Processes and Personnel",
+        "items": [
+          {
+            "item_code": "2.10",
+            "prompt": "Roles and expectations of support staff (e.g., teacher aides) and other specialists (e.g., allied health professionals) involved in supporting students with specialised needs are clear, accessible, and regularly reviewed.",
+            "descriptor_1": "Roles and expectations of support staff (e.g., teacher aides) and other specialists (e.g., allied health professionals) involved in supporting students with specialised needs are being clarified in consultation with families, teachers and providers.",
+            "descriptor_3": "Roles and expectations of support staff (e.g., teacher aides) and other specialists (e.g., allied health professionals) involved in supporting students with specialised needs are being implemented and monitored across the site.",
+            "descriptor_5": "Roles and expectations of support staff (e.g., teacher aides) and other specialists (e.g., allied health professionals) involved in supporting students with specialised needs are clear, accessible, and regularly reviewed."
+          },
+          {
+            "item_code": "2.11",
+            "prompt": "Classroom teachers and teacher aides have a shared process for discussing roles and expectations, reviewing performance, and discussing student progress.",
+            "descriptor_1": "Classroom teachers and teacher aides are being consulted to establish shared processes for discussing roles and expectations, reviewing performance, and discussing student progress.",
+            "descriptor_3": "Classroom teachers and teacher aides have agreement on their responsibilities and the shared process for discussing roles and expectations, reviewing performance, and discussing student progress and are implementing these across the site.",
+            "descriptor_5": "Classroom teachers and teacher aides have a shared process for discussing roles and expectations, reviewing performance, and discussing student progress. Dedicated time is provided for these processes which are reviewed at least annually."
+          },
+          {
+            "item_code": "2.12",
+            "prompt": "Teacher aides engage in duties that are commensurate with their skills, experience and job expectations, and which support evidence-based inclusive practices.",
+            "descriptor_1": "Teacher aides (e.g., SSO/ESO staff) are employed to assist students with specialised support needs, but there is not yet a clear and consistent plan to ensure that they work in appropriate, evidence-informed ways. Some aides are asked to engage in duties beyond their job description (e.g. planning or adjusting curriculum/ assessment).",
+            "descriptor_3": "There are plans in place to ensure that teacher aides work in appropriate ways to support teaching and intervention programs, and these are followed by most staff.",
+            "descriptor_5": "Teacher aides engage in duties that are commensurate with their skills, experience and job expectations, and which support evidence-based inclusive practices. The expectations of teacher aides are guided by clear guidelines and processes that are regularly reviewed. They are provided with opportunities to engage in professional learning with other site members."
+          },
+          {
+            "item_code": "2.13",
+            "prompt": "Effective collaboration between teachers and support staff is facilitated by the site inclusion leader.",
+            "descriptor_1": "Site leaders are reviewing how teachers and teacher aides work in collaboration to support students with a view to establishing clear role statements.",
+            "descriptor_3": "The site inclusion leader facilitates team meetings between teachers and support staff with a focus on working towards a more cohesive and collaborate approach to student support.",
+            "descriptor_5": "Effective collaboration between teachers and support staff is facilitated by the site inclusion leader. The effectiveness of collaboration is regularly reviewed and adjusted as required."
+          },
+          {
+            "item_code": "2.14",
+            "prompt": "Classroom teachers have ongoing access to specialist personnel, support resources and professional learning opportunities that enable them to build their capacity to implement inclusive practices.",
+            "descriptor_1": "Classroom teachers are aware that support is available from internal resources and, where relevant, external sources. Access is supported by the site inclusion leader.",
+            "descriptor_3": "Classroom teachers make use of specialist support personnel and resources to support more effective inclusion of all students in their classroom.",
+            "descriptor_5": "Classroom teachers have ongoing access to specialist personnel, support resources and professional learning opportunities that enable them to build their capacity to implement inclusive practices. Professional learning includes on-site support and coaching."
+          },
+          {
+            "item_code": "2.15",
+            "prompt": "An inclusive student support team is established to discuss and address group and individual student needs, and to identify students who would benefit from more targeted supports.",
+            "descriptor_1": "Student support needs are discussed in an ad-hoc way as they arise, with decisions about student support needs predominantly made by site leaders or the inclusive team.",
+            "descriptor_3": "There is an established student support team to discuss individual student academic/ behavioural support needs, and regularly scheduled meetings are held.",
+            "descriptor_5": "A student support team meets regularly to discuss and address group and individual student needs, and to identify those who would benefit from targeted supports. The team includes inclusive leaders, specialist staff, teachers, families and (where appropriate) students. Team roles are clearly defined to support collaboration and accountability, and meetings result in written action plans and follow through."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "domain_code": "3",
+    "title": "Inclusive Teaching and Classroom Practices (Universal Academic/ Behavioural Practices)",
+    "description": "This section is designed to help you reflect on the quality of evidence-based universal academic and behavioural practices at your site, which enable all students to make academic progress within age-appropriate learning experiences, and which are designed to prevent or ameliorate academic and behavioural difficulties by supporting students’ academic and prosocial skill development.  Items relate to inclusive planning, teaching, assessment and the establishment of supportive and productive learning environments to support quality differentiation.",
+    "subsections": [
+      {
+        "title": "Quality Curriculum with Clear Learning Goals",
+        "items": [
+          {
+            "item_code": "3.1",
+            "prompt": "Teachers establish clear learning goals (knowledge, understanding, skills) for each lesson and explicitly share these with students.",
+            "descriptor_1": "Teachers have a general sense of learning goals, but these are not yet consistently based around important concepts, clear and assessable, and shared with students.",
+            "descriptor_3": "Some teachers employ clear, conceptual learning goals and explicitly share these with students, but this is still inconsistent across classrooms.",
+            "descriptor_5": "Teachers across the site establish clear, meaningful learning goals (knowledge, understanding, skills) and explicitly share these to help students develop deep conceptual understanding."
+          },
+          {
+            "item_code": "3.2",
+            "prompt": "Learning and assessment tasks are closely aligned with clear learning goals.",
+            "descriptor_1": "Teachers are moving away from a focus on task completion and exploring task design that enables students to achieve clear, meaningful learning goals.",
+            "descriptor_3": "Some teachers design learning and assessment tasks aligned with stated learning goals, but this is not yet consistent across tasks or across the site, or goals may be unclear to students.",
+            "descriptor_5": "Across the site, students consistently engage in learning and assessment tasks that are clearly aligned with stated learning goals that are understood by students."
+          },
+          {
+            "item_code": "3.3",
+            "prompt": "Teachers purposefully employ a range of high-impact teaching strategies.",
+            "descriptor_1": "Teachers are learning about high-impact teaching strategies but may rely on only a small number of strategies in their own teaching.",
+            "descriptor_3": "Some teachers use a variety of high-impact teaching strategies, but this may not yet be consistent across the site.",
+            "descriptor_5": "Teachers across the site deliberately employ a variety of evidence-informed teaching strategies to suit the purpose of the lesson."
+          },
+          {
+            "item_code": "3.4",
+            "prompt": "All students in the school participate in an inclusive mainstream classroom accessing grade-level curriculum and school activities alongside their peers.",
+            "descriptor_1": "Some students with disability spend all or most time in separate classrooms. Teachers are unsure how to use the Australian curriculum framework as the basis for age-appropriate and meaningful learning experiences for every student. Some students do not have access to the full range of school experiences available to other students.",
+            "descriptor_3": "Some teachers are comfortable adjusting curriculum so that all students can participate in the grade-level curriculum alongside peers, with appropriate support, but this is inconsistent across the site. Some school activities and experiences are adjusted to ensure inclusion of all students.",
+            "descriptor_5": "All students’ primary placement is in an inclusive mainstream classroom, where they participate in the grade-level curriculum alongside peers, with appropriate adjustment. All students are included in school activities and experiences (e.g., school assemblies, camps and excursions) alongside age peers, with appropriate support."
+          }
+        ]
+      },
+      {
+        "title": "Formative Assessment to Inform Practice for Diverse Students",
+        "items": [
+          {
+            "item_code": "3.5",
+            "prompt": "Teachers use targeted pre-assessment prior to a unit of work to identify individual student readiness in relation to clear learning goals.",
+            "descriptor_1": "Teachers do not yet routinely use pre-assessment prior to a unit to determine individual starting points in relation to learning goals.",
+            "descriptor_3": "Some teachers pre-assess students prior to a unit to determine individual starting points in relation to learning goals, but this is not yet a consistent, coordinated practice across the site.",
+            "descriptor_5": "Across the site, teachers pre-assess students prior to a unit to determine individual starting points in relation to learning goals and use pre-assessment data to plan differentiated learning experiences."
+          },
+          {
+            "item_code": "3.6",
+            "prompt": "Teachers incorporate regular formal and informal assessments into classroom routines.",
+            "descriptor_1": "Teachers are exploring more effective approaches to regular curriculum-based formative assessment to check student progress and inform differentiated planning.",
+            "descriptor_3": "In some classrooms or learning areas, teachers use regular curriculum-based formative assessment to check student progress and inform planning, but this is not yet consistent across all teachers and learning areas.",
+            "descriptor_5": "Across the site, teachers use regular curriculum-based formative assessment to check student progress and inform planning, and these assessment opportunities are incorporated into efficient classroom routines."
+          },
+          {
+            "item_code": "3.7",
+            "prompt": "Teachers use targeted formative assessment data to make regular decisions about student grouping and differentiated learning experiences.",
+            "descriptor_1": "Teachers use formative assessment to record student grades or achievement, but not routinely to assign individuals to appropriate (differentiated) tasks, to structure groups, and to plan or adjust learning tasks for individual students.",
+            "descriptor_3": "Across the site, some teachers draw on formative assessment data to assign students to appropriate (differentiated) tasks, to implement flexible grouping processes, and to plan or adjust learning tasks, but this is not yet consistent across classrooms and learning areas.",
+            "descriptor_5": "Across the site, teachers draw on formative assessment results to assign individual students to appropriate (differentiated) tasks, to purposefully use flexible grouping strategies, and to plan or adjust learning tasks."
+          },
+          {
+            "item_code": "3.8",
+            "prompt": "Students are regularly asked to self-assess the extent to which assigned work is appropriately challenging.",
+            "descriptor_1": "Educators are just beginning to explore how feedback could be regularly sought (formally and informally) from students about their learning experiences.",
+            "descriptor_3": "In some classrooms, feedback is sought (formally and informally) from students about assigned work. Some teachers use this data to take timely action, but this type of feedback and action is not consistent across all classrooms or learning areas.",
+            "descriptor_5": "Across the site, feedback is regularly sought (formally and informally) from students about the extent to which assigned work is appropriately challenging. This data enables students and the teacher to take appropriate action."
+          },
+          {
+            "item_code": "3.9",
+            "prompt": "Universal screening tools in Maths, Reading and Social-Psychological Wellbeing identify students for more targeted support.",
+            "descriptor_1": "Leaders are beginning to explore how universal screening tools in Maths, Reading and Wellbeing could be employed to identify students who would benefit from more targeted support, and to monitor student progress.",
+            "descriptor_3": "Some screening tools in Maths, Reading and Wellbeing are employed, but these could be used more regularly (i.e., multiple times a year) and systematically to identify students who would benefit from more targeted support, in a timely way.",
+            "descriptor_5": "Universal screening tools in Maths, Reading and Wellbeing are employed multiple times a year to identify students who would benefit from more targeted support or extension, and to monitor student progress."
+          }
+        ]
+      },
+      {
+        "title": "Quality Differentiated Teaching Practices to Ensure Appropriate Challenge and Support",
+        "items": [
+          {
+            "item_code": "3.10",
+            "prompt": "Teachers proactively differentiate learning tasks to ensure that all students work with appropriate levels of challenge and support.",
+            "descriptor_1": "Teachers tend to rely on reactive or informal strategies such as checking in verbally with students as they work, offering 1:1 support to help students with (undifferentiated) tasks, or encouraging students to engage in extension work only after completing set (undifferentiated) tasks.",
+            "descriptor_3": "Some teachers routinely plan learning experiences that enable additional support or opportunities for advanced work in the context of common learning goals; however, this is not yet consistent across classrooms or learning areas.",
+            "descriptor_5": "Teachers across the site systematically plan learning experiences that enable extra support or opportunities for advanced work in the context of common learning goals; these opportunities are proactively planned rather than offered only after students have completed standard (undifferentiated) work."
+          },
+          {
+            "item_code": "3.11",
+            "prompt": "Students can regularly make choices about their learning and engage with content/ demonstrate learning in multiple modes.",
+            "descriptor_1": "Teachers are exploring ways to incorporate interest-based choice into learning experiences, and to enable students to engage with content/ demonstrate their learning through various modes and products. However, this is not yet a deliberate and consistent practice across the site, and most learning tasks are set by the teacher with little room for student choice.",
+            "descriptor_3": "In some classrooms/ learning areas, students regularly choose tasks based on personal interests. In some classrooms/ learning areas, students engage with content and demonstrate their learning through multiple modes/ assessment products that address their relative strengths and preferences. These practices are not yet consistent across classrooms/ learning areas.",
+            "descriptor_5": "Across the site, students are regularly invited to choose tasks aligned with key learning goals, based on their personal interests. Across the site, students engage with content and demonstrate their learning through a variety of modes and assessment products that address their relative strengths and preferences."
+          },
+          {
+            "item_code": "3.12",
+            "prompt": "Texts and resources are deliberately selected to enable students to engage with content at a range of complexity levels.",
+            "descriptor_1": "Teachers typically select and assign set texts or resources that target ‘grade level’ achievement. Teachers are beginning to explore ways to proactively incorporate texts and resources that address common learning goals but represent varying levels of complexity.",
+            "descriptor_3": "Teachers sometimes offer more complex extension resources, or more foundational resources to support students, but most students work with standard texts/resources most of the time. Some teachers select content or resources at different levels of complexity.",
+            "descriptor_5": "When planning learning experiences, teachers across the site select texts and other resources that range in complexity, including more advanced texts, to enable all students to engage with key content at their point of readiness."
+          },
+          {
+            "item_code": "3.13",
+            "prompt": "Teachers employ flexible, intentional grouping practices to ensure that all students work with a range of peers, including in similar-readiness, mixed-readiness and student-selected groups.",
+            "descriptor_1": "Teachers rarely use small group tasks or use a fixed grouping strategy (such as set groups or only relying on student choice of groups) that does not change with learning goals and does not support targeted differentiation.",
+            "descriptor_3": "Teachers use small-group tasks and employ a mix of student-choice and teacher-assigned groups. However, grouping of students is not explicitly guided by timely formative data or may not incorporate flexibility for students to move between groups as their needs change. E.g., groups are fixed for extended periods rather than flexible in response to individual progress.",
+            "descriptor_5": "Teachers across the site consistently use flexible grouping of students to maximise engagement and participation in learning, and to facilitate differentiated teaching. This includes intentional use of similar-readiness, mixed-readiness, and student-selected groups, depending on the goals of the task and guided by timely formative assessment data."
+          }
+        ]
+      },
+      {
+        "title": "Classroom Routines to Support Student Engagement and Learning",
+        "items": [
+          {
+            "item_code": "3.14",
+            "prompt": "Teachers use a range of strategies to establish positive relationships with students built on mutual trust.",
+            "descriptor_1": "Staff are exploring ways to establish positive, respectful relationships more consistently in all classrooms, spaces, and activities across the site.",
+            "descriptor_3": "In most classrooms and settings, staff demonstrate positive regard for students and work to build respectful relationships, but this is not yet guaranteed in all situations.",
+            "descriptor_5": "In every classroom/setting, staff demonstrate positive regard for students through a range of strategies (e.g., greeting individuals by name; using respectful language; getting to know students’ interests and preferences; respectfully acknowledging students’ cultural backgrounds)."
+          },
+          {
+            "item_code": "3.15",
+            "prompt": "Students are encouraged to share responsibility for managing the classroom.",
+            "descriptor_1": "Most classrooms are characterised by a very teacher-directed approach to classroom management. Students are rarely involved in discussion and shared decision-making about aspects of classroom routines and practices. This is an area of practice that teachers are just beginning to explore together.",
+            "descriptor_3": "In some classrooms, students have a say in determining, implementing and reviewing classroom routines. Some teachers expect students to assist in managing time, resources, and classroom procedures; this is inconsistent across classrooms and learning areas.",
+            "descriptor_5": "Students across the site are actively involved in determining, implementing, and evaluating classroom routines. Teachers expect students to assist in managing time, resources, space, transitions between tasks, and classroom procedures."
+          },
+          {
+            "item_code": "3.16",
+            "prompt": "Teachers provide clear and accessible directions for individual and group tasks.",
+            "descriptor_1": "Most teachers rely on verbal delivery of task directions, including multi-step directions, or rely on standard task sheets that may not be accessible to all students.",
+            "descriptor_3": "In most classrooms, task directions are usually stated clearly and accessible to students.",
+            "descriptor_5": "Across the site, task directions are consistently clear, accessible to every student, presented in manageable steps, and provided in multiple formats where appropriate (e.g., recorded or paired with visuals so that students can listen again or to support students with reading, attention, or communication difficulties)."
+          },
+          {
+            "item_code": "3.17",
+            "prompt": "Students know how to access assistance and support materials during class.",
+            "descriptor_1": "Teachers are supportive in answering questions or offering individual support as needed; seeking assistance directly from the teacher or aide is the predominant method for students to access assistance in most classrooms.",
+            "descriptor_3": "Students are encouraged to seek help through strategies such as accessing peer support when they need assistance, rather than solely relying on the teacher.",
+            "descriptor_5": "Students have multiple ways of accessing assistance and support materials during class beyond 1:1 teacher support as the first or only option and can independently manage self-help routines, including through peer support and access to carefully planned 'troubleshooting’ resources."
+          },
+          {
+            "item_code": "3.18",
+            "prompt": "Students have access to meaningful, independent work if they finish set tasks.",
+            "descriptor_1": "Additional work is available when students finish set tasks, but teachers are just beginning to explore how these tasks can be more linked to key curriculum concepts and provide opportunities for targeted support or extension.",
+            "descriptor_3": "Students know how to access curriculum-relevant work that they can go on with when they finish set tasks.",
+            "descriptor_5": "Students have access to meaningful work if they finish set tasks. They can access and complete this work independently; it is differentiated where appropriate to enrich, extend, or remediate learning for individual students."
+          },
+          {
+            "item_code": "3.19",
+            "prompt": "Expectations for classroom behaviour are clear, positively stated, and aligned with schoolwide values and expectations.",
+            "descriptor_1": "Individual teachers set expectations for behaviour in their classrooms. These may not be consistent across teachers or tied explicitly to school-wide expectations or values. Staff are exploring how to make these expectations more aligned and consistent across the site.",
+            "descriptor_3": "Expectations for classroom behaviour are clear, positively stated and displayed in most classrooms. They are mentioned as general reminders about expectations.",
+            "descriptor_5": "Expectations for classroom behaviour are clear, positively stated, and aligned with schoolwide values. They are displayed/communicated in accessible ways for all students and shared with families (e.g., student-friendly language and visual cues), and regularly discussed/ reviewed with students through specific examples linked to classroom routines."
+          },
+          {
+            "item_code": "3.20",
+            "prompt": "There is a clear and consistent system for acknowledging students who meet positive behaviour expectations.",
+            "descriptor_1": "Staff have not yet agreed on a consistent method for acknowledging students who meet behavioural expectations. This tends to vary across teachers and may tend towards a focus on correcting or addressing inappropriate behaviour. Staff are beginning to explore more consistent methods for acknowledging students who meet positive expectations.",
+            "descriptor_3": "Students are informally acknowledged for positive behaviour by most teachers. In most classrooms, teachers provide more positive, feedback acknowledging appropriate behaviour than corrective feedback when expectations are not met.",
+            "descriptor_5": "There is a clear and consistent system for acknowledging students who meet positive behaviour expectations. This system is relevant to the context, consistently applied and negotiated with students to ensure it is meaningful. There is a predominance of positive, as opposed to corrective feedback, across the site."
+          },
+          {
+            "item_code": "3.21",
+            "prompt": "Teachers use a range of strategies to discourage inappropriate behaviour, such as pre-corrects to prompt students about classroom expectations.",
+            "descriptor_1": "Teachers’ methods for addressing inappropriate behaviour varies, are not consistently tied to clear expectations, or not always provided in non-punitive language/tone. Staff are exploring effective strategies that can be applied across the site.",
+            "descriptor_3": "Teachers actively discourage inappropriate behaviour by reminding students about behavioural expectations. Teachers across classrooms use similar language to respond to behaviour that does not meet expectations.",
+            "descriptor_5": "Teachers use a range of strategies to discourage inappropriate behaviour, such as pre-corrects to prompt students about classroom expectations. This feedback is offered positively and respectfully and tied explicitly to agreed expectations."
+          },
+          {
+            "item_code": "3.22",
+            "prompt": "Teachers actively supervise students by moving, scanning, and regularly interacting.",
+            "descriptor_1": "Active supervision is acknowledged as important but not explicitly encouraged or discussed as an expectation of all staff. Some teachers rely on hands-off styles, whereby they remain at the front of the room or behind a computer. Some areas of the site (e.g., break areas, corridors) are prone to lack of active supervision, increasing the likelihood of behavioural concerns. Staff are exploring ways to improve active supervision as a key preventive approach.",
+            "descriptor_3": "Active supervision is seen as important but there is room for improvement in consistency across staff and areas of the school.",
+            "descriptor_5": "Teachers across the site actively supervise students by moving, scanning, and regularly interacting, establishing a physical presence and enabling them to prevent or quickly and positively respond to behaviour that doesn’t meet expectations. Active supervision is consistently employed in classrooms and other key settings such as break areas and corridors."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "domain_code": "4",
+    "title": "Targeted, Preventive Supports for Students at Risk or Beginning to Experience Academic and/or Behavioural Difficulties",
+    "description": "This section is designed to help you reflect on the quality and comprehensiveness of timely, targeted supports for students at known risk or already beginning to experience academic and/or behavioural difficulties. These supports may be short-term, individual or small group based, and designed to address signs of difficulty early and prevent or ameliorate further difficulties by teaching key skills and competencies. Items relate to processes for developing, implementing, monitoring, and selecting students for appropriate supports.",
+    "subsections": [
+      {
+        "title": "Targeted support interventions",
+        "items": [
+          {
+            "item_code": "4.1",
+            "prompt": "Targeted support interventions for students include practices that provide additional teaching for skill development, additional structure and predictability and/or additional opportunities for feedback. Targeted supports address academic, social and behavioural difficulties.",
+            "descriptor_1": "Targeted support interventions are being considered, but do not yet promote practices to provide additional teaching for skill development, additional structure and predictability or additional opportunities for feedback, or do not yet address multiple domains.",
+            "descriptor_3": "Some targeted support programs, strategies and interventions are in place. Supports may be offered in one domain (e.g., literacy support in the academic domain) but not yet in place across areas including student wellbeing, social competence or prosocial behaviour.",
+            "descriptor_5": "Targeted support interventions include practices that provide additional teaching for skill development, additional structure and predictability and/or additional opportunities for feedback. Supports can be offered across domains of potential need."
+          },
+          {
+            "item_code": "4.2",
+            "prompt": "Targeted supports are explicitly linked to universal supports, and students receiving targeted supports are still included in universal supports.",
+            "descriptor_1": "Leadership will establish protocols to support student access to universal supports to all students, including students receiving targeted support.",
+            "descriptor_3": "Protocols have been established, and staff are reviewing targeted supports received by students to ensure they are linked to universal supports.",
+            "descriptor_5": "Targeted supports are explicitly linked to universal supports (i.e., they build upon classroom practices and general prevention efforts), and students receiving targeted supports are still included in universal supports."
+          },
+          {
+            "item_code": "4.3",
+            "prompt": "A student support team includes a coordinator and individuals able to provide expertise, authority, and knowledge of students across grade levels and programs.",
+            "descriptor_1": "It is recognised that a student support team needs to be created and should include a coordinator and individuals who able to provide expertise, authority, and knowledge of students across grade levels and programs.",
+            "descriptor_3": "A student support team is being created but is yet to include all the necessary individuals or expertise required to support students across grade levels and programs.",
+            "descriptor_5": "A student support team meets regularly and includes a coordinator and individuals able to provide expertise, authority, and knowledge of students across grade levels and programs. This team discusses individual students and helps to identify support needs and make decisions in a timely way."
+          },
+          {
+            "item_code": "4.4",
+            "prompt": "The school has ongoing behaviour, social and academic support interventions with documented evidence of effectiveness matched to student need.",
+            "descriptor_1": "The school is establishing ongoing behaviour, social and academic support interventions drawing on documented evidence for effectiveness that is matched to student need.",
+            "descriptor_3": "The school has established behaviour, social and academic support interventions that draw on documented evidence to ensure effectiveness is matched to student need.",
+            "descriptor_5": "The school has ongoing behaviour, social and academic support interventions with documented evidence of effectiveness matched to student need. The supports are reviewed at least annually."
+          },
+          {
+            "item_code": "4.5",
+            "prompt": "The student support team monitors the progress and outcomes of students involved in intervention and documents the proportion of students experiencing success.",
+            "descriptor_1": "Leadership have identified that a student support team needs to be established to monitor the progress and outcomes of students involved in intervention programs and to document the proportion of students experiencing success.",
+            "descriptor_3": "A student support team is being established to monitor the progress and outcomes of students involved in intervention programs and to document the proportion of students experiencing success.",
+            "descriptor_5": "The student support team monitors the progress and outcomes of all students involved in intervention programs and documents and shares the data regarding the proportion of students experiencing success."
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "domain_code": "5",
+    "title": "Personalised Supports (or Intensive Intervention) for Individual Students Experiencing Academic or Behavioural Difficulties",
+    "description": "This section is designed to help you reflect on the quality of personalised supports and more intensive interventions for students already experiencing academic and/or behavioural difficulties and requiring a more tailored support plan, often including substantial or extensive adjustments to learning experiences. Items relate to team-based planning, assessment, and teaching programs/ interventions.",
+    "subsections": [
+      {
+        "title": "Teams",
+        "items": [
+          {
+            "item_code": "5.1",
+            "prompt": "The intensive support team includes a coordinator and staff who can provide expertise, administrative authority, multi-agency supports and knowledge about the operations of the school across grade levels and programs. This could be a separate team or part of the student support team also responsible for targeted supports.",
+            "descriptor_1": "An intensive support team has been identified as necessary and should include a coordinator and staff who can provide expertise, administrative authority, multi-agency supports and knowledge about the operations of the school across grade levels and programs.",
+            "descriptor_3": "An intensive support team has been created and includes at least someone who can provide expertise, administrative authority, multi-agency supports and knowledge about the operations of the school across grade levels and programs.",
+            "descriptor_5": "The intensive support team includes a coordinator and staff who can provide expertise, administrative authority, multi-agency supports and knowledge about the operations of the school across grade levels and programs. This could be a separate team or part of the student support team also responsible for targeted supports."
+          },
+          {
+            "item_code": "5.2",
+            "prompt": "The student support team evaluates the extent to which intensive supports are meeting the needs of students, families, and school personnel.",
+            "descriptor_1": "There are some staff who are aware of intensive supports that may be implemented at the school and exploring ways to evaluate these supports.",
+            "descriptor_3": "A student support team evaluates the extent to which intensive supports are meeting the needs of students, families and school staff.",
+            "descriptor_5": "The student support team evaluates the extent to which intensive supports are meeting the needs of students, families, and school personnel."
+          },
+          {
+            "item_code": "5.3",
+            "prompt": "The student support team uses decision rules and data (performance, academic progress, absences, teacher/family/student nominations) to identify students who require intensive supports.",
+            "descriptor_1": "Some staff are exploring ways to use data to make decisions for identification of students who require intensive supports. The current process mostly relies on teacher referral.",
+            "descriptor_3": "The student support team uses decision rules and some data (e.g., behaviour and teacher nominations) to identify students who require intensive supports.",
+            "descriptor_5": "The student support team uses decision rules and data (performance, academic progress, absences, teacher/family/student nominations) to identify students who require intensive supports."
+          },
+          {
+            "item_code": "5.4",
+            "prompt": "The student support team has a contact person(s) with access to external support agencies and resources for planning and implementing non-school-based interventions (e.g., intensive mental health) as needed.",
+            "descriptor_1": "The school is exploring ways that a team member/staff coordinates with external agencies.",
+            "descriptor_3": "The student support team includes staff who coordinate with some external support agencies for implementing non-school-based interventions (e.g., intensive mental health, psychology, allied health) as needed.",
+            "descriptor_5": "The student support team has a contact person(s) with access to external support agencies and resources for planning and implementing non-school-based interventions (e.g., intensive mental health) as needed."
+          }
+        ]
+      },
+      {
+        "title": "Assessment, Planning and Programming",
+        "items": [
+          {
+            "item_code": "5.5",
+            "prompt": "Assessment data are available for students receiving substantial to extensive adjustments across areas including academic (e.g., reading, maths, writing), behavioural (e.g., attendance, functional behavioural assessment) medical, and mental health strengths and needs, and across other life domains where relevant.",
+            "descriptor_1": "Assessment data are somewhat available for students receiving substantial to extensive adjustments in some areas (academic, behavioural, mental and allied health and other life skills domains) where relevant. Staff are identifying areas where additional assessment data are required.",
+            "descriptor_3": "Assessment data are available across all areas including academic (e.g., reading, maths, writing), behavioural (e.g., attendance, functional behavioural assessment) allied health, mental health needs, and across other life skills domains where relevant.",
+            "descriptor_5": "Assessment data are ongoing and available for students receiving substantial to extensive adjustments across all areas including academic, behavioural (e.g., attendance, functional behavioural assessment), allied health, mental health, and across other life skills domains where relevant."
+          },
+          {
+            "item_code": "5.6",
+            "prompt": "For each student receiving substantial to extensive adjustments, an individual team is in place to develop, implement, monitor, and adapt a personalised support plan.",
+            "descriptor_1": "The school is identifying ways to put a team in place that to develop, implement and monitor personalised support plans. A team is not yet in place.",
+            "descriptor_3": "For each student receiving substantial to extensive adjustments, an individual team is in place to develop, implement, monitor, and adapt a personalised support plan.",
+            "descriptor_5": "For each student receiving substantial to extensive adjustments, an individual team consistently collaborates to develop, implement, monitor, and adapt a personalised support plan."
+          },
+          {
+            "item_code": "5.7",
+            "prompt": "Personalised goals for students receiving substantial to extensive adjustments are identified, regularly reviewed and embedded within daily activities.",
+            "descriptor_1": "Personalised goals for students receiving substantial to extensive adjustments are identified but infrequently reviewed or embedded within daily activities.",
+            "descriptor_3": "Personalised goals for students receiving substantial to extensive adjustments are identified, reviewed and embedded within daily activities.",
+            "descriptor_5": "Personalised goals for students receiving substantial to extensive adjustments are identified, regularly reviewed and embedded within daily activities consistently by all relevant staff"
+          },
+          {
+            "item_code": "5.8",
+            "prompt": "Teachers use age-appropriate curriculum, resources, activities and content for students with substantial to extensive adjustments, consistent with same age peers.",
+            "descriptor_1": "Some teachers use age-appropriate curriculum, resources and activities for students with substantial to extensive adjustments. Staff are working to be more consistent in addressing year-level curriculum consistent with age peers.",
+            "descriptor_3": "Teachers generally use age-appropriate curriculum, resources, activities and content for students with substantial to extensive adjustments, consistent with same age peers.",
+            "descriptor_5": "Teachers consistently use age-appropriate curriculum, resources, activities and content for students with substantial to extensive adjustments, consistent with same age peers."
+          }
+        ]
+      },
+      {
+        "title": "Teaching and Learning",
+        "items": [
+          {
+            "item_code": "5.9",
+            "prompt": "Teachers use pre-assessment and formative data to design personalised learning goals and objectives, monitor progress towards goals, and adjust their teaching for students requiring substantial to extensive adjustments.",
+            "descriptor_1": "The school is exploring ways to develop teachers’ use of pre-assessment and formative assessment to develop personalised learning goals and monitor progress to adjust teaching for students requiring substantial to extensive adjustments.",
+            "descriptor_3": "Teachers use pre-assessment data to design personalised learning goals and objectives, formative assessment data to monitor progress on those goals and objectives and adjust their teaching accordingly based on the extent to which students are demonstrating progress on identified success criteria for students requiring substantial to extensive adjustments.",
+            "descriptor_5": "Teachers use pre-assessment and formative data to design personalised learning goals and objectives, monitor progress towards goals, and adjust their teaching for students requiring substantial to extensive adjustments. Practices are ongoing, including new staff development."
+          },
+          {
+            "item_code": "5.10",
+            "prompt": "Teachers design learning experiences that are accessible and inclusive of students requiring substantial to extensive adjustments to curriculum, learning materials, resources and activities.",
+            "descriptor_1": "The school is identifying ways to support teachers in their design of learning experiences that are accessible and inclusive of students requiring substantial to extensive adjustments.",
+            "descriptor_3": "Most teachers design learning experiences that are accessible and inclusive of students requiring substantial to extensive adjustments to curriculum, learning materials, resources and activities.",
+            "descriptor_5": "Teachers consistently design learning experiences that are accessible and inclusive of students requiring substantial to extensive adjustments to curriculum, learning materials, resources and activities."
+          },
+          {
+            "item_code": "5.11",
+            "prompt": "Teachers use direct and /or systematic instruction as a method of teaching personalised learning goals and monitoring progress on those goals for students requiring substantial to extensive adjustments.",
+            "descriptor_1": "The student support team is exploring ways to support teacher use of direct and /or system instruction as a method of teaching personalised learning goals and monitoring progress on goals for students requiring substantial to extensive adjustments.",
+            "descriptor_3": "Specialised teachers use direct and /or system instruction as a method of teaching personalised learning goals and monitoring progress on those goals for students requiring substantial to extensive adjustments.",
+            "descriptor_5": "Teachers consistently use direct and /or system instruction as a method of teaching personalised learning goals and monitoring progress on those goals for students requiring substantial to extensive adjustments."
+          }
+        ]
+      },
+      {
+        "title": "Behaviour",
+        "items": [
+          {
+            "item_code": "5.12",
+            "prompt": "Behaviour Support Plans for students requiring intensive behavioural support incorporate input from students, families/carers, educators and data from assessments such as Functional Behaviour Assessment (FBA).",
+            "descriptor_1": "Behaviour Support Plans for students requiring intensive behavioural support have limited input from individual team members (student, educator, family, carers, allied support) and lack data from a Functional Behaviour Assessment (FBA).",
+            "descriptor_3": "Behaviour Support Plans for students requiring intensive behavioural support include input from students, families/carers, educators, and data from assessments such as Functional Behaviour Assessment (FBA).",
+            "descriptor_5": "Behaviour Support Plans for students requiring intensive behavioural support consistently incorporate collaborative input from students, families/carers, educators, allied supports and data from assessments such as Functional Behaviour Assessment (FBA)."
+          },
+          {
+            "item_code": "5.13",
+            "prompt": "Personalised Behaviour Support Plans include (a) prevention strategies, (b) strategies for teaching replacement and desired behaviour, (c) reinforcement strategies for desired behaviour, and (d) safety plans when needed.",
+            "descriptor_1": "Behaviour Support Plans are inconsistent and may not include (a) prevention strategies, (b) strategies for teaching replacement and desired behaviour, (c) reinforcement strategies for desired behaviour, and/or (d) safety plans when needed.",
+            "descriptor_3": "Personalised Behaviour Support Plans include (a) prevention strategies, (b) strategies for teaching replacement and desired behaviour, (c) reinforcement strategies for desired behaviour, and (d) safety plans when needed.",
+            "descriptor_5": "Personalised Behaviour Support Plans are comprehensive and consistently include (a) prevention strategies, (b) strategies for teaching replacement and desired behaviour, (c) reinforcement strategies for desired behaviour, and (d) safety plans when needed."
+          },
+          {
+            "item_code": "5.14",
+            "prompt": "Personalised Behaviour Support Plans are regularly reviewed and adapted as needed.",
+            "descriptor_1": "Behaviour Support Plans are infrequently reviewed. Specialist staff are exploring ways to improve the review of BSPs to update individual team members.",
+            "descriptor_3": "Behaviour Support Plans are reviewed and updated with classroom teachers, the student, families/carers and allied support staff.",
+            "descriptor_5": "Behaviour Support Plans are regularly reviewed, adjusted and updated as needed with classroom teachers, the student, families/carers and allied support staff. This is a consistent practice in the school."
+          }
+        ]
+      },
+      {
+        "title": "Communication",
+        "items": [
+          {
+            "item_code": "5.15",
+            "prompt": "Students have access to and are supported in using a communication system, including Augmentative and Alternative Communication (AAC) when needed.",
+            "descriptor_1": "Some students have access to a communication system. The team is identifying ways to ensure all students have access to a communication system, including AAC.",
+            "descriptor_3": "Students have access to and are supported in using a communication system, including AAC when needed.",
+            "descriptor_5": "Students consistently have access to and are supported in using multiple communication systems, including AAC when needed."
+          },
+          {
+            "item_code": "5.16",
+            "prompt": "Communication opportunities are embedded across the day that encourages spontaneous and functional communication.",
+            "descriptor_1": "Staff are identifying ways they can provide further opportunities for communication for students with a range of communication needs including augmentative and alternative communication",
+            "descriptor_3": "Staff provide communication opportunities that are embedded across the day and encourages spontaneous and functional communication",
+            "descriptor_5": "Communication opportunities are deliberately and consistently embedded across the day that encourages spontaneous and functional communication."
+          }
+        ]
+      },
+      {
+        "title": "Social",
+        "items": [
+          {
+            "item_code": "5.17",
+            "prompt": "All students have opportunities to engage meaningfully with grade-level peers.",
+            "descriptor_1": "The site is exploring ways to meaningfully engage all students in grade appropriate opportunities.",
+            "descriptor_3": "All students have opportunities to participate in education opportunities with their grade-level peers.",
+            "descriptor_5": "Students have opportunities to engage meaningfully with their grade-level peers.  A monitoring system is in place and is reviewed for continuous improvement."
+          },
+          {
+            "item_code": "5.18",
+            "prompt": "Extracurricular learning activities both at school and outside of typical school hours are accessible for all students with appropriate supports available, if necessary, for students with unique support needs.",
+            "descriptor_1": "The site has an assigned team or person working on improving extracurricular activity participation by all students.",
+            "descriptor_3": "The site has an assigned team or person working on improving extracurricular activity participation by all students. Options for students who need extra individualised supports are listed and reviewed in collaboration with their families.",
+            "descriptor_5": "Extracurricular learning activities both at school and outside of typical school hours are accessible for all students with appropriate supports available, if necessary, for students with unique support needs."
+          }
+        ]
+      }
+    ]
+  }
+]

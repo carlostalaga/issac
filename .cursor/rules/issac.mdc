@@ -40,3 +40,10 @@ structure and milestones. Implement ONE milestone per session.
 
 ## Scoring
 - Keep `ScoringService` pure PHP (no WP functions) so it can be unit-tested.
+
+## Code style
+- Prefer minimalistic, readable code over defensive complexity. Do not add
+  elaborate fallback chains anticipating unlikely scenarios — they make code
+  harder to read and harder to debug.
+- When something fails, surface a clear, informative error message that points
+  to the cause, rather than silently swallowing it behind layers of guards.
