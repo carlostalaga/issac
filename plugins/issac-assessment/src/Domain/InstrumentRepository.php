@@ -13,7 +13,7 @@ defined('ABSPATH') || exit;
  * caches the assembled tree so no other code ever scatters get_field() calls.
  *
  * Totals/percentages must always be computed live from this tree — never
- * hard-coded. The reference counts (5 domains / 18 subsections / 70 items) are
+ * hard-coded. The reference counts (5 domains / 18 subsections / 69 items) are
  * for Milestone 2 import validation only.
  */
 final class InstrumentRepository
