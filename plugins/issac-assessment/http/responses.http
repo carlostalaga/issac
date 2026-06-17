@@ -1,0 +1,48 @@
+# ISSAC Assessment API — Response (score) endpoint
+#
+# How to get your nonce:
+#   Option A: Browser console on any wp-admin page → wpApiSettings.nonce
+#   Option B: wp eval 'echo wp_create_nonce("wp_rest");' --user=1
+
+@baseUrl = https://issac.local/wp-json
+@nonce = YOUR_NONCE_HERE
+
+### Upsert a score for item 1.1
+POST {{baseUrl}}/issac/v1/responses
+Content-Type: application/json
+X-WP-Nonce: {{nonce}}
+Cookie: wordpress_logged_in_xxx=YOUR_COOKIE_HERE
+
+{
+  "item_code": "1.1",
+  "score": 4
+}
+
+### Invalid score (expect 400)
+POST {{baseUrl}}/issac/v1/responses
+Content-Type: application/json
+X-WP-Nonce: {{nonce}}
+Cookie: wordpress_logged_in_xxx=YOUR_COOKIE_HERE
+
+{
+  "item_code": "1.1",
+  "score": 6
+}
+
+### Invalid item code (expect 400)
+POST {{baseUrl}}/issac/v1/responses
+Content-Type: application/json
+X-WP-Nonce: {{nonce}}
+Cookie: wordpress_logged_in_xxx=YOUR_COOKIE_HERE
+
+{
+  "item_code": "99.99",
+  "score": 3
+}
+
+# curl equivalent:
+# curl -X POST "$BASE/wp-json/issac/v1/responses" \
+#   -H "Content-Type: application/json" \
+#   -H "X-WP-Nonce: $NONCE" \
+#   --cookie "wordpress_logged_in_…=…" \
+#   -d '{"item_code":"1.1","score":4}'

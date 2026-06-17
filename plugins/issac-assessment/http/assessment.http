@@ -1,0 +1,25 @@
+# ISSAC Assessment API — Assessment endpoints
+#
+# How to get your nonce:
+#   Option A: Browser console on any wp-admin page → wpApiSettings.nonce
+#   Option B: wp eval 'echo wp_create_nonce("wp_rest");' --user=1
+#
+# Cookie auth: Copy your wordpress_logged_in_* cookie from browser devtools.
+
+@baseUrl = https://issac.local/wp-json
+@nonce = YOUR_NONCE_HERE
+
+### Get current assessment (lazy-creates if none exists)
+GET {{baseUrl}}/issac/v1/assessment
+X-WP-Nonce: {{nonce}}
+Cookie: wordpress_logged_in_xxx=YOUR_COOKIE_HERE
+
+### Mark assessment as completed
+POST {{baseUrl}}/issac/v1/complete
+X-WP-Nonce: {{nonce}}
+Cookie: wordpress_logged_in_xxx=YOUR_COOKIE_HERE
+
+# curl equivalent:
+# curl -X GET "$BASE/wp-json/issac/v1/assessment" \
+#   -H "X-WP-Nonce: $NONCE" \
+#   --cookie "wordpress_logged_in_…=…"

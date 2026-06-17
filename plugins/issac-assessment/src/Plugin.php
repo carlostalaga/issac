@@ -7,6 +7,7 @@ use Issac\Content\PostTypes;
 use Issac\Content\Validation;
 use Issac\Domain\InstrumentRepository;
 use Issac\Install\Capabilities;
+use Issac\Rest\RoutesController;
 
 defined('ABSPATH') || exit;
 
@@ -25,6 +26,7 @@ final class Plugin
         Guards::register();
         InstrumentRepository::register();
         ImportCommand::register();
+        RoutesController::register();
     }
 
     /**

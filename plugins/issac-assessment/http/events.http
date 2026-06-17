@@ -1,0 +1,33 @@
+# ISSAC Assessment API — Events/milestones endpoint
+#
+# How to get your nonce:
+#   Option A: Browser console on any wp-admin page → wpApiSettings.nonce
+#   Option B: wp eval 'echo wp_create_nonce("wp_rest");' --user=1
+
+@baseUrl = https://issac.local/wp-json
+@nonce = YOUR_NONCE_HERE
+
+### Check for new milestone events (no hint)
+POST {{baseUrl}}/issac/v1/events/check
+Content-Type: application/json
+X-WP-Nonce: {{nonce}}
+Cookie: wordpress_logged_in_xxx=YOUR_COOKIE_HERE
+
+{}
+
+### Check with domain_code hint (server still checks all conditions)
+POST {{baseUrl}}/issac/v1/events/check
+Content-Type: application/json
+X-WP-Nonce: {{nonce}}
+Cookie: wordpress_logged_in_xxx=YOUR_COOKIE_HERE
+
+{
+  "domain_code": "1"
+}
+
+# curl equivalent:
+# curl -X POST "$BASE/wp-json/issac/v1/events/check" \
+#   -H "Content-Type: application/json" \
+#   -H "X-WP-Nonce: $NONCE" \
+#   --cookie "wordpress_logged_in_…=…" \
+#   -d '{}'

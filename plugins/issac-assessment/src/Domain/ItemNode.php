@@ -1,8 +1,6 @@
 <?php
 namespace Issac\Domain;
 
-defined('ABSPATH') || exit;
-
 /**
  * Immutable value object for a single instrument item.
  *
