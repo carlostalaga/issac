@@ -276,89 +276,9 @@ $corner-radius: 50px;
     max-width: 150px;
 }
 
-.site-footer {
-    position: relative;
-    z-index: 3;
-    margin-top: clamp(48px, 7.8vw, 119px);
-
-    >.container {
-        position: relative;
-        z-index: 2;
-    }
-}
-
-.site-footer__texture {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    display: block;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: -2;
-
-    &::before {
-        content: '';
-        position: absolute;
-        left: -7rem;
-        bottom: -9rem;
-        z-index: 0;
-        width: clamp(30.8rem, 37.4vw, 52.8rem);
-        aspect-ratio: 436.8 / 482.6;
-        background-image: url('img/shape-leaves-45.svg');
-        background-repeat: no-repeat;
-        background-position: left bottom;
-        background-size: contain;
-        opacity: 0.38;
-        pointer-events: none;
-        transform-origin: 38% 78%;
-        animation: footer-leaves-drift 18s ease-in-out infinite alternate;
-        will-change: transform;
-    }
-}
-
-.site-footer__top-shape {
-    position: absolute;
-    right: 0;
-    bottom: calc(100% - 1px);
-    left: 0;
-    z-index: 1;
-    display: block;
-    width: 100%;
-    height: clamp(48px, 7.8vw, 119px);
-    object-fit: cover;
-    object-position: center bottom;
-    pointer-events: none;
-}
-
-@keyframes footer-leaves-drift {
-    0% {
-        transform: translate3d(0, 0, 0) rotate(-1deg) scale(1);
-    }
-
-    50% {
-        transform: translate3d(1.2rem, -0.8rem, 0) rotate(1.5deg) scale(1.02);
-    }
-
-    100% {
-        transform: translate3d(-0.6rem, 0.9rem, 0) rotate(-0.5deg) scale(1.01);
-    }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .site-footer__texture::before {
-        animation: none;
-    }
-}
-
 @media (max-width: 767px) {
     .logos-footer {
         max-width: 120px;
-    }
-
-    .site-footer__texture::before {
-        left: -11rem;
-        bottom: -8rem;
-        width: 35.2rem;
     }
 }
 
@@ -397,33 +317,6 @@ $corner-radius: 50px;
     }
 }
 
-.site-footer__texture--presentation {
-    z-index: 2;
-
-    &::before {
-        right: 0;
-        bottom: 0;
-        left: auto;
-        background-position: right bottom;
-        transform-origin: 62% 78%;
-        animation-name: presentation-leaves-drift;
-    }
-}
-
-@keyframes presentation-leaves-drift {
-    0% {
-        transform: translate3d(0, 0, 0) rotate(1deg) scaleX(-1);
-    }
-
-    50% {
-        transform: translate3d(-1.2rem, -0.8rem, 0) rotate(-1.5deg) scaleX(-1) scale(1.02);
-    }
-
-    100% {
-        transform: translate3d(0.6rem, 0.9rem, 0) rotate(0.5deg) scaleX(-1) scale(1.01);
-    }
-}
-
 .banner-block-wrap {
     position: relative;
     overflow: hidden;
@@ -431,29 +324,6 @@ $corner-radius: 50px;
     >.container {
         position: relative;
         z-index: 2;
-    }
-}
-
-.site-footer__texture--banner {
-    z-index: 1;
-
-    &::before {
-        right: 0;
-        bottom: -4rem;
-        left: auto;
-        width: calc(clamp(34.8rem, 43.4vw, 52.8rem) * 0.9);
-        background-position: right bottom;
-        transform-origin: 62% 78%;
-        animation-name: presentation-leaves-drift;
-    }
-}
-
-@media (max-width: 767px) {
-    .site-footer__texture--banner::before {
-        right: 0;
-        bottom: -3rem;
-        left: auto;
-        width: 38rem;
     }
 }
 
@@ -1239,6 +1109,70 @@ $corner-radius: 50px;
 }
 
 
+
+
+/*
+██████  ██       ██████   ██████ ██   ██
+██   ██ ██      ██    ██ ██      ██  ██
+██████  ██      ██    ██ ██      █████
+██   ██ ██      ██    ██ ██      ██  ██
+██████  ███████  ██████   ██████ ██   ██
+
+
+███████ ██████  ███████  ██████ ██ ███████ ██  ██████
+██      ██   ██ ██      ██      ██ ██      ██ ██
+███████ ██████  █████   ██      ██ █████   ██ ██
+     ██ ██      ██      ██      ██ ██      ██ ██
+███████ ██      ███████  ██████ ██ ██      ██  ██████
+
+
+ ██████  ██████  ██       ██████  ██    ██ ██████
+██      ██    ██ ██      ██    ██ ██    ██ ██   ██
+██      ██    ██ ██      ██    ██ ██    ██ ██████
+██      ██    ██ ██      ██    ██ ██    ██ ██   ██
+ ██████  ██████  ███████  ██████   ██████  ██   ██
+
+
+██████  ███████ ██   ██  █████  ██    ██ ██  ██████  ██    ██ ██████
+██   ██ ██      ██   ██ ██   ██ ██    ██ ██ ██    ██ ██    ██ ██   ██
+██████  █████   ███████ ███████ ██    ██ ██ ██    ██ ██    ██ ██████
+██   ██ ██      ██   ██ ██   ██  ██  ██  ██ ██    ██ ██    ██ ██   ██
+██████  ███████ ██   ██ ██   ██   ████   ██  ██████   ██████  ██   ██
+
+
+*/
+
+// Applies theme-driven text colours to the basic content block variants,
+// scoped hero content, and testimonials panel headline.
+// Depends on --text-colour, --heading-colour, and --link-colour being set by
+// the block's colour/theme classes or inherited from a parent wrapper.
+.content-basic-regular,
+.content-basic-hero,
+.hero-theme-content,
+.banner-block,
+.testimonials-slider-panel {
+    color: var(--text-colour);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .banner-title {
+        color: var(--heading-colour);
+    }
+
+    p,
+    ul,
+    ol {
+        color: var(--text-colour);
+    }
+
+    a:not(.btn):not(.btn-cta) {
+        color: var(--link-colour);
+    }
+}
 
 
 
@@ -2327,69 +2261,6 @@ body.modal-open {
 
     @media screen and (max-width: 992px) {
         column-rule: none;
-    }
-}
-
-/*
-██████  ██       ██████   ██████ ██   ██
-██   ██ ██      ██    ██ ██      ██  ██
-██████  ██      ██    ██ ██      █████
-██   ██ ██      ██    ██ ██      ██  ██
-██████  ███████  ██████   ██████ ██   ██
-
-
-███████ ██████  ███████  ██████ ██ ███████ ██  ██████
-██      ██   ██ ██      ██      ██ ██      ██ ██
-███████ ██████  █████   ██      ██ █████   ██ ██
-     ██ ██      ██      ██      ██ ██      ██ ██
-███████ ██      ███████  ██████ ██ ██      ██  ██████
-
-
- ██████  ██████  ██       ██████  ██    ██ ██████
-██      ██    ██ ██      ██    ██ ██    ██ ██   ██
-██      ██    ██ ██      ██    ██ ██    ██ ██████
-██      ██    ██ ██      ██    ██ ██    ██ ██   ██
- ██████  ██████  ███████  ██████   ██████  ██   ██
-
-
-██████  ███████ ██   ██  █████  ██    ██ ██  ██████  ██    ██ ██████
-██   ██ ██      ██   ██ ██   ██ ██    ██ ██ ██    ██ ██    ██ ██   ██
-██████  █████   ███████ ███████ ██    ██ ██ ██    ██ ██    ██ ██████
-██   ██ ██      ██   ██ ██   ██  ██  ██  ██ ██    ██ ██    ██ ██   ██
-██████  ███████ ██   ██ ██   ██   ████   ██  ██████   ██████  ██   ██
-
-
-*/
-
-// Applies theme-driven text colours to the basic content block variants,
-// scoped hero content, and testimonials panel headline.
-// Depends on --text-colour, --heading-colour, and --link-colour being set by
-// the block's colour/theme classes or inherited from a parent wrapper.
-.content-basic-regular,
-.content-basic-hero,
-.hero-theme-content,
-.banner-block,
-.testimonials-slider-panel {
-    color: var(--text-colour);
-
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    .banner-title {
-        color: var(--heading-colour);
-    }
-
-    p,
-    ul,
-    ol {
-        color: var(--text-colour);
-    }
-
-    a:not(.btn):not(.btn-cta) {
-        color: var(--link-colour);
     }
 }
 

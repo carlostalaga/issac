@@ -12,7 +12,7 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <header class="site-header bg-brand-main py-5 px-0 px-md-0 corner-fill">
+    <header class="site-header bg-brand-accent py-5 px-0 px-md-0 corner-fill">
 
         <!-- Super Menu -->
         <!-- d-none for now, to be removed -->
@@ -55,7 +55,7 @@
                                 <!-- Logo column -->
                                 <div class="col-8 col-md-4 col-xl-3">
                                     <a id="navbar-brand" href="<?php echo get_option('siteurl'); ?>" aria-label="Go to homepage">
-                                        <img id="logo-change" src="<?php echo get_template_directory_uri() ?>/img/logo-farmscape-finance.png" class="logo-constraint img-fluid my-3" alt="<?php echo get_bloginfo('name'); ?> logo">
+                                        <img id="logo-change" src="<?php echo get_template_directory_uri() ?>/img/logo-light-bystra.png" class="logo-constraint img-fluid my-3" alt="<?php echo get_bloginfo('name'); ?> logo">
                                     </a>
                                 </div>
 

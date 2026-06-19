@@ -27,10 +27,6 @@ $presentation_ticker = get_sub_field('presentation_ticker');
 
 <div class="container-fluid presentation-block <?php echo esc_attr($bg['class']); ?> p-0" <?php echo $bg['style_attr']; ?>>
 
-    <span class="site-footer__texture site-footer__texture--presentation" aria-hidden="true"></span>
-
-
-
     <?php
         /* -------------------------------------------------------------------------- */
         /*                                 Top section                                */

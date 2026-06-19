@@ -1,11 +1,4 @@
-<!-- new design footer -->
-
-<footer class="site-footer container-fluid bg-brand-main p-0" style="position: relative; margin-top: -84px;">
-
-    <span class="site-footer__texture" aria-hidden="true"></span>
-
-    <img class="site-footer__top-shape" src="<?php echo esc_url(get_template_directory_uri() . '/img/shape-slider-bottom.svg'); ?>" alt="" aria-hidden="true">
-
+<footer class="site-footer container-fluid bg-brand-main p-0">
 
     <div class="container-fluid pt-5 px-0">
 
@@ -37,7 +30,7 @@
                                 ?>
                                 <div class="mb-5">
                                     <a id="navbar-brand" href="<?php echo get_option('siteurl'); ?>" aria-label="Go to homepage">
-                                        <img src="<?php echo get_template_directory_uri() ?>/img/logo-farmscape-finance-vertical.png" class="img-fluid" alt="<?php echo get_bloginfo('name'); ?> logo">
+                                        <img src="<?php echo get_template_directory_uri() ?>/img/logo-dark-bystra.png" class="img-fluid" alt="<?php echo get_bloginfo('name'); ?> logo">
                                     </a>
                                 </div>
                                 <?php
@@ -81,23 +74,16 @@
 
                                 <?php
                                 /* -------------------------------------------------------------------------- */
-                                /*                                    Phone                                   */
+                                /*                                    Idea                                   */
                                 /* -------------------------------------------------------------------------- */
                                 ?>
                                 <div class="mb-5 text-center">
-                                    <span class="text-hueso">P: 08 8562 2707</span>
+                                    <span class="text-hueso">Lorem Ipsum</span>
                                 </div>
 
 
 
-                                <?php
-                                /* -------------------------------------------------------------------------- */
-                                /*                                    Logo                                    */
-                                /* -------------------------------------------------------------------------- */
-                                ?>
-                                <div class="mb-5 text-center">
-                                    <img src="<?php echo get_template_directory_uri() ?>/img/logo-mfaa.png" class="img-fluid" alt="MFAA Member" style="max-width: 150px;">
-                                </div>
+
 
 
                             </div>
@@ -138,13 +124,13 @@
 
                                     <?php
                                     /* -------------------------------------------------------------------------- */
-                                    /*                              Office Locations                              */
+                                    /*                                                            */
                                     /* -------------------------------------------------------------------------- */
                                     ?>
                                     <div class="col-6 col-lg-6 col-xl-3 col-xxl-3">
 
                                         <div class="titles-footer mb-4">
-                                            Office Locations
+                                            Acknowledgements
                                         </div>
                                         <div class="text-white">
                                             <?php $footer_locations = get_field('locations', 'option'); ?>
@@ -209,7 +195,7 @@
         /*                               Secondary block                              */
         /* -------------------------------------------------------------------------- */
         ?>
-        <div class="container-fluid bg-brand-main-light py-5 px-0">
+        <div class="container-fluid py-5 px-0">
             <div class="container">
                 <div class="row d-flex justify-content-center">
                     <div class="col-11 col-lg-10">
@@ -228,7 +214,7 @@
                                 </div>
                                 <?php endif; ?>
                                 <div class="col-12 text-center text-white mb-md-0" style="z-index: 2; font-size: 1.2rem;">
-                                    &copy; <?php echo date('Y'); ?> | Barossa Lending Services Pty Ltd T/A <?php echo get_bloginfo('name'); ?>. ABN 69 617 250 861 | Australian Credit Licence 391835 | <a href="#" class="text-white">Privacy Policy</a> | <a href="#" class="text-white">Complaints</a>
+                                    &copy; <?php echo date('Y'); ?> | <?php echo get_bloginfo('name'); ?>. | <a href="#" class="text-white">Privacy Policy</a>
                                 </div>
                                 <div class="col-12 text-center" style="font-size: 1.2rem;">
                                     <a href="https://envyus.com.au" target="_blank" rel="noopener noreferrer" class="text-white">Site by EnvyUs Creative</a>

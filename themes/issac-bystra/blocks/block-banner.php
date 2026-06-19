@@ -29,8 +29,6 @@ endif;
 
 <div id="banner-<?php echo $iBlock; ?>" class="container-fluid banner-block-wrap card-rounded-top corner-fill <?php echo esc_attr($banner_section_class); ?>" <?php echo $banner_section_style_attr; ?>>
 
-    <span class="site-footer__texture site-footer__texture--banner" aria-hidden="true"></span>
-
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-11 col-lg-10">
