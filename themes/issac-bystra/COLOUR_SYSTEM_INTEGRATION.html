@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+<head>
+	<meta charset="utf-8"/>
+</head>
+<body>
+
+<h1 id="background-drivencoloursystemintegration">Background-Driven Colour System Integration</h1>
+
+<p>This document explains how to integrate the AHCSA-style background-driven colour system into the Farmscape theme, specifically around:</p>
+
+<ul>
+<li><code>scss/_colours.scss</code></li>
+<li><code>blocks/block-content-basic.php</code></li>
+</ul>
+
+<p>The goal is to let a block background class control the text, heading, and link colours of everything inside that block.</p>
+
+<h2 id="currentfarmscapesetup">Current Farmscape Setup</h2>
+
+<p><code>blocks/block-content-basic.php</code> already reads an ACF background field:</p>
+
+<pre><code class="php">$content_basic_background = get_sub_field('content_basic_background');
+</code></pre>
+
+<p>It then validates that value against an allowed list:</p>
+
+<pre><code class="php">$allowed_backgrounds = array('bg-olive', 'bg-olive-light', 'bg-humo', 'bg-white');
+$background_class = in_array($content_basic_background, $allowed_backgrounds, true) ? $content_basic_background : '';
+</code></pre>
+
+<p>Finally, the selected background class is printed on the outer block wrapper:</p>
+
+<pre><code class="php">&lt;div id=&quot;&lt;?php echo esc_attr('content-' . $iBlock); ?&gt;&quot; class=&quot;container-fluid px-5 px-md-0 &lt;?php echo esc_attr($background_class); echo esc_attr($content_basic_hero_class); ?&gt;&quot;&gt;
+</code></pre>
+
+<p>This means the rendered block may look like:</p>
+
+<pre><code class="html">&lt;div class=&quot;container-fluid px-5 px-md-0 bg-olive content-basic-regular&quot;&gt;
+</code></pre>
+
+<p>That is already the right place to hook in the colour-variable system.</p>
+
+<h2 id="howtheahcsasystemworks">How The AHCSA System Works</h2>
+
+<p>AHCSA defines global CSS variables first:</p>
+
+<pre><code class="scss">:root {
+  --colour-text: #000000;
+  --colour-text-inverse: #ffffff;
+  --colour-surface: #ffffff;
+
+  --heading-colour: var(--colour-text);
+  --text-colour: var(--colour-text);
+  --link-colour: var(--colour-primary);
+}
+</code></pre>
+
+<p>Then each background class overrides those semantic variables:</p>
+
+<pre><code class="scss">.bg-olive-light {
+  --heading-colour: var(--colour-text-inverse);
+  --text-colour: var(--colour-surface);
+  --link-colour: var(--colour-text-inverse);
+}
+</code></pre>
+
+<p>Typography rules consume the semantic variables:</p>
+
+<pre><code class="scss">h1, h2, h3, h4, h5, h6 {
+  color: var(--heading-colour);
+}
+
+p, ul, ol {
+  color: var(--text-colour);
+}
+
+a {
+  color: var(--link-colour);
+}
+</code></pre>
+
+<p>Because CSS custom properties inherit, setting <code>--heading-colour</code> on <code>.bg-olive-light</code> affects headings inside that block only.</p>
+
+<h2 id="recommendedfarmscapeintegration">Recommended Farmscape Integration</h2>
+
+<p>Farmscape already uses Sass variables and a <code>$colors</code> map in <code>scss/_colours.scss</code>. Keep that system. Add CSS custom properties alongside it so blocks can inherit semantic colours.</p>
+
+<p>Add a root variable section after the colour variables or after the <code>$colors</code> map:</p>
+
+<pre><code class="scss">:root {
+    --colour-olive: #{$olive};
+    --colour-olive-light: #{$olive-light};
+    --colour-humo: #{$humo};
+    --colour-white: #{$blanco};
+    --colour-text: #{$tinta};
+    --colour-text-inverse: #{$blanco};
+
+    --heading-colour: var(--colour-text);
+    --text-colour: var(--colour-text);
+    --link-colour: var(--colour-olive);
+}
+</code></pre>
+
+<p>Then update the existing background generation loop so the generated <code>.bg-*</code> classes can also participate in the semantic colour system:</p>
+
+<pre><code class="scss">@each $name, $value in $colors {
+    .#{$name},
+    .text-#{$name} {
+        color: $value;
+    }
+
+    .bg-#{$name} {
+        background-color: $value;
+    }
+
+    .border-#{$name} {
+        border-color: $value;
+    }
+}
+</code></pre>
+
+<p>Keep that generator, then add explicit contrast rules underneath it for backgrounds used by <code>block-content-basic.php</code>:</p>
+
+<pre><code class="scss">.bg-olive,
+.bg-olive-light {
+    --heading-colour: var(--colour-text-inverse);
+    --text-colour: var(--colour-text-inverse);
+    --link-colour: var(--colour-text-inverse);
+}
+
+.bg-humo,
+.bg-white,
+.bg-blanco {
+    --heading-colour: var(--colour-text);
+    --text-colour: var(--colour-text);
+    --link-colour: var(--colour-olive);
+}
+</code></pre>
+
+<p>Then add scoped typography rules. Prefer scoping them to content blocks first, instead of changing every heading/link across the whole site at once:</p>
+
+<pre><code class="scss">.content-basic-regular,
+.content-basic-hero {
+    color: var(--text-colour);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: var(--heading-colour);
+    }
+
+    p,
+    ul,
+    ol {
+        color: var(--text-colour);
+    }
+
+    a:not(.btn):not(.btn-cta) {
+        color: var(--link-colour);
+    }
+}
+</code></pre>
+
+<p>This keeps the change focused on <code>block-content-basic.php</code> and avoids unexpectedly changing menus, buttons, cards, or other shared components.</p>
+
+<h2 id="phpchangesneeded">PHP Changes Needed</h2>
+
+<p>No major PHP rewrite is needed for <code>blocks/block-content-basic.php</code>, because it already prints the background class on the block wrapper.</p>
+
+<p>This current line is the key integration point:</p>
+
+<pre><code class="php">&lt;div id=&quot;&lt;?php echo esc_attr('content-' . $iBlock); ?&gt;&quot; class=&quot;container-fluid px-5 px-md-0 &lt;?php echo esc_attr($background_class); echo esc_attr($content_basic_hero_class); ?&gt;&quot;&gt;
+</code></pre>
+
+<p>The selected ACF value, such as <code>bg-olive</code>, becomes the CSS scope that overrides:</p>
+
+<ul>
+<li><code>--heading-colour</code></li>
+<li><code>--text-colour</code></li>
+<li><code>--link-colour</code></li>
+</ul>
+
+<p>If more background options are added in ACF, also add them to:</p>
+
+<pre><code class="php">$allowed_backgrounds = array('bg-olive', 'bg-olive-light', 'bg-humo', 'bg-white');
+</code></pre>
+
+<p>And add matching contrast rules in <code>scss/_colours.scss</code>.</p>
+
+<h2 id="exampleflow">Example Flow</h2>
+
+<p>If ACF returns <code>bg-olive</code>, the PHP outputs:</p>
+
+<pre><code class="html">&lt;div class=&quot;container-fluid px-5 px-md-0 bg-olive content-basic-regular&quot;&gt;
+</code></pre>
+
+<p>The SCSS rule for <code>.bg-olive</code> sets:</p>
+
+<pre><code class="scss">--heading-colour: var(--colour-text-inverse);
+--text-colour: var(--colour-text-inverse);
+--link-colour: var(--colour-text-inverse);
+</code></pre>
+
+<p>Then <code>.content-basic-regular h2</code>, paragraphs, lists, and normal links inherit white text for contrast on the green background.</p>
+
+<p>If ACF returns <code>bg-humo</code>, the SCSS sets dark text instead:</p>
+
+<pre><code class="scss">--heading-colour: var(--colour-text);
+--text-colour: var(--colour-text);
+--link-colour: var(--colour-olive);
+</code></pre>
+
+<h2 id="suggestedimplementationorder">Suggested Implementation Order</h2>
+
+<ol>
+<li>Add <code>:root</code> CSS custom properties to <code>scss/_colours.scss</code>.</li>
+<li>Keep the existing Sass <code>$colors</code> map and generated utility classes.</li>
+<li>Add explicit semantic colour overrides for <code>bg-olive</code>, <code>bg-olive-light</code>, <code>bg-humo</code>, and <code>bg-white</code>.</li>
+<li>Add scoped typography rules for <code>.content-basic-regular</code> and <code>.content-basic-hero</code>.</li>
+<li>Only update <code>blocks/block-content-basic.php</code> if new ACF background values need to be added to <code>$allowed_backgrounds</code>.</li>
+<li>Let CodeKit compile the SCSS and then visually check each background option in the CMS.</li>
+</ol>
+
+<h2 id="notes">Notes</h2>
+
+<p>Do not replace the existing Sass colour map. The custom properties should sit alongside it:</p>
+
+<ul>
+<li>Sass variables remain useful for compile-time styling.</li>
+<li>CSS custom properties are useful for inherited, context-aware colours.</li>
+</ul>
+
+<p>This gives the theme both systems: generated utility classes from Sass and flexible block-level text contrast from CSS variables.</p>
+
+</body>
+</html>
+

@@ -1,0 +1,479 @@
+/*
+ ██████ ███████ ███████
+██      ██           ██
+██      █████       ██
+██      ██         ██
+ ██████ ██         ██
+
+
+*/
+/* -------------------------------------------------------------------------- */
+/* cf7 – pill style (orange borders, posidonia labels)                        */
+/* -------------------------------------------------------------------------- */
+@use 'sass:color';
+@use 'colours' as colours;
+@use 'fonts' as fonts;
+
+.wpcf7-form {
+    width: 100%;
+    max-width: 100%;
+    color: colours.$blanco;
+}
+
+.wpcf7-form .wpcf7-form-control-wrap {
+    display: block;
+    width: 100%;
+}
+
+.wpcf7-form p {
+    color: colours.$brand-main-light;
+    margin: 0 0 0.75rem;
+}
+
+.wpcf7-form label {
+    display: block;
+    font-weight: fonts.$fw-500;
+    margin-bottom: 0.5rem;
+    color: colours.$humo;
+}
+
+.wpcf7-form input[type="text"],
+.wpcf7-form input[type="email"],
+.wpcf7-form input[type="tel"],
+.wpcf7-form select {
+    width: 100%;
+    padding: 6px 18px;
+    border-radius: 9999px;
+    background-color: colours.$hueso;
+    color: colours.$tinta;
+    font-size: 1.8rem;
+    font-weight: fonts.$fw-400;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid colours.$humo !important;
+}
+
+.wpcf7-form select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: colours.$hueso;
+    color: colours.$tinta;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpolyline points='2 5 8 11 14 5' style='fill:none;stroke:%238CC63E;stroke-width:2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 2rem center;
+    background-size: 1.1em 1.1em;
+    padding-left: 28px;
+    padding-right: 4.5rem;
+}
+
+.wpcf7-form textarea {
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid colours.$brand-main;
+    border-radius: 16px;
+    background-color: colours.$hueso;
+    color: colours.$tinta;
+    box-sizing: border-box;
+    min-height: 120px;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    border: 2px solid colours.$humo !important;
+}
+
+.wpcf7-form input[type="text"]:focus,
+.wpcf7-form input[type="email"]:focus,
+.wpcf7-form input[type="tel"]:focus,
+.wpcf7-form select:focus,
+.wpcf7-form textarea:focus {
+    border-color: colours.$brand-main;
+    outline: none;
+    box-shadow: 0 0 0 3px color.change(colours.$brand-main, $alpha: 0.25);
+}
+
+.wpcf7-form .wpcf7-list-item-label,
+.wpcf7-form input[type="file"] {
+    color: colours.$blanco;
+}
+
+.wpcf7-form .wpcf7-not-valid-tip,
+.wpcf7-form .wpcf7-response-output {
+    color: colours.$amarillo;
+}
+
+.wpcf7-form input.wpcf7-submit,
+.wpcf7-form .wpcf7-submit {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-500);
+    font-size: 1.6rem;
+    letter-spacing: 0.24rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border: none !important;
+    border-radius: 9999px;
+    padding: 12px 28px;
+    background-color: colours.$hueso !important;
+    color: colours.$tinta !important;
+    margin-top: 0.5rem;
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid colours.$brand-main !important;
+}
+
+/* Arrow: <input> doesn't support ::after; add " →" in CF7 template if desired: [submit "Submit →"] */
+
+.wpcf7-form input.wpcf7-submit:hover,
+.wpcf7-form .wpcf7-submit:hover {
+    background-color: colours.$brand-main-dark !important;
+    color: colours.$hueso !important;
+}
+
+
+
+
+/*
+███████ ███████  █████  ██████   ██████ ██   ██        ██        ███████ ██ ██      ████████ ███████ ██████
+██      ██      ██   ██ ██   ██ ██      ██   ██        ██        ██      ██ ██         ██    ██      ██   ██
+███████ █████   ███████ ██████  ██      ███████     ████████     █████   ██ ██         ██    █████   ██████
+     ██ ██      ██   ██ ██   ██ ██      ██   ██     ██  ██       ██      ██ ██         ██    ██      ██   ██
+███████ ███████ ██   ██ ██   ██  ██████ ██   ██     ██████       ██      ██ ███████    ██    ███████ ██   ██
+
+
+*/
+.sf-field-taxonomy-section {
+    display: none !important;
+}
+
+@media (max-width: 768px) {
+    .sf-field-taxonomy-section {
+        display: inline !important;
+    }
+}
+
+
+
+
+/*
+███    ███  █████  ██ ██       ██████ ██   ██ ██ ███    ███ ██████
+████  ████ ██   ██ ██ ██      ██      ██   ██ ██ ████  ████ ██   ██
+██ ████ ██ ███████ ██ ██      ██      ███████ ██ ██ ████ ██ ██████
+██  ██  ██ ██   ██ ██ ██      ██      ██   ██ ██ ██  ██  ██ ██
+██      ██ ██   ██ ██ ███████  ██████ ██   ██ ██ ██      ██ ██
+
+
+███████  ██████  ██████  ███    ███
+██      ██    ██ ██   ██ ████  ████
+█████   ██    ██ ██████  ██ ████ ██
+██      ██    ██ ██   ██ ██  ██  ██
+██       ██████  ██   ██ ██      ██
+
+
+*/
+
+/* Placeholder styles for various browsers */
+
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+::placeholder {
+    color: colours.$negro !important;
+    /* Use colours.$negro for placeholder */
+    opacity: 1;
+}
+
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+    color: colours.$negro !important;
+    /* Use colours.$negro for placeholder */
+}
+
+/* Microsoft Edge */
+::-ms-input-placeholder {
+    color: colours.$negro !important;
+    /* Use colours.$negro for placeholder */
+}
+
+.custom-mailchimp-input-wider {
+    background: colours.$hueso-light;
+    color: colours.$tinta;
+    border: 2px solid colours.$hueso;
+    border-radius: 3px;
+    padding: 6px 12px;
+    margin-bottom: 20px;
+    width: 320px;
+}
+
+/* Custom styles for Mailchimp button */
+.custom-mailchimp-button {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-700);
+    font-size: 1.6rem;
+    color: colours.$hueso;
+    background: transparent;
+    border: 2px solid colours.$hueso;
+    border-radius: 25px;
+    padding: 6px 18px 3px 18px;
+    text-transform: uppercase
+}
+
+/* Hover effect for Mailchimp button */
+.custom-mailchimp-button:hover {
+    background: transparent;
+    color: colours.$tinta;
+}
+
+
+/* 
+███████ ███████  █████  ██████   ██████ ██   ██
+██      ██      ██   ██ ██   ██ ██      ██   ██
+███████ █████   ███████ ██████  ██      ███████
+     ██ ██      ██   ██ ██   ██ ██      ██   ██
+███████ ███████ ██   ██ ██   ██  ██████ ██   ██
+
+
+██   ██ ████████ ███    ███ ██      ███████
+██   ██    ██    ████  ████ ██      ██
+███████    ██    ██ ████ ██ ██      ███████
+██   ██    ██    ██  ██  ██ ██           ██
+██   ██    ██    ██      ██ ███████ ███████
+
+
+*/
+input {
+    outline: none;
+}
+
+input[type=search] {
+    -webkit-appearance: textfield;
+    appearance: textfield; // Add standard property
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box; // Add standard property
+    font-family: inherit;
+    font-size: 100%;
+    color: #ffffff;
+    /* Set input text color to white */
+    /* Use a white SVG icon */
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23ffffff'%3E%3Cpath d='M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z'/%3E%3C/svg%3E") no-repeat 9px center;
+    background-size: 18px 18px;
+    border: solid 0px #ccc;
+    padding: 3px 10px 3px 32px;
+    /* Adjusted padding for icon */
+    width: 55px;
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    transition: all .5s;
+}
+
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+    display: none;
+}
+
+input[type=search]:focus {
+    width: 130px;
+    background-color: colours.$posidonia-dark;
+    border-color: transparent;
+    color: #ffffff;
+    /* Ensure input text color remains white on focus */
+    /* Keep the white icon on focus */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 512 512' fill='%23ffffff'%3E%3Cpath d='M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 9px center;
+    background-size: 18px 18px;
+}
+
+.search-form .search-submit {
+    display: none;
+}
+
+
+
+/*
+██████   ██████   ██████  ████████ ███████ ████████ ██████   █████  ██████
+██   ██ ██    ██ ██    ██    ██    ██         ██    ██   ██ ██   ██ ██   ██
+██████  ██    ██ ██    ██    ██    ███████    ██    ██████  ███████ ██████
+██   ██ ██    ██ ██    ██    ██         ██    ██    ██   ██ ██   ██ ██
+██████   ██████   ██████     ██    ███████    ██    ██   ██ ██   ██ ██
+
+
+████████  █████  ██████  ███████
+   ██    ██   ██ ██   ██ ██
+   ██    ███████ ██████  ███████
+   ██    ██   ██ ██   ██      ██
+   ██    ██   ██ ██████  ███████
+
+bootstrap tabs
+ */
+
+.nav-tabs {
+    border-bottom: 2px solid colours.$aguamarina; // Keep the main bottom border
+
+    .nav-item {
+        margin-bottom: -1px; // Keep overlap for the active tab
+    }
+
+    .nav-link {
+        color: colours.$posidonia;
+        background-color: transparent;
+        border: 2px solid colours.$aguamarina; // Apply border to all sides initially
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 9px 18px 3px 18px;
+        margin-right: 9px;
+        font-weight: fonts.$fw-500;
+        position: relative; // Needed for z-index or positioning adjustments if required
+
+        &:hover {
+            border-color: colours.$aguamarina-light;
+            border-bottom-color: 2px solid transparent;
+            color: colours.$hueso;
+            background-color: colours.$aguamarina-light;
+            // Optional: slightly lift non-active tabs on hover if desired
+            // bottom: -1px;
+        }
+
+        &.disabled {
+            color: color.adjust(colours.$posidonia, $lightness: 30%);
+            background-color: transparent;
+            border-color: colours.$aguamarina;
+        }
+
+        // Active/Selected state
+        &.active {
+            color: colours.$hueso;
+            background-color: colours.$aguamarina-dark;
+            border-color: colours.$aguamarina-dark;
+            border-bottom-color: colours.$aguamarina-dark;
+            font-weight: fonts.$fw-500;
+            // Ensure active tab is visually on top
+            z-index: 0;
+        }
+    }
+}
+
+.front-page-tabs .nav-tabs {
+    justify-content: left;
+}
+
+
+.front-page-tabs .nav-link {
+    font-size: 2.1rem;
+    font-weight: fonts.$fw-500;
+}
+
+
+// Style the tab content area
+.tab-content {
+    position: relative;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+
+
+@media (max-width: 1400px) {
+    .nav-tabs {
+        border-bottom: 0px solid colours.$aguamarina; // Keep the main bottom border
+
+        .nav-item {
+            margin: 0 9px 12px 0; // Keep overlap for the active tab
+        }
+
+        .nav-link {
+            font-weight: fonts.$fw-500;
+            font-size: 1.5rem;
+            color: colours.$posidonia;
+            border: 2px solid colours.$aguamarina;
+            background-color: colours.$hueso;
+            border-radius: 10px;
+            padding: 6px 18px 3px 18px;
+            margin-right: 5px;
+            //text-transform: uppercase;
+            position: relative; // Needed for z-index or positioning adjustments if required
+
+            &:hover {
+                color: colours.$hueso;
+                border-color: colours.$aguamarina;
+                background-color: colours.$aguamarina;
+            }
+
+            &.disabled {
+                color: color.adjust(colours.$aguamarina, $lightness: 30%);
+                background-color: colours.$hueso;
+                border-color: color.adjust(colours.$aguamarina, $lightness: 30%);
+            }
+
+            // Active/Selected state
+            &.active {
+                color: colours.$hueso;
+                border-color: colours.$aguamarina-dark;
+                background-color: colours.$aguamarina-dark;
+                border-bottom-color: colours.$aguamarina-dark; // Keep consistent border
+                font-weight: fonts.$fw-500;
+                // Ensure active tab is visually on top
+                z-index: 1;
+            }
+        }
+    }
+}
+
+
+/*
+████████  ██████   ██████  ██      ████████ ██ ██████
+   ██    ██    ██ ██    ██ ██         ██    ██ ██   ██
+   ██    ██    ██ ██    ██ ██         ██    ██ ██████
+   ██    ██    ██ ██    ██ ██         ██    ██ ██
+   ██     ██████   ██████  ███████    ██    ██ ██
+
+bootstrap tooltips     
+*/
+
+
+// Tooltip container
+.tooltip {
+    z-index: 1070; // Ensure tooltips appear above other content
+
+    // Tooltip arrow
+    .tooltip-arrow {
+        &::before {
+            border-top-color: colours.$posidonia-dark; // Arrow color matches background
+        }
+    }
+
+    // Tooltip inner content
+    .tooltip-inner {
+        @include fonts.font(fonts.$text-prose, fonts.$fw-500);
+        font-size: 1.3rem;
+        color: colours.$hueso;
+        background-color: colours.$posidonia-dark;
+        border-radius: 6px;
+        padding: 8px 12px;
+        max-width: 280px;
+        text-align: center;
+        line-height: 1.4;
+        box-shadow: 0 4px 12px color.change(colours.$negro, $alpha: 0.15);
+        border: 1px solid colours.$posidonia;
+    }
+}
+
+// Specific positioning adjustments for different placements
+.tooltip.bs-tooltip-top {
+    .tooltip-arrow::before {
+        border-top-color: colours.$posidonia-dark;
+    }
+}
+
+.tooltip.bs-tooltip-bottom {
+    .tooltip-arrow::before {
+        border-bottom-color: colours.$posidonia-dark;
+    }
+}
+
+.tooltip.bs-tooltip-start {
+    .tooltip-arrow::before {
+        border-left-color: colours.$posidonia-dark;
+    }
+}
+
+.tooltip.bs-tooltip-end {
+    .tooltip-arrow::before {
+        border-right-color: colours.$posidonia-dark;
+    }
+}

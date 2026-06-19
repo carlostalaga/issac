@@ -1,0 +1,19 @@
+# Ignore everything by default
+/*
+# ... un-ignore my stuff
+!/.gitignore
+!/plugins/
+/plugins/*
+!/plugins/issac-assessment/
+!/themes/
+/themes/*
+!/themes/issac-bystra/
+!/.cursor/
+!/DEVELOPMENT.md
+!/README.md
+!/docs/
+
+# never commit these
+.DS_Store
+plugins/issac-assessment/vendor/
+uploads/

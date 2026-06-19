@@ -1,0 +1,573 @@
+@use 'sass:map';
+@use 'colours' as colours;
+
+// Font family variables
+$text-prose: 'alexandria', sans-serif; // 400 regular
+$text-drama: 'alexandria', sans-serif; // 600, 700, 800, 900
+// $text-epic: 'times', serif;
+
+// Font weight variables
+$fw-300: 300;
+$fw-400: 400;
+$fw-500: 500;
+$fw-600: 600;
+$fw-700: 700;
+$fw-800: 800;
+$fw-900: 900;
+
+$body-font-size: 1.6rem;
+
+
+// Mixin for font properties
+@mixin font($family, $weight, $style: normal) {
+    font-family: $family;
+    font-weight: $weight;
+    font-style: $style;
+}
+
+
+// document styles
+html {
+    font-size: 62.5%;
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 57%;
+    }
+}
+
+body {
+    @include font($text-prose, $fw-400);
+    font-size: $body-font-size;
+    color: colours.$tinta;
+}
+
+// Note: Responsive scaling is handled per-element via $breakpoints map
+// Avoid scaling html font-size as it compounds with element-specific scaling
+
+a {
+    text-decoration: none;
+    color: colours.$brand-main-dark;
+
+    &:hover {
+        color: colours.$brand-main-dark;
+    }
+}
+
+ul,
+ol {
+    @include font($text-prose, $fw-400);
+    font-size: $body-font-size;
+    line-height: 1.5;
+    margin: 0 0 1.5rem 2rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.6rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+
+// Heading typography map
+// The 'family' property can use font family variables defined above, e.g. $text-prose or $text-drama.
+// The 'color' property sets the default color for each heading.
+// To override a heading color in a specific context, use utility classes from _colours.scss:
+//   <h2 class="text-posidonia">...</h2>
+// This allows sensible defaults while enabling easy per-case overrides.
+$base-font-sizes: (
+    h1: (family: $text-drama, size: 4.8rem, weight: $fw-600, line-height: 1.2, letter-spacing: 0, color: colours.$tinta, margin-bottom: 0.6rem),
+    h2: (family: $text-drama, size: 4.5rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$tinta, margin-bottom: 0.6rem),
+    h3: (family: $text-drama, size: 4.2rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$tinta, margin-bottom: 0.4rem),
+    h4: (family: $text-drama, size: 3.6rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$tinta, margin-bottom: 0.4rem),
+    h5: (family: $text-drama, size: 2.6rem, weight: $fw-600, line-height: 1.23, letter-spacing: 0, color: colours.$tinta, margin-bottom: 0.3rem),
+    h6: (family: $text-drama, size: 2.3rem, weight: $fw-600, line-height: 0.95, letter-spacing: 0, color: colours.$tinta, margin-bottom: 0.3rem)
+);
+
+$breakpoints: (
+    1200px: 0.90,
+    992px: 0.85,
+    768px: 0.80,
+    576px: 0.65,
+    380px: 0.60
+);
+
+
+// =============================================================================
+// HEADING STYLES GENERATOR
+// =============================================================================
+// Iterates over the $base-font-sizes map to generate consistent heading styles.
+// Each heading (h1-h6) receives its typography properties from the map above.
+//
+// Required properties (always applied):
+//   - family: font family variable
+//   - size: font-size in rem
+//   - weight: font-weight value
+//   - color: text color from colours module
+//
+// Optional properties (only applied if not null):
+//   - line-height: custom line-height (falls back to browser default if null)
+//   - letter-spacing: custom letter-spacing (falls back to browser default if null)
+//   - margin-bottom: spacing below heading (falls back to browser default if null)
+//
+// To override colors in specific contexts, use utility classes from _colours.scss:
+//   <h2 class="text-posidonia">...</h2>
+// =============================================================================
+@each $tag, $props in $base-font-sizes {
+    #{$tag} {
+        @include font(map.get($props, family), map.get($props, weight));
+        font-size: map.get($props, size);
+        color: map.get($props, color);
+
+        @if map.get($props, line-height) {
+            line-height: map.get($props, line-height);
+        }
+
+        @if map.get($props, letter-spacing) {
+            letter-spacing: map.get($props, letter-spacing);
+        }
+
+        @if map.get($props, margin-bottom) {
+            margin-bottom: map.get($props, margin-bottom);
+        }
+    }
+}
+
+// Responsive styles
+@each $bp, $scale in $breakpoints {
+    @media (max-width: $bp) {
+        /* body {
+            font-size: calc(#{$body-font-size} * #{$scale});
+        } */
+
+        @each $tag, $props in $base-font-sizes {
+            #{$tag} {
+                font-size: calc(#{map.get($props, size)} * #{$scale});
+            }
+        }
+    }
+}
+
+/* Basics */
+p {
+    margin: 0 0 1.5rem 0;
+}
+
+/* p:last-child {
+    margin-bottom: 0;
+} */
+
+strong {
+    font-weight: $fw-700;
+    margin: 0 0 1.5rem 0;
+}
+
+blockquote {
+    font-size: 2.2rem;
+    font-weight: $fw-700;
+    margin: 0 0 1.5rem 0;
+}
+
+.text-prose-400 {
+    @include font($text-prose, $fw-400);
+}
+
+.text-drama-600 {
+    @include font($text-drama, $fw-600);
+}
+
+.text-drama-700 {
+    @include font($text-drama, $fw-700);
+}
+
+.text-drama-800 {
+    @include font($text-drama, $fw-800);
+}
+
+.text-drama-900 {
+    @include font($text-drama, $fw-900);
+}
+
+/* Utilities */
+
+.info-text {
+    @include font($text-prose, $fw-400);
+    font-size: 1.5rem;
+}
+
+.banner-title {
+    @include font($text-drama, $fw-700);
+    font-size: 5.5rem;
+    line-height: 0.96;
+}
+
+@media (max-width: 1200px) {
+    .banner-title {
+        font-size: calc(5.5rem * 0.72);
+    }
+}
+
+/* Special case for the top sliders -  Sharp changes to accomodate long text in slider headlines */
+
+.headline-1 {
+    @include font($text-drama, $fw-900);
+    font-size: 6rem;
+    line-height: 1.1;
+}
+
+.headline-2 {
+    @include font($text-drama, $fw-900);
+    font-size: 4.2rem;
+    line-height: 1.1 !important;
+}
+
+$header-breakpoints-1: (
+    1400px: 0.90,
+    1200px: 0.85,
+    992px: 0.80,
+    768px: 0.75,
+    576px: 0.70,
+    380px: 0.65
+);
+
+@each $bp, $scale in $header-breakpoints-1 {
+    @media (max-width: $bp) {
+
+        .headline-1 {
+            font-size: calc(5.1rem * #{$scale});
+        }
+
+    }
+}
+
+$header-breakpoints-2: (
+    1400px: 0.90,
+    1200px: 0.80,
+    992px: 0.70,
+    768px: 0.65,
+    576px: 0.60,
+    380px: 0.55
+);
+
+@each $bp, $scale in $header-breakpoints-2 {
+    @media (max-width: $bp) {
+
+        .headline-2 {
+            font-size: calc(4.2rem * #{$scale});
+        }
+
+    }
+}
+
+.text-small {
+    font-size: 1.4rem;
+}
+
+.text-xs {
+    font-size: 1.3rem;
+}
+
+.titles-footer {
+    @include font($text-prose, $fw-700);
+    font-size: 1.8rem;
+    color: colours.$humo;
+    text-transform: uppercase;
+}
+
+.tabs-icon-label {
+    @include font($text-prose, $fw-500);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+}
+
+
+/*
+██      ██ ███████ ████████ ███████
+██      ██ ██         ██    ██
+██      ██ ███████    ██    ███████
+██      ██      ██    ██         ██
+███████ ██ ███████    ██    ███████
+*/
+
+// Base text-list styles - shared properties for all list styles
+// Using placeholder selector for efficient code reuse without duplication
+%text-list-base {
+    @include font($text-drama, $fw-600);
+    font-size: 1.7rem;
+    line-height: 1;
+    text-transform: uppercase;
+
+    // Link styling within list items
+    a {
+        text-decoration: none;
+        color: inherit; // Inherit color from parent element
+
+        &:hover {
+            text-decoration: none;
+        }
+
+        &:active {
+            color: colours.$amarillo; // Highlight color when clicked
+        }
+    }
+}
+
+// Light version of list - typically used on the "styled-list" or dark backgrounds
+.text-list li,
+.text-list-light {
+    @extend %text-list-base;
+    color: colours.$hueso;
+
+    &:hover {
+        color: colours.$hueso;
+    }
+}
+
+// Dark version of list - typically used on light backgrounds
+.text-list-dark {
+    @extend %text-list-base;
+    color: colours.$posidonia; // Brand color for text
+
+    &:hover {
+        color: colours.$aguamarina; // Color change on hover for interaction feedback
+    }
+}
+
+
+
+/*
+███████ ██      ██ ██████  ███████ ██████
+██      ██      ██ ██   ██ ██      ██   ██
+███████ ██      ██ ██   ██ █████   ██████
+     ██ ██      ██ ██   ██ ██      ██   ██
+███████ ███████ ██ ██████  ███████ ██   ██
+
+
+*/
+.text-slider-headline {
+    @include font($text-drama, $fw-900);
+    font-size: 7rem;
+    text-transform: none;
+}
+
+.text-slider-headline-frontpage {
+    @extend .text-slider-headline;
+    font-size: 1rem;
+}
+
+.text-slider-tagline {
+    @include font($text-drama, $fw-600);
+    font-size: 2.1rem;
+    line-height: 1.2;
+}
+
+.text-slider-content {
+    @include font($text-prose, $fw-400);
+    font-size: 1.8rem;
+}
+
+@media (max-width: 992px) {
+    .text-slider-headline {
+        font-size: 3.3rem;
+    }
+
+    .text-slider-tagline {
+        font-size: calc(2.2rem * 0.85);
+    }
+}
+
+@media (max-width: 768px) {
+    .text-slider-headline {
+        font-size: 6rem;
+        line-height: 1;
+    }
+
+    .text-slider-tagline {
+        font-size: calc(2.2rem * 0.80);
+    }
+}
+
+@media (max-width: 576px) {
+    .text-slider-headline {
+        font-size: 4rem;
+        line-height: 1;
+    }
+
+    .text-slider-tagline {
+        font-size: calc(2.2rem * 0.75);
+    }
+}
+
+/*
+ ██████  █████  ██████  ██████  ███████
+██      ██   ██ ██   ██ ██   ██ ██
+██      ███████ ██████  ██   ██ ███████
+██      ██   ██ ██   ██ ██   ██      ██
+ ██████ ██   ██ ██   ██ ██████  ███████
+
+
+*/
+.text-card-downloads-headline {
+    @include font($text-drama, $fw-600);
+    color: colours.$posidonia;
+    font-size: 2.4rem;
+}
+
+.text-card-downloads-tagline {
+    @include font($text-prose, $fw-400);
+    color: colours.$posidonia;
+    font-size: 2.1rem;
+}
+
+.text-cards-content {
+    @include font($text-prose, $fw-400);
+}
+
+
+.text-specifications {
+    @include font($text-drama, $fw-600);
+}
+
+
+
+
+/*
+
+███████ ██      ██ ██████  ███████ ██████
+██      ██      ██ ██   ██ ██      ██   ██
+███████ ██      ██ ██   ██ █████   ██████
+     ██ ██      ██ ██   ██ ██      ██   ██
+███████ ███████ ██ ██████  ███████ ██   ██
+
+
+ ██████  █████  ██████  ██████  ███████
+██      ██   ██ ██   ██ ██   ██ ██
+██      ███████ ██████  ██   ██ ███████
+██      ██   ██ ██   ██ ██   ██      ██
+ ██████ ██   ██ ██   ██ ██████  ███████
+
+
+*/
+
+
+.slider-cards .headline {
+    @include font($text-drama, $fw-700);
+    font-size: 3.0rem;
+    // position: relative;
+    // display: inline-block;
+    text-transform: none;
+    line-height: 1.2;
+}
+
+.slider-cards .tagline {
+    @include font($text-drama, $fw-600);
+    font-size: 2.5rem;
+    line-height: 1.2;
+}
+
+.slider-cards .description {
+    @include font($text-prose, $fw-400);
+    font-size: 1.7rem;
+}
+
+@media (max-width: 992px) {
+    .slider-cards .headline {
+        font-size: calc(3.0rem * 0.85);
+    }
+}
+
+@media (max-width: 768px) {
+    .slider-cards .headline {
+        font-size: calc(3.0rem * 0.80);
+    }
+}
+
+@media (max-width: 576px) {
+    .slider-cards .headline {
+        font-size: calc(3.0rem * 0.75);
+    }
+}
+
+
+/*
+ █████   ██████  ██████  ██████  ██████  ██████  ██  ██████  ███    ██
+██   ██ ██      ██      ██    ██ ██   ██ ██   ██ ██ ██    ██ ████   ██
+███████ ██      ██      ██    ██ ██████  ██   ██ ██ ██    ██ ██ ██  ██
+██   ██ ██      ██      ██    ██ ██   ██ ██   ██ ██ ██    ██ ██  ██ ██
+██   ██  ██████  ██████  ██████  ██   ██ ██████  ██  ██████  ██   ████
+
+
+*/
+.accordion-title {
+    @include font($text-drama, $fw-600);
+    font-size: 2.2rem;
+    line-height: 1;
+    color: colours.$tinta;
+
+    &:visited,
+    &:hover,
+    &:active {
+        color: colours.$brand-main;
+    }
+}
+
+
+
+
+
+
+
+/*
+███████  ██████  ███    ██ ████████      █████  ██     ██ ███████ ███████  ██████  ███    ███ ███████
+██      ██    ██ ████   ██    ██        ██   ██ ██     ██ ██      ██      ██    ██ ████  ████ ██
+█████   ██    ██ ██ ██  ██    ██        ███████ ██  █  ██ █████   ███████ ██    ██ ██ ████ ██ █████
+██      ██    ██ ██  ██ ██    ██        ██   ██ ██ ███ ██ ██           ██ ██    ██ ██  ██  ██ ██
+██       ██████  ██   ████    ██        ██   ██  ███ ███  ███████ ███████  ██████  ██      ██ ███████
+
+*/
+
+// Common styles for all icons
+// Placeholder selector for shared icon styles - only output when @extended
+%icon-common {
+    color: colours.$brand-main;
+    font-size: 2.7rem;
+    margin-right: 10px;
+    transition: color 0.4s, transform 0.4s;
+
+    &:hover {
+        color: colours.$brand-main-dark;
+        transform: translateY(1px);
+    }
+}
+
+[class*="fa-"] {
+    @extend %icon-common;
+}
+
+#social-icons-lightmode {
+
+    .fa,
+    .fab,
+    .fas,
+    .fa-brands,
+    .fa-solid {
+        color: colours.$blanco;
+
+        &:hover {
+            color: colours.$humo;
+        }
+    }
+}
+
+// Special case for fa-expand
+.fa-expand {
+    font-size: 2.7rem;
+}
+
+// Social icons reference (for documentation purposes)
+// These icons are styled via the [class*="fa-"] selector above
+// Available icons: envelope, facebook, twitter, tiktok, instagram, linkedin

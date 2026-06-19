@@ -1,0 +1,251 @@
+{
+    "key": "group_6a0e52f7363df",
+    "title": "Attributes",
+    "fields": [
+        {
+            "key": "field_6a0e52f719f89",
+            "label": "Backgrounds",
+            "name": "backgrounds",
+            "aria-label": "",
+            "type": "group",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_6a0e5346a782b",
+                    "label": "Background Colour",
+                    "name": "background_colour",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "bg-brand-main": "Brand Main",
+                        "bg-brand-accent": "Brand Accent",
+                        "bg-brand-support": "Brand Support",
+                        "bg-hueso": "Bone",
+                        "bg-white": "White",
+                        "bg-custom": "Custom Colour",
+                        "bg-hero": "Hero",
+                        "bg-1": "bg-1",
+                        "bg-2": "bg-2",
+                        "bg-2a": "bg-2a",
+                        "bg-3": "bg-3"
+                    },
+                    "default_value": "bg-white",
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 0,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0
+                },
+                {
+                    "key": "field_6a0e53a0a782c",
+                    "label": "Custom Background Colour",
+                    "name": "custom_background_colour",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6a0e5346a782b",
+                                "operator": "==",
+                                "value": "bg-custom"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0,
+                    "show_custom_palette": 0,
+                    "show_color_wheel": 1,
+                    "custom_palette_source": "",
+                    "palette_colors": ""
+                },
+                {
+                    "key": "field_6a0e5438c2ab5",
+                    "label": "Custom Text Colour",
+                    "name": "custom_text_colour",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6a0e5346a782b",
+                                "operator": "==",
+                                "value": "bg-custom"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0,
+                    "show_custom_palette": 0,
+                    "show_color_wheel": 1,
+                    "custom_palette_source": "",
+                    "palette_colors": ""
+                },
+                {
+                    "key": "field_6a0e54f0c2ab6",
+                    "label": "Corner Fill Colour",
+                    "name": "corner_fill_colour",
+                    "aria-label": "",
+                    "type": "select",
+                    "instructions": "Optional. The solid colour painted into the rounded top corners of the block directly below this one if it cannot be inherited automatically.",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6a0e5346a782b",
+                                "operator": "==",
+                                "value": "bg-hero"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_6a0e5346a782b",
+                                "operator": "==",
+                                "value": "bg-1"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_6a0e5346a782b",
+                                "operator": "==",
+                                "value": "bg-2"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_6a0e5346a782b",
+                                "operator": "==",
+                                "value": "bg-2a"
+                            }
+                        ],
+                        [
+                            {
+                                "field": "field_6a0e5346a782b",
+                                "operator": "==",
+                                "value": "bg-3"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "choices": {
+                        "bg-brand-main": "Brand Main",
+                        "bg-brand-accent": "Brand Accent",
+                        "bg-brand-support": "Brand Support",
+                        "bg-hueso": "Bone",
+                        "bg-white": "White",
+                        "bg-custom": "Custom Colour"
+                    },
+                    "default_value": false,
+                    "return_format": "value",
+                    "multiple": 0,
+                    "allow_null": 1,
+                    "allow_in_bindings": 0,
+                    "ui": 0,
+                    "ajax": 0,
+                    "placeholder": "",
+                    "create_options": 0,
+                    "save_options": 0
+                },
+                {
+                    "key": "field_6a0e54f1c2ab7",
+                    "label": "Corner Fill Custom Colour",
+                    "name": "corner_fill_custom_colour",
+                    "aria-label": "",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_6a0e54f0c2ab6",
+                                "operator": "==",
+                                "value": "bg-custom"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "enable_opacity": 0,
+                    "return_format": "string",
+                    "allow_in_bindings": 0,
+                    "show_custom_palette": 0,
+                    "show_color_wheel": 1,
+                    "custom_palette_source": "",
+                    "palette_colors": ""
+                }
+            ]
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "post"
+            },
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "page"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "display_title": "",
+    "allow_ai_access": false,
+    "ai_description": "",
+    "modified": 1781836063
+}

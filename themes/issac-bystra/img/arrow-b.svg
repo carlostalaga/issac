@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 75.3 614.66">
+  <g id="arrow-b-tail">
+    <polygon points="0 0 74.19 305.94 0 614.66 75.3 614.66 75.3 0 0 0" fill="#A7D16C"/>
+  </g>
+  <g id="arrow-b-head">
+    <polygon points=".56 614.66 74.74 305.94 .56 0 .56 614.66" fill="#d3df62"/>
+  </g>
+</svg>

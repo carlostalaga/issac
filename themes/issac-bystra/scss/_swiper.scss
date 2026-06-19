@@ -1,0 +1,751 @@
+/* General overrides for Swiper */
+@use 'colours' as colours;
+
+.swiper-wrapper {
+    height: auto;
+}
+
+/* Add some CSS for positioning */
+.swiper {
+    position: relative;
+    z-index: 0;
+}
+
+.block-slider-wrap {
+    overflow: visible;
+    position: relative;
+    z-index: 2; // above header .corner-fill ::after, below #navbar-fx dropdowns
+}
+
+.block-slider {
+    overflow: hidden;
+
+    .swiper-pagination,
+    .swiper-button-next,
+    .swiper-button-prev {
+        display: none;
+    }
+}
+
+.block-slider__bg {
+    position: relative;
+    width: 100%;
+    padding-top: 39%;
+    /* Maintain aspect ratio 1940x990: (990 / 1940) * 100% */
+    overflow: hidden;
+
+    >video,
+    >picture,
+    >picture img,
+    >img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    >.container {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .block-slider__bg {
+        padding-top: 75%; // 4:3
+    }
+}
+
+.block-slider__card-inner-wrapper {
+    transform: translateX(120px);
+}
+
+@media (max-width: 1600px) {
+    .block-slider__card-inner-wrapper {
+        transform: translateX(0px);
+    }
+}
+
+.block-slider-secondary__card-inner-wrapper {
+    transform: translateX(-120px);
+}
+
+@media (max-width: 1600px) {
+    .block-slider-secondary__card-inner-wrapper {
+        transform: translateX(0px);
+    }
+}
+
+
+.block-slider__card-inner {
+    margin-top: -60px;
+    padding: 60px 64px 36px 64px;
+    border-radius: 50px;
+    background-color: colours.$hueso;
+}
+
+@media (max-width: 1200px) {
+    .block-slider__card-inner {
+        margin-top: -30px;
+        border-radius: 25px;
+        padding: 30px 39px 18px 39px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .block-slider__card-inner {
+        margin-top: -30px;
+        border-radius: 25px;
+        padding: 30px 39px 9px 39px !important;
+    }
+}
+
+.block-slider__card-inner .text-slider-tagline,
+.block-slider__card-inner .text-slider-content {
+    color: colours.$tinta;
+}
+
+.block-slider__bottom-shape {
+    position: absolute;
+    right: 0;
+    bottom: -1px;
+    left: 0;
+    z-index: 3;
+    display: block;
+    width: 100%;
+    height: clamp(48px, 7.8vw, 119px);
+    object-fit: cover;
+    object-position: center bottom;
+    pointer-events: none;
+}
+
+.swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+    position: absolute;
+    top: 50%;
+    /* Center vertically */
+    transform: translateY(-50%);
+    /* Adjust for the button's height */
+    width: 44px;
+    height: 44px;
+    margin-top: 0;
+    color: colours.$hueso;
+}
+
+// Nav buttons live in .testimonials-slider-wrap, not inside .swiper-testimonials
+.testimonials-slider-wrap {
+    position: relative;
+    padding: 0 6rem;
+
+    .swiper-button-next,
+    .swiper-button-prev {
+        color: colours.$hueso;
+        z-index: 2;
+    }
+
+    .swiper-button-prev {
+        left: -1rem;
+    }
+
+    .swiper-button-next {
+        right: -1rem;
+    }
+}
+
+.swiper-button-next {
+    right: -3px;
+}
+
+.swiper-button-prev {
+    left: -3px;
+}
+
+@media (max-width: 767px) {
+    .block-slider__card-inner {
+        padding: clamp(1rem, 3vw, 2rem);
+    }
+
+    .block-slider__card-inner .headline-1 {
+        font-size: clamp(1.4rem, 4vw, 2.4rem);
+    }
+}
+
+
+.swiper-slide {
+    position: relative;
+    /* This makes it the reference for its absolutely positioned children */
+    display: flex;
+    justify-content: center;
+    align-items: end;
+}
+
+
+/*
+██   ██ ███████ ██████   ██████      ███████ ██      ██ ██████  ███████ ██████
+██   ██ ██      ██   ██ ██    ██     ██      ██      ██ ██   ██ ██      ██   ██
+███████ █████   ██████  ██    ██     ███████ ██      ██ ██   ██ █████   ██████
+██   ██ ██      ██   ██ ██    ██          ██ ██      ██ ██   ██ ██      ██   ██
+██   ██ ███████ ██   ██  ██████      ███████ ███████ ██ ██████  ███████ ██   ██
+
+Hero slider with SVG decorations, container queries, and fluid typography
+Based on scale_vectors reference implementation
+*/
+
+// Hero Section Container
+.hero-section {
+    // Container query context for self-contained sizing
+    container-type: inline-size;
+    container-name: hero;
+
+    // Stacking context isolation
+    isolation: isolate;
+
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+// Hero Swiper Instance (scoped to avoid conflicts with generic .swiper)
+.swiper-hero {
+    width: 100%;
+    height: var(--hero-height, 80vh);
+    min-height: 400px;
+
+    // Override generic .swiper-wrapper height: auto
+    .swiper-wrapper {
+        height: 100%;
+    }
+
+    .swiper-slide {
+        position: relative;
+        overflow: hidden;
+        // Must have explicit height to contain absolute-positioned background
+        height: 100%;
+        // Override generic .swiper-slide alignment for hero
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    // Hero navigation arrows (hidden by default, can be shown via ACF)
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: colours.$hueso;
+        opacity: 0.8;
+        transition: opacity 0.3s ease;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    // Hero pagination bullets
+    .swiper-pagination-bullet {
+        width: 16px;
+        height: 16px;
+        background: colours.$hueso;
+        opacity: 0.8;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+
+        &-active {
+            opacity: 1;
+            background: colours.$aguamarina;
+            transform: scale(1.2);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.5);
+        }
+    }
+}
+
+// Hero Background (video/image)
+.hero__background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    img,
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    picture {
+        display: block;
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    }
+}
+
+// Hero Content Container
+.hero__content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    padding: 5%;
+}
+
+// Hero Text Container
+.hero__text-container {
+    position: relative;
+    max-width: 69%;
+    padding-left: 5%;
+    z-index: 2;
+
+    // Text alignment modifiers
+    &--left {
+        text-align: left;
+    }
+
+    &--center {
+        text-align: center;
+        margin: 0 auto;
+        padding-left: 0;
+    }
+
+    &--right {
+        text-align: right;
+        margin-left: auto;
+        padding-left: 0;
+        padding-right: 5%;
+    }
+}
+
+// Hero Title - Fluid typography using container queries
+.hero__title {
+    position: relative;
+    z-index: 2;
+    color: colours.$hueso;
+    font-weight: 800;
+    line-height: 1.1;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+    // Fluid typography: scales from 24px to 72px based on container width
+    font-size: clamp(24px, calc(24px + 48 * ((100cqw - 320px) / 880)), 72px);
+}
+
+// Hero Tagline
+.hero__tagline {
+    position: relative;
+    z-index: 2;
+    color: colours.$hueso;
+    font-size: clamp(14px, calc(14px + 10 * ((100cqw - 320px) / 880)), 24px);
+    font-weight: 500;
+    line-height: 1.4;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+
+// Hero Description
+.hero__description {
+    position: relative;
+    z-index: 2;
+    color: colours.$hueso;
+    font-size: clamp(12px, calc(12px + 6 * ((100cqw - 320px) / 880)), 18px);
+    line-height: 1.6;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1.5rem;
+    max-width: 600px;
+}
+
+// Hero CTA Button
+.hero__cta {
+    position: relative;
+    z-index: 2;
+    margin-top: 1rem;
+
+    .btn {
+        text-shadow: none;
+    }
+}
+
+// Hero SVG Decorations
+.hero__svg {
+    position: absolute;
+    pointer-events: none;
+
+    // Purple starburst - positioned relative to text container
+    &--purple {
+        width: clamp(80px, 15cqw, 180px);
+        height: clamp(80px, 15cqw, 180px);
+        top: -10%;
+        left: -5%;
+        z-index: 1;
+        animation: hero-spin 20s linear infinite;
+    }
+
+    // Orange scalloped shape - right side of hero section
+    &--orange {
+        width: clamp(50px, 8cqw, 120px);
+        height: auto;
+        right: -1%;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 4;
+        animation: hero-float 8s ease-in-out infinite;
+    }
+
+    // Cloud shape - bottom of hero section
+    &--cloud {
+        width: clamp(280px, 65cqw, 600px);
+        height: auto;
+        bottom: -1%;
+        left: 5%;
+        z-index: 4;
+        animation: hero-drift 8s ease-in-out infinite;
+    }
+}
+
+// Hero Animations
+@keyframes hero-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes hero-float {
+
+    0%,
+    100% {
+        transform: translateY(-50%);
+    }
+
+    50% {
+        transform: translateY(-54%);
+    }
+}
+
+@keyframes hero-drift {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(2%);
+    }
+}
+
+/*
+███████ ██      ██ ██████  ███████ ██████      ████████  █████  ██████  ███████
+██      ██      ██ ██   ██ ██      ██   ██        ██    ██   ██ ██   ██ ██
+███████ ██      ██ ██   ██ █████   ██████         ██    ███████ ██████  ███████
+     ██ ██      ██ ██   ██ ██      ██   ██        ██    ██   ██ ██   ██      ██
+███████ ███████ ██ ██████  ███████ ██   ██        ██    ██   ██ ██████  ███████
+
+Swiper Thumbs pill nav + content slider
+*/
+
+// Block wrapper
+.slider-tabs {
+    width: 100%;
+    overflow: hidden;
+}
+
+// Nav wrapper: centres pills horizontally
+.slider-tabs__nav-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 0 16px;
+    margin-bottom: 24px;
+}
+
+// Nav swiper: only as wide as its pills
+.swiper-slider-tabs-nav {
+    width: auto;
+    max-width: 100%;
+    overflow: visible;
+
+    .swiper-wrapper {
+        display: flex;
+        align-items: center;
+        height: auto;
+    }
+}
+
+// Each pill slide shrinks to button width
+.slider-tabs__pill-slide {
+    width: auto !important;
+    flex-shrink: 0;
+}
+
+// Pill button
+.slider-tabs__pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    padding: 12px 28px;
+    border: 2px solid colours.$humo;
+    border-radius: 9999px;
+    background-color: colours.$blanco;
+    color: colours.$tinta;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    cursor: pointer;
+    transition: background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease;
+    user-select: none;
+
+    &:hover {
+        border-color: colours.$brand-accent;
+        background-color: colours.$brand-accent;
+    }
+
+    &:focus-visible {
+        outline: 2px solid colours.$posidonia;
+        outline-offset: 2px;
+    }
+
+    // Active state (set by Swiper thumbs + JS)
+    &--active,
+    .swiper-slide-thumb-active & {
+        background-color: colours.$brand-accent;
+        border-color: colours.$brand-accent;
+        color: colours.$tinta;
+    }
+}
+
+// Content swiper
+.swiper-slider-tabs-content {
+    .swiper-wrapper {
+        height: auto;
+    }
+
+    .swiper-slide {
+        height: auto;
+        align-items: flex-start;
+    }
+}
+
+// Panel inner content
+.slider-tabs__panel-inner {
+    padding: 24px 0;
+}
+
+/*
+███████ ██      ██ ██████  ███████ ██████
+██      ██      ██ ██   ██ ██      ██   ██
+███████ ██      ██ ██   ██ █████   ██████
+     ██ ██      ██ ██   ██ ██      ██   ██
+███████ ███████ ██ ██████  ███████ ██   ██
+
+███    ██  █████  ██    ██     ██   ██ ███████ ██████   ██████
+████   ██ ██   ██ ██    ██     ██   ██ ██      ██   ██ ██    ██
+██ ██  ██ ███████ ██    ██     ███████ █████   ██████  ██    ██
+██  ██ ██ ██   ██  ██  ██      ██   ██ ██      ██   ██ ██    ██
+██   ████ ██   ██   ████       ██   ██ ███████ ██   ██  ██████
+
+Slider nav hero block
+*/
+
+.slider-nav-hero {
+    height: auto;
+    min-height: 0;
+
+    .swiper-wrapper {
+        height: auto;
+    }
+
+    .swiper-slide {
+        display: block;
+        height: auto;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+
+        // Ensure all slide content is pre-rendered even when not active
+        svg,
+        img,
+        video {
+            backface-visibility: hidden;
+            transform: translateZ(0);
+        }
+    }
+}
+
+.slider-nav-hero-top {
+    height: 100%;
+}
+
+.slider-nav-hero-media {
+    position: relative;
+    aspect-ratio: 6 / 5;
+    overflow: hidden;
+}
+
+.slider-nav-hero-image,
+.slider-nav-hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.slider-nav-hero-arrow {
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    height: calc(100% + 4px);
+    width: auto;
+    z-index: 1;
+    pointer-events: none;
+    object-fit: fill;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.slider-nav-hero-arrow-head {
+    left: 0;
+}
+
+.slider-nav-hero-arrow-tail {
+    right: 0;
+}
+
+.slider-nav-hero-content {
+    position: relative;
+    background: linear-gradient(to right, #A7D16C 0%, #A7D16C 10%, #d3df62 90%, #d3df62 100%);
+    min-height: 100%;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+}
+
+.slider-nav-hero-content-arrow {
+    position: absolute;
+    top: -2px;
+    bottom: -2px;
+    right: 0;
+    height: calc(100% + 4px);
+    width: auto;
+    z-index: 0;
+    pointer-events: none;
+    object-fit: fill;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+
+.slider-nav-hero-content-inner {
+    position: relative;
+    z-index: 1;
+}
+
+// Responsive: tighten spacing on mobile
+@media (max-width: 767px) {
+    .slider-tabs__pill {
+        padding: 10px 20px;
+        font-size: 1.4rem;
+    }
+
+    .slider-tabs__nav-wrapper {
+        justify-content: flex-start;
+        margin-bottom: 16px;
+    }
+
+    .slider-tabs__panel-inner {
+        padding: 16px 0;
+    }
+}
+
+@media (max-width: 991.98px) {
+    .slider-nav-hero-content-inner {
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+    }
+}
+
+
+// Hero Responsive Adjustments
+@media (max-width: 768px) {
+    .hero__text-container {
+        max-width: 80%;
+        padding-left: 15%;
+
+        &--center {
+            padding-left: 0;
+        }
+
+        &--right {
+            padding-right: 15%;
+        }
+    }
+
+    .hero__svg {
+        &--purple {
+            top: 20%;
+            left: 2%;
+        }
+
+        &--orange {
+            top: 30%;
+            transform: translateY(0);
+        }
+    }
+}
+
+@media (max-width: 480px) {
+    .swiper-hero {
+        min-height: 350px;
+    }
+
+    .hero__text-container {
+        max-width: 90%;
+        padding-left: 20%;
+
+        &--center {
+            padding-left: 0;
+        }
+
+        &--right {
+            padding-right: 10%;
+        }
+    }
+
+    .hero__svg {
+        &--purple {
+            top: 15%;
+            left: 0;
+        }
+
+        // Hide some decorations on very small screens for cleaner look
+        &--orange {
+            display: none;
+        }
+    }
+}

@@ -1,0 +1,2652 @@
+/*
+Theme Name: Issac Bystra
+Theme URI: https://envyus.com.au/
+Author: Envy Us
+Author URI: https://envyus.com.au/
+Description: Bystra Jun 2026
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: minimal, flexible blocks, options, scss structure, responsive, bootstrap
+Text Domain: bystra
+*/
+
+@use 'sass:color';
+@use 'colours' as colours;
+@use 'fonts' as fonts;
+@use 'vendors';
+@use 'fx';
+@use 'swiper';
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+*:focus {
+    outline: none !important;
+}
+
+//.container {
+//    max-width: 1200px;
+//}
+
+.logo-constraint {
+    max-width: 231px;
+}
+
+.logo-constraint-extrawide {
+    max-width: 300px;
+}
+
+.logo-constraint-slider {
+    max-width: 300px;
+}
+
+@media (max-width: 992px) {
+    .logo-constraint {
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo-constraint {
+        max-width: 162px;
+    }
+}
+
+.bg-content-light {
+    background-color: color.change(#000, $alpha: 0.12);
+}
+
+
+/*
+██ ███    ███  █████   ██████  ███████ ███████
+██ ████  ████ ██   ██ ██       ██      ██
+██ ██ ████ ██ ███████ ██   ███ █████   ███████
+██ ██  ██  ██ ██   ██ ██    ██ ██           ██
+██ ██      ██ ██   ██  ██████  ███████ ███████
+
+
+*/
+/* WordPress Image Alignments */
+.aligncenter,
+.align-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.alignleft,
+.align-left {
+    float: left;
+    margin: 0.5em 1em 0.5em 0;
+}
+
+.alignright,
+.align-right {
+    float: right;
+    margin: 0.5em 0 0.5em 1em;
+}
+
+/* WordPress Captions */
+.wp-caption {
+    max-width: 100%;
+    margin-bottom: 1em;
+}
+
+.wp-caption.aligncenter,
+.wp-caption.align-center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.wp-caption.alignleft,
+.wp-caption.align-left {
+    margin-right: 1em;
+}
+
+.wp-caption.alignright,
+.wp-caption.align-right {
+    margin-left: 1em;
+}
+
+.wp-caption img {
+    display: block;
+    margin: 0 auto;
+}
+
+.wp-caption-text {
+    margin: 0.5em 0;
+    font-size: 1.4rem;
+    color: colours.$tinta;
+    text-align: center;
+}
+
+/* Clear floats after aligned items */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 576px) {
+
+    .alignleft,
+    .alignright,
+    .align-left,
+    .align-right {
+        float: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 1em;
+    }
+}
+
+.img-cards {
+    border-top-left-radius: 24px;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+    border: 2px solid colours.$blanco;
+}
+
+// Pill/capsule top shape: using a large fixed value (999px) instead of percentage
+// ensures the arch starts right at the top edge. The browser caps the radius at
+// half the element's width, creating a consistent tight semicircle regardless of
+// image dimensions.
+.img-v-cards {
+    border-radius: 999px 999px 0 0;
+}
+
+.img-v-cards-base {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+
+// Staggered card layout: even cards are offset vertically to create
+// a dynamic, alternating pattern
+.cards-v-staggered>.col:nth-child(even) {
+    margin-top: 13rem;
+}
+
+.img-banners {
+    border-top-left-radius: 0;
+    border-top-right-radius: 6.7rem;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 6.7rem;
+}
+
+.img-contact {
+    border-top-left-radius: 4.7rem;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 4.7rem;
+    border-bottom-left-radius: 0;
+}
+
+.img-rounded {
+    border-radius: 50px;
+}
+
+$corner-radius: 50px;
+
+.card-rounded-top {
+    position: relative;
+    z-index: 2; // stack above the previous section's .corner-fill ::after strip
+    margin-top: -$corner-radius; // overlap the strip left by the previous .corner-fill block
+    padding-top: $corner-radius; // preserve content spacing after the negative margin pull-up
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+    background-clip: border-box;
+}
+
+.img-rounded-top {
+    position: relative;
+    z-index: 2; // stack above the previous section's .corner-fill ::after strip
+    border-top-left-radius: $corner-radius;
+    border-top-right-radius: $corner-radius;
+}
+
+// Block: a section paints its own background colour into the rounded
+// corners of the section directly below it. Use as a mix on any section.
+.corner-fill {
+    position: relative;
+    z-index: 1; // lets the next section's background cover the strip, leaving only the corners
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: calc(100% - 1px); // 1px overlap prevents hairline gaps at the section seam
+        left: 0;
+        right: 0;
+        height: calc(#{$corner-radius} + 1px);
+        // Solid colour: inherits this section's background.
+        // Image/gradient sections set --corner-fill-colour to a solid colour instead.
+        background-color: var(--corner-fill-colour, inherit);
+        pointer-events: none;
+    }
+}
+
+.card-rounded {
+    border-radius: 50px;
+}
+
+.img-rounded-max {
+    border-radius: 55.6rem;
+    border: 13px solid colours.$brand-accent;
+}
+
+.banner-rounded {
+    border-radius: 40px;
+    border: 4px solid colours.$brand-main;
+}
+
+.banner-repeater-icon {
+    display: inline-block;
+    background-color: colours.$blanco;
+    border-radius: 50%;
+    padding: 12px;
+    line-height: 0;
+
+    img {
+        display: block;
+        border-radius: 50%;
+    }
+}
+
+.contact-rounded {
+    border-radius: 50px;
+}
+
+.doctors-staff-rounded {
+    border-radius: 40px;
+    box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+
+.logos-footer {
+    max-width: 150px;
+}
+
+.site-footer {
+    position: relative;
+    z-index: 3;
+    margin-top: clamp(48px, 7.8vw, 119px);
+
+    >.container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.site-footer__texture {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    display: block;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: -2;
+
+    &::before {
+        content: '';
+        position: absolute;
+        left: -7rem;
+        bottom: -9rem;
+        z-index: 0;
+        width: clamp(30.8rem, 37.4vw, 52.8rem);
+        aspect-ratio: 436.8 / 482.6;
+        background-image: url('img/shape-leaves-45.svg');
+        background-repeat: no-repeat;
+        background-position: left bottom;
+        background-size: contain;
+        opacity: 0.38;
+        pointer-events: none;
+        transform-origin: 38% 78%;
+        animation: footer-leaves-drift 18s ease-in-out infinite alternate;
+        will-change: transform;
+    }
+}
+
+.site-footer__top-shape {
+    position: absolute;
+    right: 0;
+    bottom: calc(100% - 1px);
+    left: 0;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: clamp(48px, 7.8vw, 119px);
+    object-fit: cover;
+    object-position: center bottom;
+    pointer-events: none;
+}
+
+@keyframes footer-leaves-drift {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(-1deg) scale(1);
+    }
+
+    50% {
+        transform: translate3d(1.2rem, -0.8rem, 0) rotate(1.5deg) scale(1.02);
+    }
+
+    100% {
+        transform: translate3d(-0.6rem, 0.9rem, 0) rotate(-0.5deg) scale(1.01);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-footer__texture::before {
+        animation: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .logos-footer {
+        max-width: 120px;
+    }
+
+    .site-footer__texture::before {
+        left: -11rem;
+        bottom: -8rem;
+        width: 35.2rem;
+    }
+}
+
+.presentation-block {
+    position: relative;
+    overflow: hidden;
+
+    >.row,
+    >.container,
+    >.col-12 {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.presentation-block__image {
+    position: relative;
+    width: 100%;
+    // Mirrors the slider image frame: fixed proportion, cropped cover image.
+    padding-top: 39%;
+    overflow: hidden;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+@media (max-width: 767px) {
+    .presentation-block__image {
+        padding-top: 51.03%;
+    }
+}
+
+.site-footer__texture--presentation {
+    z-index: 2;
+
+    &::before {
+        right: 0;
+        bottom: 0;
+        left: auto;
+        background-position: right bottom;
+        transform-origin: 62% 78%;
+        animation-name: presentation-leaves-drift;
+    }
+}
+
+@keyframes presentation-leaves-drift {
+    0% {
+        transform: translate3d(0, 0, 0) rotate(1deg) scaleX(-1);
+    }
+
+    50% {
+        transform: translate3d(-1.2rem, -0.8rem, 0) rotate(-1.5deg) scaleX(-1) scale(1.02);
+    }
+
+    100% {
+        transform: translate3d(0.6rem, 0.9rem, 0) rotate(0.5deg) scaleX(-1) scale(1.01);
+    }
+}
+
+.banner-block-wrap {
+    position: relative;
+    overflow: hidden;
+
+    >.container {
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.site-footer__texture--banner {
+    z-index: 1;
+
+    &::before {
+        right: 0;
+        bottom: -4rem;
+        left: auto;
+        width: calc(clamp(34.8rem, 43.4vw, 52.8rem) * 0.9);
+        background-position: right bottom;
+        transform-origin: 62% 78%;
+        animation-name: presentation-leaves-drift;
+    }
+}
+
+@media (max-width: 767px) {
+    .site-footer__texture--banner::before {
+        right: 0;
+        bottom: -3rem;
+        left: auto;
+        width: 38rem;
+    }
+}
+
+
+/*
+███    ███ ███████ ███    ██ ██    ██ ███████
+████  ████ ██      ████   ██ ██    ██ ██
+██ ████ ██ █████   ██ ██  ██ ██    ██ ███████
+██  ██  ██ ██      ██  ██ ██ ██    ██      ██
+██      ██ ███████ ██   ████  ██████  ███████
+
+
+*/
+
+.site-header {
+    position: relative;
+    z-index: 1; // keep low so .corner-fill ::after stacks behind the next block; nav uses #navbar-fx
+    box-shadow: 0 15px 25px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                  Main Menu                                 */
+/* -------------------------------------------------------------------------- */
+//
+// Markup lives in `header.php`. Two parallel menus are rendered from the same
+// WP location so we can style them independently without fighting Bootstrap's
+// navbar-expand system:
+//
+//   #menu-main-menu-desktop  - UL inside the white pill, visible xl+ only
+//   #main-menu-mobile        - collapse wrapper, visible <xl only (d-xl-none)
+//     └─ #menu-main-menu-mobile (UL inside the collapse)
+//
+// Scenarios covered below, in order:
+//   1. Shared item typography
+//   2. Containers / structural display rules (desktop vs mobile)
+//   3. Default link states (normal, visited, hover, current)
+//   4. Mobile overrides (<xl): green links, white panel, left alignment, CTA buttons
+//   5. Dropdowns: base look, desktop hover-gap fix, item styles, active state
+//
+
+// Stacking: primary nav wraps the desktop bar in `header.php`; lift it above hero /
+// slider layers so dropdown panels receive pointer events on every row.
+#navbar-fx {
+    position: relative;
+    z-index: 1050;
+}
+
+/* -------------------- 1. Shared item typography -------------------- */
+
+.menu-item {
+    @include fonts.font(fonts.$text-drama, fonts.$fw-500);
+    font-size: 1.8rem;
+    margin-left: 9px;
+}
+
+
+/* -------------------- 2. Containers / structure -------------------- */
+
+// Mobile collapse container (only visible <xl via d-xl-none in header.php).
+// `.show` / `.collapsing` are added by Bootstrap when the hamburger toggles.
+#main-menu-mobile {
+
+    &.show,
+    &.collapsing {
+        display: flex;
+        flex-direction: column;
+    }
+
+    // Defensive hide on xl+ in case the collapse class lingers after resize.
+    @media (min-width: 1200px) {
+        display: none !important;
+    }
+}
+
+// Desktop menu UL - inline row on xl+
+#menu-main-menu-desktop {
+    display: flex;
+    align-items: center;
+
+    >.menu-item {
+        display: flex;
+        align-items: center;
+
+        &:not(:last-child)::after {
+            content: '|';
+            color: colours.$brand-main;
+            margin-left: 9px;
+        }
+
+        &:has(+ .btn-cta)::after {
+            content: none;
+        }
+    }
+
+    >.btn-cta {
+        margin-left: 2.4rem;
+        padding: 0;
+        border: 0;
+        background: transparent;
+
+        >a {
+            @include fonts.font(fonts.$text-drama, fonts.$fw-500);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 24px;
+            border-radius: 999px;
+            background-color: colours.$brand-main;
+            color: colours.$negro !important;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+        }
+
+        >a:link,
+        >a:visited {
+            color: colours.$negro !important;
+        }
+
+        >a:hover,
+        >a:focus {
+            background-color: colours.$brand-main-dark;
+            color: colours.$blanco !important;
+        }
+
+        &.current-menu-item>a,
+        &.current_page_item>a,
+        >a.active {
+            background-color: colours.$brand-main-dark !important;
+            color: colours.$blanco !important;
+        }
+    }
+}
+
+// Mobile menu UL - stacked column
+#menu-main-menu-mobile {
+    flex-direction: column;
+}
+
+
+/* -------------------- 3. Default link states (desktop look) -------------------- */
+// Applies to both menus by default; mobile is re-skinned in section 4.
+€ #main-menu-mobile,
+#menu-main-menu-desktop {
+
+    color: colours.$tinta;
+
+    a {
+        &:link {
+            color: colours.$hueso;
+            text-decoration: none;
+        }
+
+        &:visited {
+            color: colours.$hueso !important;
+            background-color: transparent;
+        }
+
+        &:hover {
+            color: colours.$blanco !important;
+            text-decoration: none;
+        }
+
+        &.active {
+            color: colours.$blanco !important;
+            background-color: transparent !important;
+        }
+    }
+
+    .current-menu-item>a,
+    .current-menu-parent>a,
+    .current-menu-ancestor>a,
+    .current_page_item>a,
+    .current_page_parent>a,
+    .current_page_ancestor>a {
+        color: colours.$hueso-dark !important;
+        background-color: transparent !important;
+    }
+}
+
+/* -------------------- 4. Mobile overrides (<xl) -------------------- */
+// The mobile menu opens as a white panel with green links, keeping contrast
+// with the page while matching the desktop navigation colors.
+
+@media (max-width: 1199.98px) {
+
+    #main-menu-mobile {
+
+        // Open mobile panel
+        &.show,
+        &.collapsing {
+            align-items: flex-start;
+            background-color: colours.$blanco;
+            border-radius: 24px;
+            padding: 2rem;
+        }
+
+        // Mobile dropdown panel - full width, left-aligned text
+        .dropdown-menu {
+            text-align: left;
+            width: 100%;
+        }
+
+        // Top-level link colors on mobile
+        a {
+            @include fonts.font(fonts.$text-drama, fonts.$fw-500);
+            font-size: 1.8rem;
+
+            &:link,
+            &:visited {
+                color: colours.$tinta !important;
+            }
+
+            &:hover {
+                color: colours.$brand-main-dark !important;
+            }
+        }
+
+        .current-menu-item>a,
+        .current-menu-parent>a,
+        .current-menu-ancestor>a,
+        .current_page_item>a,
+        .current_page_parent>a,
+        .current_page_ancestor>a,
+        >a.active {
+            color: colours.$brand-main-dark !important;
+        }
+
+        // Dropdown item colors on mobile
+        .dropdown-item {
+
+            &:link,
+            &:visited {
+                color: colours.$tinta !important;
+            }
+
+            &:hover {
+                color: colours.$brand-main !important;
+            }
+        }
+
+        // Inverted CTA buttons on mobile
+        .btn-cta {
+            background-color: colours.$brand-main;
+            border-color: colours.$blanco;
+            color: colours.$blanco;
+            width: auto;
+            margin-top: 0.75rem;
+
+            a:link,
+            a:visited {
+                color: colours.$blanco;
+            }
+
+            &:hover,
+            &--active {
+                background-color: colours.$brand-main-dark;
+                border-color: colours.$brand-main-dark;
+            }
+
+            a:hover,
+            &--active a {
+                color: colours.$brand-main !important;
+            }
+        }
+    }
+
+    // Mobile UL left alignment (full width so .menu-item rows fill the screen)
+    #menu-main-menu-mobile {
+        align-items: flex-start;
+        text-align: left;
+        width: 100%;
+
+        .menu-item {
+            width: 100%;
+            text-align: left;
+        }
+
+        .btn-cta {
+            width: auto;
+            padding: 0;
+            border: 0;
+            background: transparent;
+
+            >a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                padding: 6px 24px;
+                border-radius: 999px;
+                background-color: colours.$brand-main;
+                color: colours.$negro !important;
+                text-transform: uppercase;
+            }
+
+            >a:hover,
+            >a:focus {
+                background-color: colours.$brand-main-dark;
+                color: colours.$blanco !important;
+            }
+
+            &.current-menu-item>a,
+            &.current_page_item>a,
+            >a.active {
+                background-color: colours.$brand-main-dark !important;
+                color: colours.$blanco !important;
+            }
+        }
+    }
+}
+
+
+/* -------------------- 5. Dropdowns -------------------- */
+
+// Base dropdown panel - applies to both desktop and mobile
+.dropdown-menu {
+    background-color: colours.$humo !important;
+    border: 0;
+    z-index: 1060;
+    pointer-events: auto;
+}
+
+// Desktop hover dropdown - removes the gap that can cause the menu to close
+// when moving the cursor from the trigger to the panel.
+@media (min-width: 1200px) {
+    #menu-main-menu-desktop>.dropdown {
+        position: relative;
+    }
+
+    #menu-main-menu-desktop>.dropdown>.dropdown-menu {
+        top: 100%;
+        left: 0;
+    }
+
+    .navbar-nav .dropdown-menu {
+        margin-top: 0;
+    }
+}
+
+// Dropdown item typography + color. The third selector is needed to beat the
+// `#menu-main-menu-desktop a:visited` rule from section 3 on specificity.
+.dropdown-item,
+.dropdown-item:visited,
+#menu-main-menu-desktop .dropdown-item:visited {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-500);
+    color: colours.$tinta !important;
+    background: transparent;
+    padding-right: 2rem;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus,
+#menu-main-menu-desktop .dropdown-item:hover,
+#menu-main-menu-desktop .dropdown-item:focus {
+    background-color: transparent;
+    color: colours.$brand-main !important;
+}
+
+// Current state for dropdown items. Top-level current links are handled in
+// section 3 with the other link states.
+.dropdown-item.active,
+#main-menu-mobile .dropdown-menu .active,
+#menu-main-menu-desktop .dropdown-menu .active {
+    color: colours.$brand-main-dark !important;
+    background-color: transparent !important;
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                 Super Menu                                 */
+/* -------------------------------------------------------------------------- */
+#super-menu ul {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#super-menu li {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-700);
+    font-size: 1.3rem;
+    position: relative;
+    /* Needed for the separator positioning */
+    display: flex;
+    padding: 0;
+}
+
+/* Add vertical line separator between items only (no separator at start or end) */
+#super-menu li:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    right: -2px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: colours.$carbon;
+}
+
+#super-menu a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+    padding: 12px 24px 12px 24px;
+    transition: background-color 0.2s ease, color 0.2s ease;
+
+    &:link {
+        color: colours.$carbon;
+    }
+
+    &:visited {
+        color: colours.$carbon;
+    }
+
+    &:hover {
+        background-color: color.change(colours.$brand-main, $alpha: 0.18);
+        color: colours.$brand-main-dark;
+    }
+
+    &:active {
+        color: colours.$brand-support;
+    }
+}
+
+#super-menu .super-menu-button {
+    padding: 0;
+
+    &::after {
+        content: none;
+    }
+}
+
+#super-menu li:has(+ .super-menu-button)::after,
+#super-menu li:has(+ li > .super-menu-button)::after {
+    content: none;
+}
+
+#super-menu .super-menu-button>a,
+#super-menu a.super-menu-button {
+    background-color: colours.$brand-main;
+    color: colours.$carbon;
+    padding: 12px 24px 12px 24px;
+    text-decoration: none;
+
+    &:link,
+    &:visited {
+        color: colours.$carbon;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: colours.$brand-main-dark;
+        color: colours.$blanco;
+    }
+
+    &:active {
+        background-color: colours.$brand-main-dark;
+        color: colours.$blanco;
+    }
+}
+
+@media (max-width: 576px) {
+
+    #super-menu a,
+    #super-menu .super-menu-button>a,
+    #super-menu a.super-menu-button {
+        padding: 12px 24px 12px 24px;
+    }
+}
+
+/* Footer Menu */
+#footer-menu ul {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#footer-menu li {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-700);
+    position: relative;
+    color: colours.$blanco;
+    padding: 0;
+}
+
+#footer-menu a {
+    text-decoration: none;
+    color: inherit;
+    text-transform: uppercase;
+
+    &:link {
+        color: #ffffff;
+    }
+
+    &:visited {
+        color: #ffffff;
+    }
+
+    &:hover {
+        color: #FF0000;
+    }
+
+    &:active {
+        color: #FFA500;
+    }
+}
+
+
+/* Footer Menu */
+#footer-menu ul {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    margin: 12px 0 0 0;
+}
+
+#footer-menu li {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-400);
+    font-size: 1.8rem;
+    position: relative;
+    color: colours.$hueso;
+    margin: 0 0 6px 0;
+    padding: 0;
+}
+
+#footer-menu a {
+    text-decoration: none;
+    color: inherit;
+    text-transform: capitalize;
+
+    &:link {
+        color: colours.$hueso;
+    }
+
+    &:visited {
+        color: colours.$hueso;
+    }
+
+    &:hover {
+        color: colours.$aguamarina;
+    }
+
+    &:active {
+        color: colours.$aguamarina-light;
+    }
+}
+
+
+/* privacy Menu */
+#privacy-menu ul {
+    // display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#privacy-menu li {
+    position: relative;
+    /* Needed for the separator positioning */
+    padding: 0;
+    margin: 0;
+}
+
+#privacy-menu a {
+    text-decoration: none;
+    color: inherit;
+
+    &:link {
+        color: colours.$hueso;
+    }
+
+    &:visited {
+        color: colours.$hueso;
+    }
+
+    &:hover {
+        color: colours.$brand-main;
+    }
+
+    &:active {
+        color: colours.$amarillo;
+    }
+}
+
+.sidebar-menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: 2px solid colours.$brand-main;
+    background-color: colours.$blanco;
+
+    li {
+        margin: 0;
+        border-bottom: 1px solid color.change(colours.$brand-main, $alpha: 0.45);
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        &.current-menu-item,
+        &.current_page_item {
+            background-color: colours.$brand-main-light;
+
+            a {
+                text-decoration: underline;
+            }
+        }
+
+        &.current-menu-parent,
+        &.current-menu-ancestor,
+        &.current_page_parent,
+        &.current_page_ancestor {
+            background-color: colours.$humo;
+        }
+    }
+
+    a {
+        @include fonts.font(fonts.$text-prose, fonts.$fw-700);
+        display: block;
+        padding: 0.95rem 1.15rem;
+        color: colours.$tinta;
+        text-decoration: none;
+        line-height: 1.25;
+
+        &:hover,
+        &:focus-visible {
+            color: colours.$tinta;
+            text-decoration: none;
+        }
+    }
+}
+
+
+/* -------------------------------------------------------------------------- */
+/*                                special cases                               */
+/* -------------------------------------------------------------------------- */
+
+.menu-phone a::after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f095";
+    /* phone icon */
+    margin-left: 6px;
+}
+
+/*
+██████  ██    ██ ████████ ████████  ██████  ███    ██ ███████
+██   ██ ██    ██    ██       ██    ██    ██ ████   ██ ██
+██████  ██    ██    ██       ██    ██    ██ ██ ██  ██ ███████
+██   ██ ██    ██    ██       ██    ██    ██ ██  ██ ██      ██
+██████   ██████     ██       ██     ██████  ██   ████ ███████
+ 
+*/
+/* btn-cta used in the menu item styles */
+.btn-cta {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-700);
+    border-radius: 999px;
+    padding: 0.45rem 1.2rem;
+    border: 2px solid colours.$brand-main;
+    color: colours.$brand-main;
+    background: transparent;
+    transition: all 0.25s ease;
+}
+
+.btn-cta:hover,
+.btn-cta--active {
+    background: colours.$brand-main;
+    color: colours.$hueso ;
+}
+
+#main-menu-mobile .btn-cta a:hover,
+#main-menu-mobile .btn-cta--active a,
+#menu-main-menu-desktop .btn-cta a:hover,
+#menu-main-menu-desktop .btn-cta--active a {
+    color: colours.$hueso !important;
+}
+
+
+@mixin button-styles($bg-colour, $bg-colour-hover, $text-colour, $text-colour-hover, $border-colour, $border-colour-hover) {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-600);
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-size: 1.6rem;
+    letter-spacing: 0.24rem;
+    border: 2px solid $border-colour;
+    border-radius: 24px;
+    margin: 0 3px;
+    padding: 6px 18px 6px 18px;
+    background-color: $bg-colour;
+    color: $text-colour;
+    text-transform: uppercase;
+    text-decoration: none;
+
+    &:hover {
+        border-color: $border-colour-hover;
+        background-color: $bg-colour-hover;
+        color: $text-colour-hover;
+        text-decoration: none;
+    }
+}
+
+.fit-content {
+    width: -moz-fit-content;
+    width: fit-content;
+    max-width: 100%;
+}
+
+
+.btn-brand-main {
+    @include button-styles(colours.$brand-main, colours.$hueso, colours.$hueso, colours.$brand-main, colours.$brand-main, colours.$brand-main);
+}
+
+
+.btn-brand-accent {
+    @include button-styles(colours.$brand-accent, colours.$hueso, colours.$blanco, colours.$brand-accent, colours.$brand-accent, colours.$brand-accent);
+}
+
+
+.btn-blanco {
+    @include button-styles(colours.$blanco, colours.$hueso, colours.$tinta, colours.$tinta, colours.$blanco, colours.$hueso);
+}
+
+.btn-hueso {
+    @include button-styles(colours.$hueso-dark, colours.$hueso, colours.$tinta, colours.$tinta, colours.$hueso-dark, colours.$hueso);
+}
+
+/* @mixin button-styles($bg-colour, $bg-colour-hover, $text-colour, $text-colour-hover) {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-500); */
+.btn-brand-main-dark-light {
+    @include button-styles(colours.$blanco, colours.$brand-accent-light, colours.$brand-main-dark, colours.$brand-main-dark, colours.$blanco, colours.$brand-accent-light);
+    font-size: 2.1rem;
+    font-weight: fonts.$fw-300;
+}
+
+.btn-posidonia {
+    @include button-styles(colours.$posidonia, colours.$posidonia-dark, colours.$hueso, colours.$humo, colours.$posidonia, colours.$posidonia-dark);
+}
+
+
+.btn-hero {
+    @include button-styles(colours.$blanco, colours.$brand-accent, colours.$negro, colours.$negro, colours.$blanco, colours.$brand-accent);
+    justify-content: center;
+    padding: 24px 18px;
+    min-height: 105px !important;
+    font-size: 2.6rem;
+    text-transform: none;
+    letter-spacing: 0.0rem;
+    font-family: fonts.$text-drama;
+    font-weight: fonts.$fw-500;
+
+    &:hover,
+    &:focus,
+    &.is-active,
+    &.is-active:focus {
+        border-color: colours.$brand-accent;
+        background-color: colours.$brand-accent;
+        color: colours.$negro;
+        box-shadow: none;
+    }
+}
+
+.btn.btn-hero {
+
+    &:active,
+    &.is-active:active {
+        border-color: colours.$brand-accent-dark;
+        background-color: colours.$brand-accent-dark;
+        color: colours.$humo;
+        box-shadow: none;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .btn-hero {
+        min-height: 48px;
+        margin-top: 6px;
+        margin-bottom: 6px
+    }
+}
+
+
+
+
+
+/*
+██  ██████  ██████  ███    ██ ███████
+██ ██      ██    ██ ████   ██ ██
+██ ██      ██    ██ ██ ██  ██ ███████
+██ ██      ██    ██ ██  ██ ██      ██
+██  ██████  ██████  ██   ████ ███████
+
+
+*/
+
+.icon-details-container {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-600);
+    text-align: center;
+    background-color: colours.$posidonia;
+    color: colours.$hueso;
+}
+
+.icon-details {
+    height: auto;
+    width: 30px;
+    border: 1px solid colours.$posidonia;
+}
+
+
+
+
+
+
+/*
+██      ██ ███████ ████████ ███████
+██      ██ ██         ██    ██
+██      ██ ███████    ██    ███████
+██      ██      ██    ██         ██
+███████ ██ ███████    ██    ███████
+
+Check the fonts in %text-list-base (.text-list li, .text-list-light and .text-list-dark versions) in the _fonts.scss file 
+*/
+
+.styled-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    ul {
+        width: 100%;
+    }
+
+    li {
+        padding: 3px 15px 0px 15px;
+        margin: 9px 0;
+        position: relative;
+
+        // Alternate background colors
+        &:nth-child(odd) {
+            background-color: colours.$aguamarina;
+        }
+
+        &:nth-child(even) {
+            background-color: colours.$posidonia;
+        }
+
+        // Add a hover effect
+        &:hover {
+            background-color: color.adjust(#fff, $lightness: -30%);
+            cursor: pointer;
+        }
+
+        .list-link {
+            display: block;
+            width: 100%;
+            height: auto;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}
+
+
+.location-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+
+    ul {
+        width: 100%;
+    }
+
+    li {
+        padding: 3px 15px 0px 15px;
+        margin: 9px 0;
+        position: relative;
+        border-bottom: 1px solid colours.$sombra;
+
+        // Alternate background colors
+        &:nth-child(odd) {
+            background-color: colours.$carbon;
+        }
+
+        &:nth-child(even) {
+            background-color: colours.$negro;
+        }
+
+        // Add a hover effect
+        &:hover {
+            background-color: color.adjust(#fff, $lightness: -30%);
+            cursor: pointer;
+        }
+
+        .list-link {
+            display: block;
+            width: 100%;
+            height: auto;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+}
+
+
+
+
+
+
+
+
+/*
+ ██████  █████  ██████  ██████  ███████
+██      ██   ██ ██   ██ ██   ██ ██
+██      ███████ ██████  ██   ██ ███████
+██      ██   ██ ██   ██ ██   ██      ██
+ ██████ ██   ██ ██   ██ ██████  ███████
+
+
+*/
+.card-icon {
+    width: 100%;
+    max-width: 120px;
+    height: auto;
+}
+
+.img-darken {
+    filter: brightness(96%);
+}
+
+.card-h-icon {
+    width: 100%;
+    border: 0px solid transparent !important;
+}
+
+@media screen and (max-width: 576px) {
+    .card-h-icon {
+        width: 120px !important;
+        height: auto;
+        border: 0px solid transparent !important;
+        text-align: center;
+    }
+}
+
+// arrow icon is used in cards-h where the color is dynamic and the horizontal layout changes to vertical on mobile
+.arrow-icon {
+    position: absolute;
+    width: 36px;
+    height: auto;
+    z-index: 10;
+    bottom: -18px;
+    left: 25%;
+    transform: translateY(-50%) translateX(50%) rotate(0deg);
+}
+
+/* Adjust for larger screens */
+@media (min-width: 768px) {
+    .arrow-icon {
+        top: 50%;
+        right: 9px;
+        left: auto;
+        bottom: auto;
+        transform: translateY(-50%) translateX(50%) rotate(270deg);
+    }
+}
+
+.round-all {
+    border-radius: 40px !important;
+}
+
+.round-up {
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+}
+
+.round-down {
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.round-start {
+    border-top-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+}
+
+.round-end {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.round-cards-h-icon {
+    border-top-left-radius: 12px !important;
+    border-bottom-left-radius: 12px !important;
+}
+
+.round-cards-h-content {
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+@media screen and (max-width: 576px) {
+    .round-cards-h-icon {
+        border-top-left-radius: 12px !important;
+        border-top-right-radius: 12px !important;
+        border-bottom-right-radius: 0px !important;
+        border-bottom-left-radius: 0px !important;
+    }
+
+    .round-cards-h-content {
+        border-top-left-radius: 0px !important;
+        border-top-right-radius: 0px !important;
+        border-bottom-right-radius: 12px !important;
+        border-bottom-left-radius: 12px !important;
+    }
+}
+
+.cardItem {
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    overflow: hidden;
+}
+
+.text-card-headline {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-400);
+    font-size: 12rem;
+    text-transform: none;
+}
+
+.text-card-tagline {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-700);
+    font-size: 2.4rem;
+    text-transform: uppercase;
+}
+
+.text-above-image {
+    z-index: 2;
+}
+
+.img-darken {
+    z-index: 1;
+}
+
+.card-header-custom {
+    border-top-left-radius: 1.5rem;
+    border: 1px solid colours.$negro;
+    background-color: colours.$negro;
+    padding: 0.8rem 0.5rem 0.4rem 0.5rem;
+}
+
+.card-body-custom {
+    border-radius: 0rem 0rem 1.5rem 1.5rem;
+    border: 1px solid colours.$negro;
+    padding: 0.8rem 0.5rem 0.4rem 0.5rem;
+}
+
+.card {
+    border: 0px solid #f7f7f7;
+}
+
+
+
+
+
+/*
+ █████   ██████  ██████  ██████  ██████  ██████  ██  ██████  ███    ██
+██   ██ ██      ██      ██    ██ ██   ██ ██   ██ ██ ██    ██ ████   ██
+███████ ██      ██      ██    ██ ██████  ██   ██ ██ ██    ██ ██ ██  ██
+██   ██ ██      ██      ██    ██ ██   ██ ██   ██ ██ ██    ██ ██  ██ ██
+██   ██  ██████  ██████  ██████  ██   ██ ██████  ██  ██████  ██   ████
+
+
+*/
+// Collapsed (default) pill: cream fill, thin brand-main border, flat
+.accordion-button {
+    background-color: colours.$hueso !important;
+    border: 3px solid colours.$brand-accent !important;
+    border-radius: 50rem !important;
+    box-shadow: none !important;
+    color: colours.$brand-main-dark;
+    transition: background-color 0.45s ease, border-color 0.45s ease, color 0.45s ease;
+    padding: 21px 18px;
+}
+
+// Active (expanded) pill: solid brand-main fill, white text
+.accordion-button:not(.collapsed) {
+    background-color: colours.$brand-main !important;
+    border-color: colours.$brand-main !important;
+    box-shadow: none !important;
+    color: colours.$blanco;
+}
+
+.plusMinus,
+.plusMinusSub {
+    position: absolute;
+    right: 20px;
+
+    &::before {
+        content: "\f067"; // Font Awesome plus icon
+        font-family: "Font Awesome 5 Free"; // Font Family for Font Awesome 5
+        font-weight: 900; // Font Weight required for the Free solid icons
+        display: block;
+        color: colours.$brand-main;
+        font-style: normal;
+    }
+
+    &.rotate {
+        transform: rotate(180deg);
+        transition: 0.5s;
+
+        &::before {
+            content: "\f068"; // Font Awesome minus icon
+        }
+    }
+}
+
+// Plus / minus icon turns white when the pill is active
+.accordion-button:not(.collapsed) .plusMinus,
+.accordion-button:not(.collapsed) .plusMinusSub {
+    &::before {
+        color: colours.$blanco;
+    }
+}
+
+
+
+
+.plusMinusCard {
+    &::before {
+        color: colours.$hueso !important;
+    }
+}
+
+
+.accordion-button:not(.collapsed)::after {
+    display: none;
+}
+
+.accordion-button::after {
+    display: none;
+}
+
+// Accordion title hover and expanded states
+.accordion-title {
+    color: colours.$brand-main;
+    transition: color 0.25s ease;
+}
+
+.accordion-button:hover .accordion-title {
+    color: colours.$brand-main-dark;
+}
+
+.accordion-button:not(.collapsed) .accordion-title {
+    color: colours.$blanco;
+}
+
+
+.block-accordion__wrapper {
+    padding-bottom: 90px;
+}
+
+@media (max-width: 1200px) {
+    .block-accordion__wrapper {
+        padding-bottom: 72px;
+    }
+}
+
+@media (max-width: 992px) {
+    .block-accordion__wrapper {
+        padding-bottom: 36px;
+    }
+}
+
+
+
+
+/*
+███    ███  ██████  ██████   █████  ██      ███████
+████  ████ ██    ██ ██   ██ ██   ██ ██      ██
+██ ████ ██ ██    ██ ██   ██ ███████ ██      ███████
+██  ██  ██ ██    ██ ██   ██ ██   ██ ██           ██
+██      ██  ██████  ██████  ██   ██ ███████ ███████
+
+*/
+body.modal-open {
+    overflow: hidden !important;
+    padding-right: 0 !important;
+}
+
+.modal {
+    padding-right: 0 !important;
+}
+
+.modal-header {
+    border-bottom: 0;
+    border-top-left-radius: 12px !important;
+    border-top-right-radius: 12px !important;
+}
+
+
+
+/*
+███████ ██ ███    ██  ██████  ██      ███████      ██████ ██████  ████████
+██      ██ ████   ██ ██       ██      ██          ██      ██   ██    ██
+███████ ██ ██ ██  ██ ██   ███ ██      █████       ██      ██████     ██
+     ██ ██ ██  ██ ██ ██    ██ ██      ██          ██      ██         ██
+███████ ██ ██   ████  ██████  ███████ ███████      ██████ ██         ██
+
+
+*/
+.y-borders {
+    border-top: 2px solid colours.$negro;
+    border-bottom: 2px solid colours.$negro;
+}
+
+
+
+/*
+███████ ██ ███    ██  ██████  ██      ███████
+██      ██ ████   ██ ██       ██      ██
+███████ ██ ██ ██  ██ ██   ███ ██      █████
+     ██ ██ ██  ██ ██ ██    ██ ██      ██
+███████ ██ ██   ████  ██████  ███████ ███████
+
+
+*/
+.contentBlock img {
+    max-width: 100%;
+}
+
+
+
+/*
+███    ██ ███████ ██     ██ ███████ ██████   █████  ██████  ███████ ██████
+████   ██ ██      ██     ██ ██      ██   ██ ██   ██ ██   ██ ██      ██   ██
+██ ██  ██ █████   ██  █  ██ ███████ ██████  ███████ ██████  █████   ██████
+██  ██ ██ ██      ██ ███ ██      ██ ██      ██   ██ ██      ██      ██   ██
+██   ████ ███████  ███ ███  ███████ ██      ██   ██ ██      ███████ ██   ██
+
+
+*/
+.newspaper {
+    column-count: 2;
+}
+
+@media screen and (max-width: 992px) {
+    .newspaper {
+        column-count: 1;
+    }
+
+}
+
+
+
+/*
+██████   █████   ██████  ██ ███    ██  █████  ████████ ██  ██████  ███    ██
+██   ██ ██   ██ ██       ██ ████   ██ ██   ██    ██    ██ ██    ██ ████   ██
+██████  ███████ ██   ███ ██ ██ ██  ██ ███████    ██    ██ ██    ██ ██ ██  ██
+██      ██   ██ ██    ██ ██ ██  ██ ██ ██   ██    ██    ██ ██    ██ ██  ██ ██
+██      ██   ██  ██████  ██ ██   ████ ██   ██    ██    ██  ██████  ██   ████
+
+
+*/
+/* Pagination Styling */
+.pagination a {
+    margin: 0 5px;
+    padding: 5px 10px;
+    background-color: colours.$hueso-light;
+    // border: 1px solid #dee2e6;
+    color: colours.$tinta;
+    text-decoration: none;
+}
+
+.pagination a:hover {
+    background-color: colours.$negro;
+    color: colours.$hueso;
+}
+
+/* Active page styling */
+.pagination .current {
+    margin: 0 5px;
+    padding: 5px 10px;
+
+    background-color: colours.$posidonia-light;
+    color: colours.$hueso;
+    border-color: colours.$negro;
+}
+
+
+// Common hover styles for both "Prev" and "Next" links
+.pagination a:hover {
+    background-color: colours.$posidonia-dark;
+    color: colours.$hueso;
+}
+
+// Targeting the "Prev" link specifically
+.pagination a:has(> .fas.fa-chevron-left) {
+    background-color: colours.$hueso;
+    color: colours.$tinta;
+
+    // Hover styles specific to "Prev" link, if needed
+    &:hover {
+        background-color: colours.$humo;
+        color: colours.$hueso;
+    }
+}
+
+// Targeting the "Next" link specifically
+.pagination a:has(> .fas.fa-chevron-right) {
+    background-color: colours.$hueso;
+    color: colours.$tinta;
+
+    // Hover styles specific to "Next" link, if needed
+    &:hover {
+        background-color: colours.$humo;
+        color: colours.$hueso;
+    }
+}
+
+.bannerLeft {
+    height: 700px;
+    padding: 40px;
+    background-position: center;
+    background-size: cover;
+
+}
+
+.colStack {
+    padding: 40px;
+    width: 100%;
+    height: 50%;
+    background-position: center;
+    background-size: cover;
+}
+
+.bannerItem {
+    position: relative;
+}
+
+.bannerItem::before {
+    content: '';
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: color.change(#000000, $alpha: 0.3);
+}
+
+.bannerItem h1 {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-700);
+    font-size: 12rem;
+    line-height: 50%;
+    margin-bottom: 20px;
+}
+
+.bannerItem h3 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    width: 480px;
+
+}
+
+.txtWrapper {
+    z-index: 99;
+}
+
+/*
+██████  ██       ██████   ██████
+██   ██ ██      ██    ██ ██
+██████  ██      ██    ██ ██   ███
+██   ██ ██      ██    ██ ██    ██
+██████  ███████  ██████   ██████
+
+
+██       ██████   ██████  ██████
+██      ██    ██ ██    ██ ██   ██
+██      ██    ██ ██    ██ ██████
+██      ██    ██ ██    ██ ██
+███████  ██████   ██████  ██
+
+
+*/
+.postImgContainer {
+    position: relative;
+    width: 100%;
+    padding-top: 100%;
+    /* Ensures a square container */
+    overflow: hidden;
+    /* Prevents image overflow */
+    background-color: colours.$humo;
+    /* Gray background as fallback */
+}
+
+.postImgFluid {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensures the image fills the container */
+    display: block;
+}
+
+
+
+/*
+███████ ██      ██ ██████  ███████ ██████       ██████  █████  ██████  ██████  ███████
+██      ██      ██ ██   ██ ██      ██   ██     ██      ██   ██ ██   ██ ██   ██ ██
+███████ ██      ██ ██   ██ █████   ██████      ██      ███████ ██████  ██   ██ ███████
+     ██ ██      ██ ██   ██ ██      ██   ██     ██      ██   ██ ██   ██ ██   ██      ██
+███████ ███████ ██ ██████  ███████ ██   ██      ██████ ██   ██ ██   ██ ██████  ███████
+
+
+*/
+// Slider Cards Block - Slick Slider Styles
+.slider-cards .slick-slide {
+    margin: 0 10px;
+}
+
+.slick-prev,
+.slick-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 10;
+    font-size: 0;
+    color: transparent;
+    background: none;
+    border: none;
+}
+
+.slick-prev::before,
+.slick-next::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    font-size: 36px;
+    color: color.change(colours.$posidonia, $alpha: 0.7);
+    opacity: 1;
+}
+
+.slick-prev::before {
+    content: "\f053";
+}
+
+.slick-next::before {
+    content: "\f054";
+}
+
+.slick-prev {
+    left: -45px;
+}
+
+.slick-next {
+    right: -45px;
+}
+
+.slick-dots {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.slick-dots li {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slick-dots li button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: color.change(colours.$humo, $alpha: 0.7);
+    border: none;
+    cursor: pointer;
+    font-size: 0;
+}
+
+.slick-dots li.slick-active button {
+    background: colours.$sombra;
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
+}
+
+
+// Slider Doctors Block
+.block-slider-doctors-card {
+    z-index: 20;
+    padding: 20px 60px;
+}
+
+@media (max-width: 768px) {
+    .block-slider-doctors-card {
+        padding: 20px 20px;
+    }
+}
+
+
+.slider-doctors .slick-slide {
+    margin: 0 30px;
+}
+
+
+
+/*
+██████   ██████   ██████ ██    ██ ███    ███ ███████ ███    ██ ████████
+██   ██ ██    ██ ██      ██    ██ ████  ████ ██      ████   ██    ██
+██   ██ ██    ██ ██      ██    ██ ██ ████ ██ █████   ██ ██  ██    ██
+██   ██ ██    ██ ██      ██    ██ ██  ██  ██ ██      ██  ██ ██    ██
+██████   ██████   ██████  ██████  ██      ██ ███████ ██   ████    ██
+
+
+██████  ███████ ███████  ██████  ██    ██ ██████   ██████ ███████ ███████
+██   ██ ██      ██      ██    ██ ██    ██ ██   ██ ██      ██      ██
+██████  █████   ███████ ██    ██ ██    ██ ██████  ██      █████   ███████
+██   ██ ██           ██ ██    ██ ██    ██ ██   ██ ██      ██           ██
+██   ██ ███████ ███████  ██████   ██████  ██   ██  ██████ ███████ ███████
+
+
+*/
+// Document Resources - newspaper column styles
+.newspaper-1 {
+    column-count: 1;
+    column-gap: 40px;
+}
+
+.newspaper-2 {
+    column-count: 2;
+    column-gap: 40px;
+}
+
+@media screen and (max-width: 992px) {
+    .newspaper-2 {
+        column-count: 1;
+    }
+}
+
+.list-separator {
+    border-bottom: 1px solid colours.$brand-main;
+    padding-bottom: 20px;
+}
+
+
+
+/*
+ ██████  █████  ██████  ██████  ███████     ███████ ██   ██
+██      ██   ██ ██   ██ ██   ██ ██          ██       ██ ██
+██      ███████ ██████  ██   ██ ███████     █████     ███
+██      ██   ██ ██   ██ ██   ██      ██     ██       ██ ██
+ ██████ ██   ██ ██   ██ ██████  ███████     ██      ██   ██
+
+
+*/
+// Card FX styles for 3D hover effects
+.card-fx-container {
+    perspective: 6000px;
+}
+
+.card-fx {
+    box-shadow: 0 6px 9px color.change(colours.$negro, $alpha: 0.15);
+    transition: box-shadow 0.3s ease-out;
+    transform-style: preserve-3d;
+}
+
+
+
+
+/* cards block */
+.cards-shape {
+    border-radius: 30px;
+}
+
+.cards-shape-top {
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+.cards-shape-bottom {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+/* Team Cards - Image Overflow Effect */
+.team-card-wrapper {
+    padding-top: 150px;
+    /* Space for the overflowing image */
+}
+
+.team-card-body {
+    overflow: visible;
+    /* Allow image to overflow */
+}
+
+.team-image-overflow {
+    margin-top: -150px;
+    /* Pull image above the card boundary */
+    position: relative;
+    z-index: 2;
+}
+
+
+/*
+███████ ██    ██  ██████
+██      ██    ██ ██
+███████ ██    ██ ██   ███
+     ██  ██  ██  ██    ██
+███████   ████    ██████
+
+
+*/
+
+/* Content Basic SVG Decorations */
+.content-basic__svg-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.content-basic__svg {
+    display: block;
+
+    &--cloud-right {
+        width: clamp(250px, 35vw, 550px);
+        height: auto;
+        margin-top: -3px;
+        margin-right: -24px;
+    }
+}
+
+.content-basic__image-mask {
+    aspect-ratio: 1001.6 / 702.1;
+    width: 100%;
+}
+
+.content-basic__masked-svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    &-image {
+        width: 100%;
+        height: 100%;
+    }
+
+    &--ready {
+        .content-basic__mask-path {
+            transform: scale(0);
+        }
+    }
+
+    &.is-visible {
+        .content-basic__mask-path {
+            transform: scale(1);
+            transition: transform 0.85s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+    }
+}
+
+.content-basic__mask-path {
+    transform-box: fill-box;
+    transform-origin: center;
+}
+
+@for $i from 1 through 6 {
+    .content-basic__mask-path--#{$i} {
+        transition-delay: #{($i - 1) * 80}ms;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .content-basic__masked-svg--ready {
+        .content-basic__mask-path {
+            transition: none;
+            transform: scale(1);
+        }
+    }
+}
+
+.content-basic__masked-image {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    -webkit-mask-image: url('img/shape-mask.svg');
+    mask-image: url('img/shape-mask.svg');
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+
+
+/*
+ ██████  ██████  ███    ██ ██████  ██ ████████ ██  ██████  ███    ██ ███████
+██      ██    ██ ████   ██ ██   ██ ██    ██    ██ ██    ██ ████   ██ ██
+██      ██    ██ ██ ██  ██ ██   ██ ██    ██    ██ ██    ██ ██ ██  ██ ███████
+██      ██    ██ ██  ██ ██ ██   ██ ██    ██    ██ ██    ██ ██  ██ ██      ██
+ ██████  ██████  ██   ████ ██████  ██    ██    ██  ██████  ██   ████ ███████
+
+███████ ██ ██████  ███████ ██████   █████  ██████
+██      ██ ██   ██ ██      ██   ██ ██   ██ ██   ██
+███████ ██ ██   ██ █████   ██████  ███████ ██████
+     ██ ██ ██   ██ ██      ██   ██ ██   ██ ██   ██
+███████ ██ ██████  ███████ ██████  ██   ██ ██   ██
+
+*/
+.conditions-sidebar,
+.section-sidebar {
+    position: sticky;
+    top: 2rem;
+
+    &__heading {
+        @include fonts.font(fonts.$text-prose, fonts.$fw-600);
+        font-size: 2.1rem;
+        padding: 1rem 1.4rem;
+        margin-bottom: 0;
+    }
+
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__item {
+        border-left: 4px solid transparent;
+
+        a {
+            @include fonts.font(fonts.$text-prose, fonts.$fw-400);
+            font-size: 2.1rem;
+            display: block;
+            padding: 0.7rem 1.4rem;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+    }
+}
+
+.conditions-sidebar {
+    &__heading {
+        color: colours.$blanco;
+        background-color: colours.$brand-main;
+    }
+
+    &__item {
+        border-bottom: 1px solid colours.$humo;
+
+        a {
+            color: colours.$tinta;
+
+            &:hover {
+                color: colours.$brand-main-dark;
+                background-color: color.change(colours.$brand-main, $alpha: 0.06);
+            }
+        }
+
+        &--active {
+            border-left-color: colours.$brand-main;
+            background-color: color.change(colours.$brand-main, $alpha: 0.1);
+
+            a {
+                color: colours.$brand-main-dark;
+            }
+        }
+    }
+}
+
+.section-sidebar {
+    &__heading {
+        color: colours.$blanco;
+        background-color: colours.$posidonia;
+    }
+
+    &__item {
+        border-bottom: 1px solid colours.$humo;
+
+        a {
+            color: colours.$tinta;
+
+            &:hover {
+                color: colours.$posidonia-dark;
+                background-color: color.change(colours.$posidonia, $alpha: 0.06);
+            }
+        }
+
+        &--active {
+            border-left-color: colours.$posidonia;
+            background-color: color.change(colours.$posidonia, $alpha: 0.1);
+
+            a {
+                color: colours.$posidonia-dark;
+            }
+        }
+    }
+}
+
+/*
+ ██████ ████████  █████      ██████  ██    ██ ████████ ████████  ██████  ███    ██ ███████
+██         ██    ██   ██     ██   ██ ██    ██    ██       ██    ██    ██ ████   ██ ██
+██         ██    ███████     ██████  ██    ██    ██       ██    ██    ██ ██ ██  ██ ███████
+██         ██    ██   ██     ██   ██ ██    ██    ██       ██    ██    ██ ██  ██ ██      ██
+ ██████    ██    ██   ██     ██████   ██████     ██       ██     ██████  ██   ████ ███████
+
+
+*/
+
+.cta-buttons-container {
+    position: relative;
+    z-index: 2;
+    margin-top: -55px;
+    margin-bottom: -50px;
+}
+
+@media (max-width: 992px) {
+    .cta-buttons-container {
+        margin-top: 0;
+        margin-bottom: 0px;
+    }
+}
+
+.content-basic-regular {
+    // card-rounded-top supplies the top overlap padding; keep hero variants explicit.
+    padding-bottom: 45px;
+}
+
+.content-basic-hero {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+@media (max-width: 767px) {
+    .content-basic-hero {
+        padding-top: 70px;
+        padding-bottom: 120px;
+    }
+}
+
+.content-basic__columns {
+    column-gap: 40px;
+    border-left: 3px solid var(--colour-brand-accent);
+    column-rule: 3px solid var(--colour-brand-accent);
+    padding-left: 3rem;
+
+    // prevent the line protrude the content
+    .content-basic-content>*:last-child {
+        margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 992px) {
+        column-rule: none;
+    }
+}
+
+/*
+██████  ██       ██████   ██████ ██   ██
+██   ██ ██      ██    ██ ██      ██  ██
+██████  ██      ██    ██ ██      █████
+██   ██ ██      ██    ██ ██      ██  ██
+██████  ███████  ██████   ██████ ██   ██
+
+
+███████ ██████  ███████  ██████ ██ ███████ ██  ██████
+██      ██   ██ ██      ██      ██ ██      ██ ██
+███████ ██████  █████   ██      ██ █████   ██ ██
+     ██ ██      ██      ██      ██ ██      ██ ██
+███████ ██      ███████  ██████ ██ ██      ██  ██████
+
+
+ ██████  ██████  ██       ██████  ██    ██ ██████
+██      ██    ██ ██      ██    ██ ██    ██ ██   ██
+██      ██    ██ ██      ██    ██ ██    ██ ██████
+██      ██    ██ ██      ██    ██ ██    ██ ██   ██
+ ██████  ██████  ███████  ██████   ██████  ██   ██
+
+
+██████  ███████ ██   ██  █████  ██    ██ ██  ██████  ██    ██ ██████
+██   ██ ██      ██   ██ ██   ██ ██    ██ ██ ██    ██ ██    ██ ██   ██
+██████  █████   ███████ ███████ ██    ██ ██ ██    ██ ██    ██ ██████
+██   ██ ██      ██   ██ ██   ██  ██  ██  ██ ██    ██ ██    ██ ██   ██
+██████  ███████ ██   ██ ██   ██   ████   ██  ██████   ██████  ██   ██
+
+
+*/
+
+// Applies theme-driven text colours to the basic content block variants,
+// scoped hero content, and testimonials panel headline.
+// Depends on --text-colour, --heading-colour, and --link-colour being set by
+// the block's colour/theme classes or inherited from a parent wrapper.
+.content-basic-regular,
+.content-basic-hero,
+.hero-theme-content,
+.banner-block,
+.testimonials-slider-panel {
+    color: var(--text-colour);
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    .banner-title {
+        color: var(--heading-colour);
+    }
+
+    p,
+    ul,
+    ol {
+        color: var(--text-colour);
+    }
+
+    a:not(.btn):not(.btn-cta) {
+        color: var(--link-colour);
+    }
+}
+
+
+
+/*
+██   ██ ███████ ██████   ██████
+██   ██ ██      ██   ██ ██    ██
+███████ █████   ██████  ██    ██
+██   ██ ██      ██   ██ ██    ██
+██   ██ ███████ ██   ██  ██████
+
+
+*/
+
+.hero-overlap {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    container-type: inline-size;
+    padding-top: 0;
+    // clamp(MIN, PREFERRED, MAX): grows with viewport (10vw) but never below 72px or above 120px
+    margin-bottom: clamp(72px, 10vw, 120px);
+}
+
+@media (min-width: 1200px) {
+    .hero-overlap {
+        // min(): picks the smallest, so width is the parent +240px but never wider than the viewport (minus 6rem) or 1700px
+        width: min(calc(100% + 210px), calc(100vw - 6rem), 1500px);
+        max-width: none;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+.hero-overlap__media {
+    flex: 0 1 52%;
+    align-self: flex-start;
+    position: relative;
+    z-index: 1;
+}
+
+.hero-overlap__image {
+    display: block;
+    width: 100%;
+    aspect-ratio: 7 / 5;
+    object-fit: cover;
+}
+
+.hero-overlap__card-wrap {
+    display: flex;
+    align-items: flex-start;
+    flex: 0 1 52%;
+    position: relative;
+    z-index: 2;
+    // Top of card aligns with vertical midpoint of image (7:5 aspect, ~52% column width).
+    margin-top: calc(52cqi * 5 / 7 / 5);
+    margin-left: clamp(-140px, -10vw, -72px);
+}
+
+.hero-overlap__card {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    min-height: calc(52cqi * 5 / 7 * 0.6);
+    padding: clamp(32px, 4vw, 56px) clamp(32px, 5vw, 72px) clamp(24px, 3vw, 40px);
+}
+
+.hero-overlap__headline {
+    padding: 0;
+}
+
+.hero-overlap--solo .hero-overlap__card-wrap {
+    margin-left: 0;
+}
+
+@media (max-width: 991.98px) {
+
+    .hero-overlap__media,
+    .hero-overlap__card-wrap {
+        flex-basis: 60%;
+    }
+
+    .hero-overlap__card-wrap {
+        margin-left: clamp(-96px, -12vw, -48px);
+        margin-top: calc(60cqi * 5 / 7 / 2);
+    }
+
+    .hero-overlap__card {
+        min-height: calc(60cqi * 5 / 7 * 0.9);
+    }
+}
+
+@media (max-width: 767.98px) {
+    .hero-overlap {
+        display: block;
+        margin-bottom: 64px;
+    }
+
+    .hero-overlap__media,
+    .hero-overlap__card-wrap {
+        width: 100%;
+    }
+
+    .hero-overlap__card-wrap {
+        display: block;
+        margin-top: -48px;
+        margin-left: 0;
+        padding-left: clamp(24px, 8vw, 56px);
+    }
+
+    .hero-overlap__card {
+        display: block;
+        min-height: 0;
+    }
+}
+
+
+
+
+
+/*
+████████ ███████ ███████ ████████ ██ ███    ███  ██████  ███    ██ ██  █████  ██      ███████
+   ██    ██      ██         ██    ██ ████  ████ ██    ██ ████   ██ ██ ██   ██ ██      ██
+   ██    █████   ███████    ██    ██ ██ ████ ██ ██    ██ ██ ██  ██ ██ ███████ ██      ███████
+   ██    ██           ██    ██    ██ ██  ██  ██ ██    ██ ██  ██ ██ ██ ██   ██ ██           ██
+   ██    ███████ ███████    ██    ██ ██      ██  ██████  ██   ████ ██ ██   ██ ███████ ███████
+
+
+*/
+.testimonial-slider-card {
+    border-top-left-radius: 201px;
+    border-top-right-radius: 201px;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    padding: 42px;
+}
+
+.testimonial-read-more {
+    position: relative;
+    z-index: 2;
+    font-weight: 400;
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.swiper-testimonials .testimonial-slide {
+    align-items: stretch;
+    height: auto;
+}
+
+
+/*
+██████  ██████  ███████ ███████ ███████ ███    ██ ████████  █████  ████████ ██  ██████  ███    ██
+██   ██ ██   ██ ██      ██      ██      ████   ██    ██    ██   ██    ██    ██ ██    ██ ████   ██
+██████  ██████  █████   ███████ █████   ██ ██  ██    ██    ███████    ██    ██ ██    ██ ██ ██  ██
+██      ██   ██ ██           ██ ██      ██  ██ ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██
+██      ██   ██ ███████ ███████ ███████ ██   ████    ██    ██   ██    ██    ██  ██████  ██   ████
+
+
+*/
+
+.presentation-content-wrapper {
+    z-index: 1;
+    position: relative;
+    margin-top: -90px;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+.presentation-content-container {
+    top: -120px;
+    margin-bottom: -0px;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+
+    .presentation-content-wrapper {
+        margin-top: -30px;
+        border-top-left-radius: 25px;
+        border-top-right-radius: 25px;
+    }
+
+    .presentation-content-container {
+        top: -45px;
+        margin-bottom: 60px;
+    }
+}
+
+
+
+.block-presentation__card-inner {
+    padding: 60px 64px 36px 64px;
+    border-radius: 50px;
+    background-color: colours.$hueso;
+    height: 100%;
+    width: 100%;
+}
+
+.block-presentation__marquee-wrapper {
+    position: relative;
+    z-index: 2 !important;
+    padding-bottom: 300px;
+}
+
+@media (max-width: 1200px) {
+    .block-presentation__card-inner {
+        border-radius: 25px;
+        padding: 30px 39px 18px 39px !important;
+    }
+
+    .block-presentation__marquee-wrapper {
+        padding-bottom: 270px;
+    }
+}
+
+@media (max-width: 992px) {
+    .block-presentation__card-inner {
+        border-radius: 25px;
+        padding: 30px 39px 9px 39px !important;
+    }
+
+    .block-presentation__marquee-wrapper {
+        padding-bottom: 210px;
+    }
+}
+
+/*
+██████   █████  ███    ██ ███    ██ ███████ ██████
+██   ██ ██   ██ ████   ██ ████   ██ ██      ██   ██
+██████  ███████ ██ ██  ██ ██ ██  ██ █████   ██████
+██   ██ ██   ██ ██  ██ ██ ██  ██ ██ ██      ██   ██
+██████  ██   ██ ██   ████ ██   ████ ███████ ██   ██
+
+
+*/
+
+.block-banner__card-inner {
+    padding: 60px 64px 36px 64px;
+    border-radius: 50px;
+}
+
+@media (max-width: 1200px) {
+    .block-banner__card-inner {
+        border-radius: 25px;
+        padding: 30px 39px 18px 39px !important;
+    }
+}
+
+@media (max-width: 992px) {
+    .block-banner__card-inner {
+        border-radius: 25px;
+        padding: 30px 39px 9px 39px !important;
+    }
+}

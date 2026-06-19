@@ -1,0 +1,327 @@
+// =============================================================================
+// COLOUR SYSTEM
+// =============================================================================
+// This file defines all theme colours and generates utility classes automatically.
+//
+// HOW IT WORKS:
+// 1. We define individual Sass variables for each colour (e.g., $posidonia: #232663)
+// 2. We group all colours into a Sass "map" - think of it as a dictionary/object
+// 3. We use an @each loop to iterate over the map and generate CSS classes
+//
+// BENEFITS:
+// - Adding a new colour = 1 line (add to map) instead of 6+ lines (manual classes)
+// - No risk of duplicates or typos
+// - Consistent naming across all utilities
+// - Easy to maintain and extend
+// =============================================================================
+
+@use 'sass:color';
+
+
+
+// =============================================================================
+// COLOUR VARIABLES
+// =============================================================================
+// These Sass variables are the "source of truth" for all colours.
+// Other SCSS files can import and use these directly: colours.$posidonia
+// =============================================================================
+
+// Primary brand colours
+$brand-main: #FFD300; // Flinders Gold
+$brand-main-light: #F6EEE1; // Sand
+$brand-main-dark: #CB9828; // Deep Gold
+
+// Secondary brand colours
+$brand-accent: #232D4B; // Midnight Navy
+$brand-accent-light: #77915D; // Eucalypt Green
+$brand-accent-dark: #232D4B; // Midnight Navy
+
+// Tertiary brand colours
+$brand-support: #DC5300; // Summer Red
+$brand-support-light: #F3B8CB; // Sunset Pink
+$brand-support-dark: #CB9828; // Deep Gold
+
+
+$posidonia: #0D2C6B;
+$posidonia-light: #2D4C8B;
+$posidonia-dark: #0A1F4A;
+
+$aguamarina: #B7DFC9;
+$aguamarina-light: #e6f4fa;
+$aguamarina-dark: #7bc4d4;
+
+$purpura: #80298F;
+$purpura-light: #A049A0;
+$purpura-dark: #612661;
+
+$cielo: #ACCDEC;
+$cielo-light: #D4E8F5;
+$cielo-dark: #7A9DB8;
+
+$amarillo: #fcb937;
+$hueso: #FAF7EE;
+$hueso-light: #F9F7F5;
+$hueso-dark: #DBC8B6;
+$tinta: #646B47;
+$humo: #eaeaea;
+$sombra: color.change(#7e7e81, $alpha: 0.6);
+$carbon: #0A0203;
+$negro: #0A0203;
+$blanco: #ffffff;
+
+
+
+
+// =============================================================================
+// COLOUR MAP
+// =============================================================================
+// A Sass map is a collection of key-value pairs, similar to a JavaScript object
+// or a PHP associative array.
+//
+// SYNTAX:
+//   $map-name: (
+//       "key1": value1,
+//       "key2": value2,
+//   );
+//
+// The KEY (in quotes) becomes the class name suffix: .text-{key}, .bg-{key}
+// The VALUE is the Sass variable containing the actual hex/colour value
+//
+// To add a new colour:
+// 1. Define the variable above (e.g., $nuevo: #ff0000;)
+// 2. Add it to this map (e.g., "nuevo": $nuevo,)
+// 3. Done! The loop below will auto-generate .text-nuevo, .bg-nuevo, etc.
+// =============================================================================
+
+$colors: (
+    // Primary brand
+    "brand-main": $brand-main,
+    "brand-main-light": $brand-main-light,
+    "brand-main-dark": $brand-main-dark,
+
+    // Secondary brand
+    "brand-accent": $brand-accent,
+    "brand-accent-light": $brand-accent-light,
+    "brand-accent-dark": $brand-accent-dark,
+
+    // Tertiary brand
+    "brand-support": $brand-support,
+    "brand-support-light": $brand-support-light,
+    "brand-support-dark": $brand-support-dark,
+
+    // Accent and neutrals
+    "posidonia": $posidonia,
+    "posidonia-light": $posidonia-light,
+    "posidonia-dark": $posidonia-dark,
+
+    "aguamarina": $aguamarina,
+    "aguamarina-light": $aguamarina-light,
+    "aguamarina-dark": $aguamarina-dark,
+
+    "purpura": $purpura,
+    "purpura-light": $purpura-light,
+    "purpura-dark": $purpura-dark,
+
+    "amarillo": $amarillo,
+    "hueso": $hueso,
+    "hueso-light": $hueso-light,
+    "hueso-dark": $hueso-dark,
+    "tinta": $tinta,
+    "humo": $humo,
+    "sombra": $sombra,
+    "carbon": $carbon,
+    "negro": $negro,
+    "blanco": $blanco,
+
+    // Extended palette
+    "cielo": $cielo,
+    "cielo-light": $cielo-light,
+    "cielo-dark": $cielo-dark,
+);
+
+
+// =============================================================================
+// CSS CUSTOM PROPERTIES
+// =============================================================================
+// Sass variables remain the compile-time source of truth. These runtime variables
+// let background classes control inherited text colours inside scoped blocks.
+// =============================================================================
+
+:root {
+    --colour-brand-main: #{$brand-main};
+    --colour-brand-main-light: #{$brand-main-light};
+    --colour-brand-main-dark: #{$brand-main-dark};
+    --colour-brand-accent: #{$brand-accent};
+    --colour-brand-accent-light: #{$brand-accent-light};
+    --colour-brand-accent-dark: #{$brand-accent-dark};
+    --colour-brand-support: #{$brand-support};
+    --colour-brand-support-light: #{$brand-support-light};
+    --colour-brand-support-dark: #{$brand-support-dark};
+    --colour-hueso: #{$hueso};
+    --colour-humo: #{$humo};
+    --colour-tinta: #{$tinta};
+    --colour-blanco: #{$blanco};
+
+    --colour-text: var(--colour-tinta);
+    --colour-text-inverse: var(--colour-blanco);
+
+    --heading-colour: var(--colour-text);
+    --text-colour: var(--colour-text);
+    --link-colour: var(--colour-brand-main-dark);
+}
+
+
+
+// =============================================================================
+// UTILITY CLASS GENERATOR
+// =============================================================================
+// The @each directive loops through every item in our $colors map.
+// On each iteration:
+//   - $name = the key (e.g., "posidonia")
+//   - $value = the value (e.g., #232663)
+//
+// #{$name} is Sass interpolation - it inserts the variable's value into a string.
+// So when $name = "posidonia", .#{$name} becomes .posidonia
+//
+// This single loop replaces ~230 lines of manually written utility classes!
+// =============================================================================
+
+@each $name, $value in $colors {
+
+    // Text colour utilities
+    // Generates: .posidonia, .text-posidonia { color: #232663; }
+    .#{$name},
+    .text-#{$name} {
+        color: $value;
+    }
+
+    // Background colour utilities
+    // Generates: .bg-posidonia { background-color: #232663; }
+    .bg-#{$name} {
+        background-color: $value;
+    }
+
+    // Border colour utilities
+    // Generates: .border-posidonia { border-color: #232663; }
+    .border-#{$name} {
+        border-color: $value;
+    }
+}
+
+
+// =============================================================================
+// SEMANTIC BACKGROUND COLOURS
+// =============================================================================
+// These overrides are inherited by scoped content blocks that consume the
+// semantic variables. Keep contrast choices explicit rather than automatic.
+// =============================================================================
+
+.bg-brand-main,
+.bg-brand-main-dark,
+.bg-brand-accent {
+    --heading-colour: var(--colour-text-inverse);
+    --text-colour: var(--colour-text-inverse);
+    --link-colour: var(--colour-text-inverse);
+}
+
+
+.bg-hueso,
+.bg-blanco {
+    --heading-colour: var(--colour-brand-main);
+    --text-colour: var(--colour-text);
+    --link-colour: var(--colour-brand-main-dark);
+}
+
+
+
+// =============================================================================
+// SPECIAL UTILITY CLASSES
+// =============================================================================
+// These are one-off utilities that don't fit the pattern above.
+// Keep special cases separate for clarity.
+// =============================================================================
+
+.bg-transparent {
+    background-color: transparent !important;
+}
+
+.bg-hero {
+    --heading-colour: var(--colour-text-inverse);
+    --text-colour: var(--colour-text-inverse);
+    --link-colour: var(--colour-text-inverse);
+
+    background-image: url("img/bg-hero.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.bg-1 {
+    background-image: url("img/bg-1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                 Rule to create the split background effect.                */
+/* -------------------------------------------------------------------------- */
+@mixin split-bg($base-colour, $overlay-colour, $bottom: 50%) {
+    isolation: isolate;
+    position: relative;
+    background-color: $base-colour;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: $bottom;
+        left: 0;
+        z-index: 0;
+        background-color: $overlay-colour;
+        pointer-events: none;
+    }
+
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.bg-2 {
+    @include split-bg($humo, $blanco);
+}
+
+.bg-2a {
+    @include split-bg($humo, $blanco, 60%);
+}
+
+.bg-3 {
+    position: relative;
+    background-color: $hueso;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: 45%;
+        right: 0;
+        bottom: 0%;
+        left: 0;
+        z-index: 0;
+        background-color: $brand-accent;
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        pointer-events: none;
+    }
+
+    >* {
+        position: relative;
+        z-index: 1;
+    }
+
+    &.corner-fill::after {
+        z-index: 0;
+        background-color: var(--corner-fill-colour, #{$brand-accent});
+    }
+}
