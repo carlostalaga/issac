@@ -85,3 +85,7 @@ defined('ABSPATH') || exit;
     <?php endforeach; ?>
 
 </div>
+
+<div id="issac-toast-template" class="toast d-none" role="status" aria-live="polite" aria-atomic="true">
+    <div class="toast-body"></div>
+</div>

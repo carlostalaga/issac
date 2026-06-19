@@ -32,17 +32,20 @@
     }
 }
 
-// Save state colours (driven by JS in 5B)
+// Save state visual feedback (driven by JS)
+.issac-item--saving .issac-item__scores { opacity: 0.7; }
+
 .issac-item--saved .issac-item__status {
     color: var(--bs-success);
+
+    &::before {
+        content: '\2713';
+        margin-right: 0.35em;
+    }
 }
 
 .issac-item--unsaved .issac-item__status {
     color: var(--bs-danger);
-}
-
-.issac-item--saving .issac-item__scores {
-    opacity: 0.7;
 }
 
 // Sticky progress wrapper

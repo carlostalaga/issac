@@ -10,24 +10,23 @@ final class Assets
 {
     public static function register(): void
     {
-        add_action('wp_enqueue_scripts', [self::class, 'enqueue']);
+        add_action('wp_enqueue_scripts', [self::class, 'registerAssets']);
     }
 
-    public static function enqueue(): void
+    /**
+     * Register (but don't enqueue) ISSAC assets and localize data.
+     * The shortcode callback calls enqueueAll() to activate them.
+     */
+    public static function registerAssets(): void
     {
-        $post = get_post();
-        if (!$post || !has_shortcode($post->post_content ?? '', 'issac_domain')) {
-            return;
-        }
-
-        wp_enqueue_style(
+        wp_register_style(
             'issac-css',
             ISSAC_URL . 'assets/css/issac.css',
             [],
             ISSAC_VERSION
         );
 
-        wp_enqueue_script(
+        wp_register_script(
             'issac-js',
             ISSAC_URL . 'assets/js/issac.js',
             [],
@@ -42,5 +41,21 @@ final class Assets
             'nonce'      => wp_create_nonce('wp_rest'),
             'domainCode' => $domainCode ?: null,
         ]);
+
+        // Best-effort early enqueue: loads CSS in <head> when detectable.
+        $post = get_post();
+        if ($post && has_shortcode($post->post_content ?? '', 'issac_domain')) {
+            self::enqueueAll();
+        }
+    }
+
+    /**
+     * Called by the shortcode to guarantee assets are enqueued,
+     * even when has_shortcode() couldn't detect them early.
+     */
+    public static function enqueueAll(): void
+    {
+        wp_enqueue_style('issac-css');
+        wp_enqueue_script('issac-js');
     }
 }

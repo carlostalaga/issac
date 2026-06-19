@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .issac-item__scores {
   display: flex;
   gap: 0.5rem;
@@ -25,16 +26,20 @@
   border-left-color: var(--bs-primary);
 }
 
+.issac-item--saving .issac-item__scores {
+  opacity: 0.7;
+}
+
 .issac-item--saved .issac-item__status {
   color: var(--bs-success);
+}
+.issac-item--saved .issac-item__status::before {
+  content: "✓";
+  margin-right: 0.35em;
 }
 
 .issac-item--unsaved .issac-item__status {
   color: var(--bs-danger);
-}
-
-.issac-item--saving .issac-item__scores {
-  opacity: 0.7;
 }
 
 .issac-domain__progress-sticky {

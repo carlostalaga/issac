@@ -27,6 +27,8 @@ final class Shortcodes
                 . '<a href="' . esc_url($loginUrl) . '">Log in</a></p>';
         }
 
+        Assets::enqueueAll();
+
         $domainCode = sanitize_text_field($_GET['d'] ?? '');
         $tree = InstrumentRepository::tree();
 
