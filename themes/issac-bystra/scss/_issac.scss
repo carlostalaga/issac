@@ -1,0 +1,37 @@
+// ISSAC Assessment — Theme-level page styles
+
+.issac-domain {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+}
+
+.issac-domain__header {
+    margin-bottom: 1.5rem;
+}
+
+.issac-subsection {
+    margin-bottom: 2rem;
+}
+
+.issac-subsection__title {
+    border-bottom: 1px solid var(--bs-border-color, #dee2e6);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.issac-item {
+    border: 1px solid var(--bs-border-color, #dee2e6);
+    border-radius: 0.5rem;
+}
+
+.issac-item__code {
+    font-weight: 700;
+    margin-right: 0.25rem;
+}
+
+.issac-login-prompt,
+.issac-error {
+    padding: 1.5rem;
+    text-align: center;
+}

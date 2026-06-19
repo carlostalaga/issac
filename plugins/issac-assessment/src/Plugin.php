@@ -6,6 +6,8 @@ use Issac\Content\Guards;
 use Issac\Content\PostTypes;
 use Issac\Content\Validation;
 use Issac\Domain\InstrumentRepository;
+use Issac\Frontend\Assets;
+use Issac\Frontend\Shortcodes;
 use Issac\Install\Capabilities;
 use Issac\Rest\RoutesController;
 
@@ -27,6 +29,8 @@ final class Plugin
         InstrumentRepository::register();
         ImportCommand::register();
         RoutesController::register();
+        Shortcodes::register();
+        Assets::register();
     }
 
     /**

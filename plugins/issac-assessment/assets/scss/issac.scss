@@ -1,0 +1,73 @@
+// ISSAC Assessment — Plugin-specific styles
+// Bootstrap is already loaded by the theme; do not import it here.
+
+// Score selector sizing
+.issac-item__scores {
+    display: flex;
+    gap: 0.5rem;
+    border: none;
+    padding: 0;
+
+    .issac-score__btn {
+        width: 2.5rem;
+        height: 2.5rem;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        font-weight: 600;
+    }
+}
+
+// Descriptor active state
+.issac-descriptor {
+    padding: 0.75rem;
+    border-left: 3px solid transparent;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s, border-color 0.2s;
+
+    &--active {
+        background-color: rgba(var(--bs-primary-rgb), 0.08);
+        border-left-color: var(--bs-primary);
+    }
+}
+
+// Save state colours (driven by JS in 5B)
+.issac-item--saved .issac-item__status {
+    color: var(--bs-success);
+}
+
+.issac-item--unsaved .issac-item__status {
+    color: var(--bs-danger);
+}
+
+.issac-item--saving .issac-item__scores {
+    opacity: 0.7;
+}
+
+// Sticky progress wrapper
+.issac-domain__progress-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bs-body-bg, #fff);
+    padding: 0.75rem 0;
+}
+
+.issac-domain__progress-text {
+    display: block;
+    font-size: 0.85rem;
+    margin-top: 0.25rem;
+    color: var(--bs-secondary-color, #6c757d);
+}
+
+// Reduced motion
+@media (prefers-reduced-motion: reduce) {
+    .issac-domain__progress-bar {
+        transition: none;
+    }
+
+    .issac-descriptor {
+        transition: none;
+    }
+}
