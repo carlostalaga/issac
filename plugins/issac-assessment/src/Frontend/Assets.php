@@ -44,7 +44,10 @@ final class Assets
 
         // Best-effort early enqueue: loads CSS in <head> when detectable.
         $post = get_post();
-        if ($post && has_shortcode($post->post_content ?? '', 'issac_domain')) {
+        if ($post && (
+            has_shortcode($post->post_content ?? '', 'issac_domain')
+            || has_shortcode($post->post_content ?? '', 'issac_dashboard')
+        )) {
             self::enqueueAll();
         }
     }
