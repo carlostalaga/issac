@@ -12,6 +12,10 @@
 !/DEVELOPMENT.md
 !/README.md
 !/docs/
+!/prompts/
+!/prompts/**
+!/reports/
+!/reports/**
 
 # never commit these
 .DS_Store
