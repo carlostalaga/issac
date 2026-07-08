@@ -1,6 +1,7 @@
 <?php
 namespace Issac;
 
+use Issac\Admin\AdminMenu;
 use Issac\Cli\ImportCommand;
 use Issac\Content\Guards;
 use Issac\Content\PostTypes;
@@ -31,6 +32,7 @@ final class Plugin
         RoutesController::register();
         Shortcodes::register();
         Assets::register();
+        AdminMenu::register();
     }
 
     /**

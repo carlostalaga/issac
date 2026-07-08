@@ -23,7 +23,7 @@ final class Capabilities
     public const TAKE_ASSESSMENT = 'issac_take_assessment';
 
     /** Bump when the cap set changes to force a re-sync on existing sites. */
-    private const VERSION = '1';
+    private const VERSION = '2';
     private const OPTION  = 'issac_caps_version';
 
     /** @return string[] Capabilities granted to administrators. */
@@ -52,7 +52,22 @@ final class Capabilities
             get_role('issac_participant')?->add_cap(self::TAKE_ASSESSMENT);
         }
 
-        // Administrators manage the instrument and (later) the dashboards.
+        // Manager role for school coordinators who oversee assessments.
+        if (add_role('issac_manager', 'ISSAC Manager', [
+            'read'                => true,
+            self::TAKE_ASSESSMENT => true,
+            self::EDIT_INSTRUMENT => true,
+            self::VIEW_ADMIN     => true,
+        ]) === null) {
+            $role = get_role('issac_manager');
+            if ($role) {
+                foreach ([self::TAKE_ASSESSMENT, self::EDIT_INSTRUMENT, self::VIEW_ADMIN] as $cap) {
+                    $role->add_cap($cap);
+                }
+            }
+        }
+
+        // Administrators manage the instrument and the dashboards.
         $admin = get_role('administrator');
         if ($admin) {
             foreach (self::adminCaps() as $cap) {

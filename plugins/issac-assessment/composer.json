@@ -2,7 +2,10 @@
     "autoload": {
         "psr-4": {
             "Issac\\": "src/"
-        }
+        },
+        "files": [
+            "src/InstrumentVersion.php"
+        ]
     },
     "require": {
         "mpdf/mpdf": "^8.3"
