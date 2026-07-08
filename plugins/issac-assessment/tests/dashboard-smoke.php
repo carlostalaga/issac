@@ -119,11 +119,11 @@ foreach (['1', '2', '3', '4', '5'] as $code) {
     );
 }
 
-// ── 6. Download button stays disabled (M7 placeholder) ───────────────
-echo "\n6. Download button disabled (no PDF route yet)\n";
+// ── 6. Download button enabled when responses exist (M7) ───────────────
+echo "\n6. Download button enabled with responses\n";
 
-issac_dash_assert(str_contains($output, 'disabled'), 'Download button remains disabled');
-issac_dash_assert(!str_contains($output, '/issac/v1/report'), 'No link to missing PDF endpoint');
+issac_dash_assert(str_contains($output, '/issac/v1/report'), 'Download link points to report endpoint');
+issac_dash_assert(!str_contains($output, 'Coming soon'), 'Coming soon text removed');
 
 // ── 7. Logged-out → login prompt ─────────────────────────────────────
 echo "\n7. Access gate — logged out\n";

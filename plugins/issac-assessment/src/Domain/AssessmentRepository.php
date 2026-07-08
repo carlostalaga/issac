@@ -1,6 +1,8 @@
 <?php
 namespace Issac\Domain;
 
+use const Issac\CURRENT_INSTRUMENT_VERSION;
+
 defined('ABSPATH') || exit;
 
 /**
@@ -70,7 +72,7 @@ final class AssessmentRepository
              )",
             $table,
             $userId,
-            '2023.06',
+            CURRENT_INSTRUMENT_VERSION,
             $now,
             $now,
             $table,

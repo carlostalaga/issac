@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Issac\Frontend;
 
 use Issac\Domain\AssessmentRepository;
+use Issac\Domain\EventRepository;
 use Issac\Domain\InstrumentRepository;
 use Issac\Domain\ResponseRepository;
 use Issac\Domain\ScoringService;
@@ -34,6 +35,7 @@ final class Shortcodes
         $tree = InstrumentRepository::tree();
         $responses = ResponseRepository::forAssessment((int) $assessment->id);
         $summary = ScoringService::summary($tree, $responses);
+        $lastReportDate = EventRepository::lastFired((int) $assessment->id, 'pdf_generated');
 
         ob_start();
         include __DIR__ . '/templates/dashboard.php';

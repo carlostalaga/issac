@@ -8,7 +8,7 @@ defined('ABSPATH') || exit;
 /**
  * WP-CLI command: wp issac import
  *
- * Loads data/instrument-2023.06.json into the instrument CPTs.
+ * Loads data/instrument-{version}.json (see Issac\CURRENT_INSTRUMENT_VERSION) into the instrument CPTs.
  * Idempotent — safe to re-run; only creates posts that don't already exist.
  */
 final class ImportCommand

@@ -58,4 +58,44 @@ final class EventRepository
             $assessmentId,
         ));
     }
+
+    /**
+     * Records or updates an event timestamp. Repeatable events (e.g. pdf_generated)
+     * use INSERT … ON DUPLICATE KEY UPDATE so created_at reflects the latest call.
+     */
+    public static function recordOrTouch(int $assessmentId, string $eventKey): void
+    {
+        global $wpdb;
+        $assessmentId = absint($assessmentId);
+
+        $now = gmdate('Y-m-d H:i:s');
+
+        $wpdb->query($wpdb->prepare(
+            "INSERT INTO %i (assessment_id, event_key, created_at)
+             VALUES (%d, %s, %s)
+             ON DUPLICATE KEY UPDATE created_at = VALUES(created_at)",
+            self::table(),
+            $assessmentId,
+            $eventKey,
+            $now,
+        ));
+    }
+
+    /**
+     * Returns the created_at timestamp for a specific event, or null if never recorded.
+     */
+    public static function lastFired(int $assessmentId, string $eventKey): ?string
+    {
+        global $wpdb;
+        $assessmentId = absint($assessmentId);
+
+        $createdAt = $wpdb->get_var($wpdb->prepare(
+            "SELECT created_at FROM %i WHERE assessment_id = %d AND event_key = %s",
+            self::table(),
+            $assessmentId,
+            $eventKey,
+        ));
+
+        return $createdAt !== null ? (string) $createdAt : null;
+    }
 }

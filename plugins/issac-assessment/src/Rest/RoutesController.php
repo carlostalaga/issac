@@ -27,6 +27,7 @@ final class RoutesController
         AssessmentEndpoint::register();
         ResponseEndpoint::register();
         EventsEndpoint::register();
+        ReportEndpoint::register();
     }
 
     /**

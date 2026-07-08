@@ -1,10 +1,12 @@
 <?php
 namespace Issac\Content;
 
+use const Issac\CURRENT_INSTRUMENT_VERSION;
+
 defined('ABSPATH') || exit;
 
 /**
- * Idempotent importer: reads data/instrument-2023.06.json and creates (or
+ * Idempotent importer: reads data/instrument-{version}.json and creates (or
  * updates) the CPT posts that represent the instrument's content model.
  *
  * Matching rules:
@@ -84,7 +86,7 @@ final class Importer
 
     private function loadJson(): array
     {
-        $path = ISSAC_PATH . 'data/instrument-2023.06.json';
+        $path = ISSAC_PATH . 'data/instrument-' . CURRENT_INSTRUMENT_VERSION . '.json';
         if (!file_exists($path)) {
             throw new \RuntimeException("Instrument JSON not found at {$path}");
         }

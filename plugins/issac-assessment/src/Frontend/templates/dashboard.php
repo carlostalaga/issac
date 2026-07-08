@@ -90,13 +90,25 @@ $offset     = $circumference - ($circumference * $completion / 100);
     </section>
 
     <section class="issac-dashboard__actions text-center mt-4">
-        <?php // TODO(M7): Wire href to the PDF report endpoint (GET /issac/v1/report). ?>
-        <button type="button" class="btn btn-outline-secondary issac-dashboard__download" disabled
-                aria-disabled="true"
-                title="Report download will be available in a future update">
-            <?= $completion >= 100.0 ? 'Download report' : 'Download progress report' ?>
-            <small class="d-block text-body-secondary">Coming soon</small>
-        </button>
+        <?php
+        $downloadLabel = $completion >= 100.0 ? 'Download report' : 'Download progress report';
+        $reportUrl     = wp_nonce_url(rest_url('issac/v1/report'), 'wp_rest');
+        ?>
+        <?php if ($answered >= 1) : ?>
+            <a href="<?= esc_url($reportUrl) ?>" class="btn btn-outline-secondary issac-dashboard__download">
+                <?= esc_html($downloadLabel) ?>
+            </a>
+        <?php else : ?>
+            <button type="button" class="btn btn-outline-secondary issac-dashboard__download" disabled
+                    aria-disabled="true">
+                <?= esc_html($downloadLabel) ?>
+            </button>
+        <?php endif; ?>
+        <?php if ($lastReportDate !== null) : ?>
+            <small class="d-block text-body-secondary mt-2">
+                Last report: <?= esc_html(wp_date('j M Y, g:i a', strtotime($lastReportDate . ' UTC'))) ?>
+            </small>
+        <?php endif; ?>
     </section>
 
 </div>

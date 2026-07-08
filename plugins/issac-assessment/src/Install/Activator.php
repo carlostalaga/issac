@@ -1,6 +1,8 @@
 <?php
 namespace Issac\Install;
 
+use const Issac\CURRENT_INSTRUMENT_VERSION;
+
 defined('ABSPATH') || exit;
 
 /**
@@ -34,7 +36,7 @@ class Activator
         $assessments = "CREATE TABLE {$prefix}issac_assessments (
             id bigint unsigned NOT NULL AUTO_INCREMENT,
             user_id bigint unsigned NOT NULL,
-            instrument_version varchar(20) NOT NULL DEFAULT '2023.06',
+            instrument_version varchar(20) NOT NULL DEFAULT '" . CURRENT_INSTRUMENT_VERSION . "',
             status varchar(20) NOT NULL DEFAULT 'in_progress',
             started_at datetime NOT NULL,
             updated_at datetime NOT NULL,
