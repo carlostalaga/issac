@@ -19,15 +19,15 @@ $total      = (int) $overall['total'];
 $percent    = (int) round($completion);
 
 // SVG ring geometry
-$ringSize   = 120;
-$strokeWidth = 10;
+$ringSize   = 240;
+$strokeWidth = 24;
 $radius     = ($ringSize - $strokeWidth) / 2;
 $circumference = 2 * M_PI * $radius;
 $offset     = $circumference - ($circumference * $completion / 100);
 ?>
 <div class="issac-dashboard container">
 
-    <section class="issac-dashboard__overview text-center mb-4">
+    <section class="issac-dashboard__overview text-center mb-4 bg-brand-accent p-5 rounded-5 mb-5">
         <div class="issac-dashboard__ring-wrap" role="img" aria-label="<?= esc_attr("Overall progress: {$percent}%") ?>">
             <svg class="issac-dashboard__ring" width="<?= $ringSize ?>" height="<?= $ringSize ?>" viewBox="0 0 <?= $ringSize ?> <?= $ringSize ?>">
                 <circle class="issac-dashboard__ring-bg" cx="<?= $ringSize / 2 ?>" cy="<?= $ringSize / 2 ?>" r="<?= $radius ?>" fill="none" stroke-width="<?= $strokeWidth ?>" />
@@ -64,7 +64,7 @@ $offset     = $circumference - ($circumference * $completion / 100);
                             <div class="progress-bar" style="width: <?= esc_attr($dCompletion) ?>%"></div>
                         </div>
 
-                        <div class="issac-dashboard__card-stats small text-body-secondary mb-3">
+                        <div class="issac-dashboard__card-stats text-body-secondary mb-3">
                             <?php if ($dAnswered >= 1) : ?>
                             <span class="issac-dashboard__card-avg">Avg <?= esc_html(number_format($domainSummary['average'], 1)) ?> &middot; <?= esc_html($domainSummary['band']) ?></span>
                             <span class="issac-dashboard__card-count"><?= $dAnswered ?>/<?= $dTotal ?> answered</span>

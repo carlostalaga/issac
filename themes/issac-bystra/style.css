@@ -19,7 +19,7 @@ Text Domain: bystra
   --colour-brand-accent-light: #3e4f84;
   --colour-brand-accent-dark: #232D4B;
   --colour-brand-support: #DC5300;
-  --colour-brand-support-light: #F3B8CB;
+  --colour-brand-support-light: #1E7D74;
   --colour-brand-support-dark: #CB9828;
   --colour-hueso: #FAF7EE;
   --colour-humo: #eaeaea;
@@ -125,15 +125,15 @@ Text Domain: bystra
 
 .brand-support-light,
 .text-brand-support-light {
-  color: #F3B8CB;
+  color: #1E7D74;
 }
 
 .bg-brand-support-light {
-  background-color: #F3B8CB;
+  background-color: #1E7D74;
 }
 
 .border-brand-support-light {
-  border-color: #F3B8CB;
+  border-color: #1E7D74;
 }
 
 .brand-support-dark,
@@ -602,7 +602,7 @@ h1 {
   font-weight: 600;
   font-style: normal;
   font-size: 4.8rem;
-  color: #646B47;
+  color: #232D4B;
   line-height: 1.2;
   letter-spacing: 0;
   margin-bottom: 0.6rem;
@@ -3183,6 +3183,7 @@ Text Domain: bystra
 .issac-dashboard__ring-wrap {
   position: relative;
   display: inline-block;
+  color: #FFD300;
 }
 
 .issac-dashboard__ring-label {
@@ -3196,14 +3197,14 @@ Text Domain: bystra
 }
 
 .issac-dashboard__ring-percent {
-  font-size: 1.5rem;
+  font-size: 3.6rem;
   font-weight: 700;
   line-height: 1;
 }
 
 .issac-dashboard__ring-caption {
-  font-size: 0.75rem;
-  color: var(--bs-secondary-color, #6c757d);
+  font-size: 1.5rem;
+  color: #FAF7EE;
 }
 
 body,
@@ -4260,8 +4261,6 @@ html {
   box-shadow: none;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-  font-size: 2.1rem;
-  font-weight: 300;
 }
 .btn-brand-main-dark-light:hover, .btn-brand-main-dark-light:focus-visible {
   border-color: #3e4f84;
@@ -4272,6 +4271,10 @@ html {
 .btn-brand-main-dark-light:disabled, .btn-brand-main-dark-light.disabled {
   opacity: 0.55;
   pointer-events: none;
+}
+.btn-brand-main-dark-light {
+  font-size: 2.1rem;
+  font-weight: 300;
 }
 
 .btn-posidonia {
@@ -4330,14 +4333,6 @@ html {
   box-shadow: none;
   cursor: pointer;
   transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
-  justify-content: center;
-  padding: 24px 18px;
-  min-height: 105px !important;
-  font-size: 2.6rem;
-  text-transform: none;
-  letter-spacing: 0rem;
-  font-family: "alexandria", sans-serif;
-  font-weight: 500;
 }
 .btn-hero:hover, .btn-hero:focus-visible {
   border-color: #232D4B;
@@ -4348,6 +4343,16 @@ html {
 .btn-hero:disabled, .btn-hero.disabled {
   opacity: 0.55;
   pointer-events: none;
+}
+.btn-hero {
+  justify-content: center;
+  padding: 24px 18px;
+  min-height: 105px !important;
+  font-size: 2.6rem;
+  text-transform: none;
+  letter-spacing: 0rem;
+  font-family: "alexandria", sans-serif;
+  font-weight: 500;
 }
 .btn-hero:hover, .btn-hero:focus, .btn-hero.is-active, .btn-hero.is-active:focus {
   border-color: #232D4B;
@@ -5680,5 +5685,3 @@ body.modal-open {
     padding: 30px 39px 9px 39px !important;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

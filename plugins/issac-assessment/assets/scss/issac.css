@@ -62,7 +62,7 @@
 }
 
 .issac-dashboard__ring-fill {
-  stroke: var(--colour-brand-main, #FFD300);
+  stroke: var(--bs-primary, #FFD300);
   stroke-linecap: round;
   transition: stroke-dashoffset 0.6s ease;
 }
@@ -91,15 +91,3 @@
     transition: none;
   }
 }
-.issac-dashboard__card .progress {
-  height: 0.8rem;
-  background-color: var(--colour-brand-main-light, #F6EEE1);
-  border-radius: 50rem;
-  overflow: hidden;
-}
-.issac-dashboard__card .progress-bar {
-  background-color: var(--colour-brand-support-light, #1E7D74);
-  border-radius: 50rem;
-}
-
-/*# sourceMappingURL=issac.css.map */

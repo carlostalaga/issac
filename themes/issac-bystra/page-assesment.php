@@ -10,18 +10,19 @@ Template Name: My Assessment
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <div>
-                        <h1>My Assessment</h1>
-                    </div>
+        <div class="container-fluid py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div>
+                            <h1>My Assessment</h1>
+                        </div>
 
-                    <div>
-                        <?php echo do_shortcode('[issac_dashboard]'); ?>
+                        <div>
+                            <?php echo do_shortcode('[issac_dashboard]'); ?>
+                        </div>
                     </div>
                 </div>
-
             </div>
         </div>
 

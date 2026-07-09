@@ -33,7 +33,9 @@
 }
 
 // Save state visual feedback (driven by JS)
-.issac-item--saving .issac-item__scores { opacity: 0.7; }
+.issac-item--saving .issac-item__scores {
+    opacity: 0.7;
+}
 
 .issac-item--saved .issac-item__status {
     color: var(--bs-success);
@@ -72,7 +74,7 @@
 }
 
 .issac-dashboard__ring-fill {
-    stroke: var(--bs-primary, #0d6efd);
+    stroke: var(--colour-brand-main, #FFD300);
     stroke-linecap: round;
     transition: stroke-dashoffset 0.6s ease;
 }
@@ -103,5 +105,20 @@
 
     .issac-dashboard__ring-fill {
         transition: none;
+    }
+}
+
+// Progress bar horizontal
+.issac-dashboard__card {
+    .progress {
+        height: 0.8rem;
+        background-color: var(--colour-brand-main-light, #F6EEE1); // track
+        border-radius: 50rem;
+        overflow: hidden;
+    }
+
+    .progress-bar {
+        background-color: var(--colour-brand-support-light, #1E7D74); // fill
+        border-radius: 50rem;
     }
 }
