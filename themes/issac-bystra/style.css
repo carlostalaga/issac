@@ -16,7 +16,7 @@ Text Domain: bystra
   --colour-brand-main-light: #F6EEE1;
   --colour-brand-main-dark: #CB9828;
   --colour-brand-accent: #232D4B;
-  --colour-brand-accent-light: #77915D;
+  --colour-brand-accent-light: #3e4f84;
   --colour-brand-accent-dark: #232D4B;
   --colour-brand-support: #DC5300;
   --colour-brand-support-light: #F3B8CB;
@@ -86,15 +86,15 @@ Text Domain: bystra
 
 .brand-accent-light,
 .text-brand-accent-light {
-  color: #77915D;
+  color: #3e4f84;
 }
 
 .bg-brand-accent-light {
-  background-color: #77915D;
+  background-color: #3e4f84;
 }
 
 .border-brand-accent-light {
-  border-color: #77915D;
+  border-color: #3e4f84;
 }
 
 .brand-accent-dark,
@@ -656,9 +656,9 @@ h6 {
   font-family: "alexandria", sans-serif;
   font-weight: 600;
   font-style: normal;
-  font-size: 2.3rem;
+  font-size: 1.8rem;
   color: #646B47;
-  line-height: 0.95;
+  line-height: 1.14;
   letter-spacing: 0;
   margin-bottom: 0.3rem;
 }
@@ -683,7 +683,7 @@ h6 {
     font-size: calc(2.6rem * 0.9);
   }
   h6 {
-    font-size: calc(2.3rem * 0.9);
+    font-size: calc(1.8rem * 0.9);
   }
 }
 @media (max-width: 992px) {
@@ -706,7 +706,7 @@ h6 {
     font-size: calc(2.6rem * 0.85);
   }
   h6 {
-    font-size: calc(2.3rem * 0.85);
+    font-size: calc(1.8rem * 0.85);
   }
 }
 @media (max-width: 768px) {
@@ -729,7 +729,7 @@ h6 {
     font-size: calc(2.6rem * 0.8);
   }
   h6 {
-    font-size: calc(2.3rem * 0.8);
+    font-size: calc(1.8rem * 0.8);
   }
 }
 @media (max-width: 576px) {
@@ -752,7 +752,7 @@ h6 {
     font-size: calc(2.6rem * 0.65);
   }
   h6 {
-    font-size: calc(2.3rem * 0.65);
+    font-size: calc(1.8rem * 0.65);
   }
 }
 @media (max-width: 380px) {
@@ -775,7 +775,7 @@ h6 {
     font-size: calc(2.6rem * 0.6);
   }
   h6 {
-    font-size: calc(2.3rem * 0.6);
+    font-size: calc(1.8rem * 0.6);
   }
 }
 /* Basics */
@@ -3176,7 +3176,6 @@ Text Domain: bystra
 }
 
 .issac-dashboard {
-  max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
@@ -4265,8 +4264,8 @@ html {
   font-weight: 300;
 }
 .btn-brand-main-dark-light:hover, .btn-brand-main-dark-light:focus-visible {
-  border-color: #77915D;
-  background-color: #77915D;
+  border-color: #3e4f84;
+  background-color: #3e4f84;
   color: #CB9828;
   text-decoration: none;
 }

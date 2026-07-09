@@ -25,20 +25,13 @@ $radius     = ($ringSize - $strokeWidth) / 2;
 $circumference = 2 * M_PI * $radius;
 $offset     = $circumference - ($circumference * $completion / 100);
 ?>
-<div class="issac-dashboard">
+<div class="issac-dashboard container">
 
     <section class="issac-dashboard__overview text-center mb-4">
         <div class="issac-dashboard__ring-wrap" role="img" aria-label="<?= esc_attr("Overall progress: {$percent}%") ?>">
             <svg class="issac-dashboard__ring" width="<?= $ringSize ?>" height="<?= $ringSize ?>" viewBox="0 0 <?= $ringSize ?> <?= $ringSize ?>">
-                <circle class="issac-dashboard__ring-bg"
-                        cx="<?= $ringSize / 2 ?>" cy="<?= $ringSize / 2 ?>" r="<?= $radius ?>"
-                        fill="none" stroke-width="<?= $strokeWidth ?>" />
-                <circle class="issac-dashboard__ring-fill"
-                        cx="<?= $ringSize / 2 ?>" cy="<?= $ringSize / 2 ?>" r="<?= $radius ?>"
-                        fill="none" stroke-width="<?= $strokeWidth ?>"
-                        stroke-dasharray="<?= esc_attr((string) $circumference) ?>"
-                        stroke-dashoffset="<?= esc_attr((string) $offset) ?>"
-                        transform="rotate(-90 <?= $ringSize / 2 ?> <?= $ringSize / 2 ?>)" />
+                <circle class="issac-dashboard__ring-bg" cx="<?= $ringSize / 2 ?>" cy="<?= $ringSize / 2 ?>" r="<?= $radius ?>" fill="none" stroke-width="<?= $strokeWidth ?>" />
+                <circle class="issac-dashboard__ring-fill" cx="<?= $ringSize / 2 ?>" cy="<?= $ringSize / 2 ?>" r="<?= $radius ?>" fill="none" stroke-width="<?= $strokeWidth ?>" stroke-dasharray="<?= esc_attr((string) $circumference) ?>" stroke-dashoffset="<?= esc_attr((string) $offset) ?>" transform="rotate(-90 <?= $ringSize / 2 ?> <?= $ringSize / 2 ?>)" />
             </svg>
             <div class="issac-dashboard__ring-label">
                 <span class="issac-dashboard__ring-percent"><?= $percent ?>%</span>
@@ -62,22 +55,21 @@ $offset     = $circumference - ($circumference * $completion / 100);
             <div class="col-12 col-md-6">
                 <div class="card issac-dashboard__card h-100">
                     <div class="card-body d-flex flex-column">
-                        <h2 class="card-title h5 mb-2"><?= esc_html($domainSummary['title']) ?></h2>
+                        <div class="mb-2 fosforos">
+                            <h6 class="text-brand-accent"><?= esc_html($domainSummary['title']) ?></h6>
+                        </div>
                         <div class="issac-dashboard__card-desc mb-3"><?= wp_kses_post($domainNode->description) ?></div>
 
-                        <div class="progress mb-2" role="progressbar"
-                             aria-valuenow="<?= (int) round($dCompletion) ?>"
-                             aria-valuemin="0" aria-valuemax="100"
-                             aria-label="<?= esc_attr($domainSummary['title'] . ' progress') ?>">
+                        <div class="progress mb-2" role="progressbar" aria-valuenow="<?= (int) round($dCompletion) ?>" aria-valuemin="0" aria-valuemax="100" aria-label="<?= esc_attr($domainSummary['title'] . ' progress') ?>">
                             <div class="progress-bar" style="width: <?= esc_attr($dCompletion) ?>%"></div>
                         </div>
 
                         <div class="issac-dashboard__card-stats small text-body-secondary mb-3">
                             <?php if ($dAnswered >= 1) : ?>
-                                <span class="issac-dashboard__card-avg">Avg <?= esc_html(number_format($domainSummary['average'], 1)) ?> &middot; <?= esc_html($domainSummary['band']) ?></span>
-                                <span class="issac-dashboard__card-count"><?= $dAnswered ?>/<?= $dTotal ?> answered</span>
+                            <span class="issac-dashboard__card-avg">Avg <?= esc_html(number_format($domainSummary['average'], 1)) ?> &middot; <?= esc_html($domainSummary['band']) ?></span>
+                            <span class="issac-dashboard__card-count"><?= $dAnswered ?>/<?= $dTotal ?> answered</span>
                             <?php else : ?>
-                                <span class="issac-dashboard__card-count"><?= $dAnswered ?>/<?= $dTotal ?> answered</span>
+                            <span class="issac-dashboard__card-count"><?= $dAnswered ?>/<?= $dTotal ?> answered</span>
                             <?php endif; ?>
                         </div>
 
@@ -100,19 +92,18 @@ $offset     = $circumference - ($circumference * $completion / 100);
         $reportUrl     = wp_nonce_url(rest_url('issac/v1/report'), 'wp_rest');
         ?>
         <?php if ($answered >= 1) : ?>
-            <a href="<?= esc_url($reportUrl) ?>" class="btn btn-brand-accent-outline issac-dashboard__download">
-                <?= esc_html($downloadLabel) ?>
-            </a>
+        <a href="<?= esc_url($reportUrl) ?>" class="btn btn-brand-accent-outline issac-dashboard__download">
+            <?= esc_html($downloadLabel) ?>
+        </a>
         <?php else : ?>
-            <button type="button" class="btn btn-brand-accent-outline issac-dashboard__download" disabled
-                    aria-disabled="true">
-                <?= esc_html($downloadLabel) ?>
-            </button>
+        <button type="button" class="btn btn-brand-accent-outline issac-dashboard__download" disabled aria-disabled="true">
+            <?= esc_html($downloadLabel) ?>
+        </button>
         <?php endif; ?>
         <?php if ($lastReportDate !== null) : ?>
-            <small class="d-block text-body-secondary mt-2">
-                Last report: <?= esc_html(wp_date('j M Y, g:i a', strtotime($lastReportDate . ' UTC'))) ?>
-            </small>
+        <small class="d-block text-body-secondary mt-2">
+            Last report: <?= esc_html(wp_date('j M Y, g:i a', strtotime($lastReportDate . ' UTC'))) ?>
+        </small>
         <?php endif; ?>
     </section>
 
