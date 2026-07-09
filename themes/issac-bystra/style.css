@@ -613,7 +613,7 @@ h2 {
   font-weight: 600;
   font-style: normal;
   font-size: 4.5rem;
-  color: #646B47;
+  color: #232D4B;
   line-height: 0.96;
   letter-spacing: 0;
   margin-bottom: 0.6rem;
@@ -624,7 +624,7 @@ h3 {
   font-weight: 600;
   font-style: normal;
   font-size: 4.2rem;
-  color: #646B47;
+  color: #232D4B;
   line-height: 0.96;
   letter-spacing: 0;
   margin-bottom: 0.4rem;
@@ -635,7 +635,7 @@ h4 {
   font-weight: 600;
   font-style: normal;
   font-size: 3.6rem;
-  color: #646B47;
+  color: #232D4B;
   line-height: 0.96;
   letter-spacing: 0;
   margin-bottom: 0.4rem;
@@ -646,7 +646,7 @@ h5 {
   font-weight: 600;
   font-style: normal;
   font-size: 2.6rem;
-  color: #646B47;
+  color: #232D4B;
   line-height: 1.23;
   letter-spacing: 0;
   margin-bottom: 0.3rem;
@@ -657,7 +657,7 @@ h6 {
   font-weight: 600;
   font-style: normal;
   font-size: 1.8rem;
-  color: #646B47;
+  color: #232D4B;
   line-height: 1.14;
   letter-spacing: 0;
   margin-bottom: 0.3rem;
@@ -3140,7 +3140,6 @@ Text Domain: bystra
   }
 }
 .issac-domain {
-  max-width: 900px;
   margin: 0 auto;
   padding: 2rem 1rem;
 }
@@ -3157,6 +3156,7 @@ Text Domain: bystra
   border-bottom: 1px solid var(--bs-border-color, #dee2e6);
   padding-bottom: 0.5rem;
   margin-bottom: 1rem;
+  color: #1E7D74;
 }
 
 .issac-item {

@@ -257,7 +257,6 @@
 }
 
 .issac-domain {
-    max-width: 900px;
     margin: 0 auto;
     padding: 2rem 1rem;
 }
@@ -274,6 +273,7 @@
     border-bottom: 1px solid var(--bs-border-color, #dee2e6);
     padding-bottom: 0.5rem;
     margin-bottom: 1rem;
+    color: colours.$brand-support-light;
 }
 
 .issac-item {

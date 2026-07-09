@@ -81,11 +81,11 @@ li {
 // This allows sensible defaults while enabling easy per-case overrides.
 $base-font-sizes: (
     h1: (family: $text-drama, size: 4.8rem, weight: $fw-600, line-height: 1.2, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.6rem),
-    h2: (family: $text-drama, size: 4.5rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$tinta, margin-bottom: 0.6rem),
-    h3: (family: $text-drama, size: 4.2rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$tinta, margin-bottom: 0.4rem),
-    h4: (family: $text-drama, size: 3.6rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$tinta, margin-bottom: 0.4rem),
-    h5: (family: $text-drama, size: 2.6rem, weight: $fw-600, line-height: 1.23, letter-spacing: 0, color: colours.$tinta, margin-bottom: 0.3rem),
-    h6: (family: $text-drama, size: 1.8rem, weight: $fw-600, line-height: 1.14, letter-spacing: 0, color: colours.$tinta, margin-bottom: 0.3rem)
+    h2: (family: $text-drama, size: 4.5rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.6rem),
+    h3: (family: $text-drama, size: 4.2rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.4rem),
+    h4: (family: $text-drama, size: 3.6rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.4rem),
+    h5: (family: $text-drama, size: 2.6rem, weight: $fw-600, line-height: 1.23, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.3rem),
+    h6: (family: $text-drama, size: 1.8rem, weight: $fw-600, line-height: 1.14, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.3rem)
 );
 
 $breakpoints: (

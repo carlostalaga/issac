@@ -52,7 +52,7 @@
 
 .issac-domain__progress-text {
   display: block;
-  font-size: 0.85rem;
+  font-size: 1.5rem;
   margin-top: 0.25rem;
   color: var(--bs-secondary-color, #6c757d);
 }

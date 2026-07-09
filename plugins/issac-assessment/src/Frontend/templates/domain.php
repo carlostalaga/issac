@@ -17,12 +17,9 @@ defined('ABSPATH') || exit;
         <div class="issac-domain__description"><?= wp_kses_post($domain->description) ?></div>
     </header>
 
-    <div class="issac-domain__progress-sticky">
-        <div class="issac-domain__progress progress" role="progressbar"
-             aria-valuenow="<?= (int) round($domainSummary['completion']) ?>"
-             aria-valuemin="0" aria-valuemax="100">
-            <div class="issac-domain__progress-bar progress-bar"
-                 style="width: <?= esc_attr($domainSummary['completion']) ?>%"></div>
+    <div class="issac-domain__progress-sticky my-5">
+        <div class="issac-domain__progress progress" role="progressbar" aria-valuenow="<?= (int) round($domainSummary['completion']) ?>" aria-valuemin="0" aria-valuemax="100">
+            <div class="issac-domain__progress-bar progress-bar" style="width: <?= esc_attr($domainSummary['completion']) ?>%"></div>
         </div>
         <span class="issac-domain__progress-text">
             <?= (int) $domainSummary['answered'] ?>/<?= (int) $domainSummary['total'] ?>
@@ -32,11 +29,11 @@ defined('ABSPATH') || exit;
 
     <?php foreach ($domain->subsections as $subsection) : ?>
     <section class="issac-subsection">
-        <h2 class="issac-subsection__title"><?= esc_html($subsection->title) ?></h2>
+        <h4 class="issac-subsection__title">— <?= esc_html($subsection->title) ?></h4>
 
         <?php foreach ($subsection->items as $item) : ?>
-            <?php if (!$item->isActive) continue; ?>
-            <?php
+        <?php if (!$item->isActive) continue; ?>
+        <?php
                 $currentScore = $responses[$item->itemCode] ?? 0;
                 $activeDescriptor = match (true) {
                     $currentScore >= 5 => 5,
@@ -45,41 +42,37 @@ defined('ABSPATH') || exit;
                     default            => 0,
                 };
             ?>
-            <article class="issac-item p-3 mb-3" data-item-code="<?= esc_attr($item->itemCode) ?>">
-                <div class="issac-item__prompt mb-2">
-                    <span class="issac-item__code"><?= esc_html($item->itemCode) ?></span>
-                    <?= esc_html($item->prompt) ?>
+        <article class="issac-item p-3 mb-3" data-item-code="<?= esc_attr($item->itemCode) ?>">
+            <div class="issac-item__prompt mb-2">
+                <span class="issac-item__code"><?= esc_html($item->itemCode) ?></span>
+                <?= esc_html($item->prompt) ?>
+            </div>
+
+            <fieldset class="issac-item__scores mb-3">
+                <legend class="visually-hidden">Score for item <?= esc_attr($item->itemCode) ?></legend>
+                <?php for ($score = 1; $score <= 5; $score++) : ?>
+                <input type="radio" class="btn-check" name="score_<?= esc_attr($item->itemCode) ?>" id="score_<?= esc_attr($item->itemCode) ?>_<?= $score ?>" value="<?= $score ?>" autocomplete="off" <?php checked($currentScore, $score); ?>>
+                <label class="btn btn-outline-primary issac-score__btn" for="score_<?= esc_attr($item->itemCode) ?>_<?= $score ?>"><?= $score ?></label>
+                <?php endfor; ?>
+            </fieldset>
+
+            <div class="issac-item__descriptors row">
+                <div class="col-md-4 issac-descriptor issac-descriptor--1<?= $activeDescriptor === 1 ? ' issac-descriptor--active' : '' ?>">
+                    <strong class="issac-descriptor__label">Exploring</strong>
+                    <div class="issac-descriptor__text"><?= wp_kses_post($item->descriptor1) ?></div>
                 </div>
-
-                <fieldset class="issac-item__scores mb-3">
-                    <legend class="visually-hidden">Score for item <?= esc_attr($item->itemCode) ?></legend>
-                    <?php for ($score = 1; $score <= 5; $score++) : ?>
-                    <input type="radio" class="btn-check" name="score_<?= esc_attr($item->itemCode) ?>"
-                           id="score_<?= esc_attr($item->itemCode) ?>_<?= $score ?>"
-                           value="<?= $score ?>" autocomplete="off"
-                           <?php checked($currentScore, $score); ?>>
-                    <label class="btn btn-outline-primary issac-score__btn"
-                           for="score_<?= esc_attr($item->itemCode) ?>_<?= $score ?>"><?= $score ?></label>
-                    <?php endfor; ?>
-                </fieldset>
-
-                <div class="issac-item__descriptors row">
-                    <div class="col-md-4 issac-descriptor issac-descriptor--1<?= $activeDescriptor === 1 ? ' issac-descriptor--active' : '' ?>">
-                        <strong class="issac-descriptor__label">Exploring</strong>
-                        <div class="issac-descriptor__text"><?= wp_kses_post($item->descriptor1) ?></div>
-                    </div>
-                    <div class="col-md-4 issac-descriptor issac-descriptor--3<?= $activeDescriptor === 3 ? ' issac-descriptor--active' : '' ?>">
-                        <strong class="issac-descriptor__label">Implementing</strong>
-                        <div class="issac-descriptor__text"><?= wp_kses_post($item->descriptor3) ?></div>
-                    </div>
-                    <div class="col-md-4 issac-descriptor issac-descriptor--5<?= $activeDescriptor === 5 ? ' issac-descriptor--active' : '' ?>">
-                        <strong class="issac-descriptor__label">Sustained Action</strong>
-                        <div class="issac-descriptor__text"><?= wp_kses_post($item->descriptor5) ?></div>
-                    </div>
+                <div class="col-md-4 issac-descriptor issac-descriptor--3<?= $activeDescriptor === 3 ? ' issac-descriptor--active' : '' ?>">
+                    <strong class="issac-descriptor__label">Implementing</strong>
+                    <div class="issac-descriptor__text"><?= wp_kses_post($item->descriptor3) ?></div>
                 </div>
+                <div class="col-md-4 issac-descriptor issac-descriptor--5<?= $activeDescriptor === 5 ? ' issac-descriptor--active' : '' ?>">
+                    <strong class="issac-descriptor__label">Sustained Action</strong>
+                    <div class="issac-descriptor__text"><?= wp_kses_post($item->descriptor5) ?></div>
+                </div>
+            </div>
 
-                <div class="issac-item__status" aria-live="polite"></div>
-            </article>
+            <div class="issac-item__status" aria-live="polite"></div>
+        </article>
         <?php endforeach; ?>
     </section>
     <?php endforeach; ?>
