@@ -2885,6 +2885,260 @@ Slider nav hero block
     display: none;
   }
 }
+/*
+Theme Name: Issac Bystra
+Theme URI: https://envyus.com.au/
+Author: Envy Us
+Author URI: https://envyus.com.au/
+Description: Bystra Jun 2026
+Version: 1.1
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: minimal, flexible blocks, options, scss structure, responsive, bootstrap
+Text Domain: bystra
+*/
+.issac-front-hero {
+  --heading-colour: #ffffff;
+  --text-colour: #FAF7EE;
+  position: relative;
+  isolation: isolate;
+  padding-top: 12rem;
+  padding-bottom: 8rem;
+  overflow: hidden;
+}
+.issac-front-hero::before {
+  content: "";
+  position: absolute;
+  top: -25%;
+  right: -5%;
+  width: min(70rem, 80%);
+  height: min(70rem, 90%);
+  background: radial-gradient(ellipse at center, rgba(255, 211, 0, 0.18) 0%, transparent 68%);
+  pointer-events: none;
+  z-index: 0;
+}
+.issac-front-hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.issac-front-hero__tag {
+  display: inline-block;
+  margin: 0 0 2.4rem;
+  padding: 0.5rem 1.4rem;
+  border: 1px solid #FFD300;
+  border-radius: 50rem;
+  font-family: "alexandria", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.5rem;
+  letter-spacing: 0.08em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #FFD300;
+}
+
+.issac-front-hero__title {
+  margin-bottom: 2rem;
+  color: #ffffff;
+}
+
+.issac-front-hero__lead {
+  max-width: 84rem;
+  margin: 0 0 4rem;
+  font-family: "alexandria", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: rgba(250, 247, 238, 0.82);
+}
+
+.issac-front-hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem 4.5rem;
+}
+
+.issac-front-hero__stat-value {
+  display: block;
+  font-family: "alexandria", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 4.8rem;
+  line-height: 1;
+  color: #FFD300;
+}
+
+.issac-front-hero__stat-label {
+  display: block;
+  margin-top: 0.8rem;
+  font-family: "alexandria", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 1.3;
+  color: rgba(250, 247, 238, 0.82);
+}
+
+@media (max-width: 992px) {
+  .issac-front-hero {
+    padding-top: 8rem;
+    padding-bottom: 6rem;
+  }
+  .issac-front-hero__stat-value {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 576px) {
+  .issac-front-hero {
+    padding-top: 6rem;
+    padding-bottom: 5rem;
+  }
+  .issac-front-hero__stats {
+    gap: 2.4rem 3rem;
+  }
+  .issac-front-hero__stat-value {
+    font-size: 3.6rem;
+  }
+}
+.issac-intro {
+  padding: 8rem 0;
+  background-color: #ffffff;
+}
+
+.issac-intro__title {
+  margin-bottom: 2.4rem;
+  color: #232D4B;
+}
+
+.issac-intro__content p {
+  margin-bottom: 2rem;
+  font-family: "alexandria", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.8rem;
+  line-height: 1.6;
+  color: #646B47;
+}
+.issac-intro__content p:last-child {
+  margin-bottom: 0;
+}
+.issac-intro__content strong {
+  color: #232D4B;
+  font-weight: 700;
+}
+
+.issac-intro__artifact {
+  padding: 4rem;
+  background-color: #FAF7EE;
+  border: 1px solid rgba(219, 200, 182, 0.35);
+  border-radius: 2rem;
+}
+
+.issac-intro__artifact-heading {
+  margin: 0 0 3.2rem;
+  font-family: "alexandria", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 1.8rem;
+  letter-spacing: 0.1em;
+  line-height: 1.2;
+  text-transform: uppercase;
+  color: #0D2C6B;
+}
+
+.issac-intro__steps {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.issac-intro__step {
+  display: flex;
+  gap: 1.8rem;
+  align-items: flex-start;
+  margin-bottom: 3.2rem;
+}
+.issac-intro__step:last-child {
+  margin-bottom: 0;
+}
+
+.issac-intro__step-num {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.6rem;
+  font-family: "alexandria", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: #ffffff;
+}
+.issac-intro__step-num--1 {
+  background-color: #232D4B;
+}
+.issac-intro__step-num--2 {
+  background-color: #FFD300;
+  color: #232D4B;
+}
+.issac-intro__step-num--3 {
+  background-color: #CB9828;
+}
+.issac-intro__step-num--4 {
+  background-color: #DC5300;
+}
+
+.issac-intro__step-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.issac-intro__step-title {
+  display: block;
+  margin-bottom: 0.4rem;
+  font-family: "alexandria", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  font-size: 1.7rem;
+  line-height: 1.3;
+  color: #232D4B;
+}
+
+.issac-intro__step-text {
+  display: block;
+  font-family: "alexandria", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: #646B47;
+}
+
+@media (max-width: 992px) {
+  .issac-intro {
+    padding: 6rem 0;
+  }
+  .issac-intro__artifact {
+    margin-top: 1rem;
+    padding: 3.2rem;
+  }
+  .issac-intro__step {
+    margin-bottom: 2.8rem;
+  }
+}
+@media (max-width: 576px) {
+  .issac-intro {
+    padding: 5rem 0;
+  }
+  .issac-intro__artifact {
+    padding: 2.4rem;
+  }
+}
 .issac-domain {
   max-width: 900px;
   margin: 0 auto;
@@ -3801,194 +4055,282 @@ html {
   max-width: 100%;
 }
 
-.btn-brand-main {
-  font-family: "alexandria", sans-serif;
-  font-weight: 600;
-  font-style: normal;
-  display: inline-flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  font-size: 1.6rem;
-  letter-spacing: 0.24rem;
-  border: 2px solid #FFD300;
-  border-radius: 24px;
-  margin: 0 3px;
-  padding: 6px 18px 6px 18px;
-  background-color: #FFD300;
-  color: #FAF7EE;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-.btn-brand-main:hover {
-  border-color: #FFD300;
-  background-color: #FAF7EE;
-  color: #FFD300;
-  text-decoration: none;
-}
-
 .btn-brand-accent {
   font-family: "alexandria", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: center;
+  gap: 0.8rem;
   font-size: 1.6rem;
-  letter-spacing: 0.24rem;
+  line-height: 1.25;
+  letter-spacing: 0;
   border: 2px solid #232D4B;
-  border-radius: 24px;
-  margin: 0 3px;
-  padding: 6px 18px 6px 18px;
+  border-radius: 0.8rem;
+  margin: 0;
+  padding: 1.2rem 2.4rem;
   background-color: #232D4B;
   color: #ffffff;
-  text-transform: uppercase;
+  text-transform: none;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(35, 45, 75, 0.28);
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-brand-accent:hover, .btn-brand-accent:focus-visible {
+  border-color: rgb(25.2636363636, 32.4818181818, 54.1363636364);
+  background-color: rgb(25.2636363636, 32.4818181818, 54.1363636364);
+  color: #ffffff;
   text-decoration: none;
 }
-.btn-brand-accent:hover {
+.btn-brand-accent:disabled, .btn-brand-accent.disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+.btn-brand-accent:hover, .btn-brand-accent:focus-visible {
+  box-shadow: 0 6px 18px rgba(35, 45, 75, 0.34);
+}
+
+.btn-brand-accent-outline {
+  font-family: "alexandria", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  letter-spacing: 0;
+  border: 2px solid #232D4B;
+  border-radius: 0.8rem;
+  margin: 0;
+  padding: 1.2rem 2.4rem;
+  background-color: #ffffff;
+  color: #232D4B;
+  text-transform: none;
+  text-decoration: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-brand-accent-outline:hover, .btn-brand-accent-outline:focus-visible {
   border-color: #232D4B;
-  background-color: #FAF7EE;
+  background-color: #232D4B;
+  color: #ffffff;
+  text-decoration: none;
+}
+.btn-brand-accent-outline:disabled, .btn-brand-accent-outline.disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.btn-brand-main {
+  font-family: "alexandria", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  font-size: 1.6rem;
+  line-height: 1.25;
+  letter-spacing: 0;
+  border: 2px solid #FFD300;
+  border-radius: 0.8rem;
+  margin: 0;
+  padding: 1.2rem 2.4rem;
+  background-color: #FFD300;
+  color: #232D4B;
+  text-transform: none;
+  text-decoration: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-brand-main:hover, .btn-brand-main:focus-visible {
+  border-color: #CB9828;
+  background-color: #CB9828;
   color: #232D4B;
   text-decoration: none;
+}
+.btn-brand-main:disabled, .btn-brand-main.disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.btn-sm.btn-brand-accent,
+.btn-sm.btn-brand-accent-outline,
+.btn-sm.btn-brand-main,
+.btn-sm.btn-blanco,
+.btn-sm.btn-hueso,
+.btn-sm.btn-brand-main-dark-light,
+.btn-sm.btn-posidonia {
+  padding: 0.6rem 1.6rem;
+  font-size: 1.4rem;
 }
 
 .btn-blanco {
   font-family: "alexandria", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: center;
+  gap: 0.8rem;
   font-size: 1.6rem;
-  letter-spacing: 0.24rem;
+  line-height: 1.25;
+  letter-spacing: 0;
   border: 2px solid #ffffff;
-  border-radius: 24px;
-  margin: 0 3px;
-  padding: 6px 18px 6px 18px;
+  border-radius: 0.8rem;
+  margin: 0;
+  padding: 1.2rem 2.4rem;
   background-color: #ffffff;
   color: #646B47;
-  text-transform: uppercase;
+  text-transform: none;
   text-decoration: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
-.btn-blanco:hover {
+.btn-blanco:hover, .btn-blanco:focus-visible {
   border-color: #FAF7EE;
   background-color: #FAF7EE;
   color: #646B47;
   text-decoration: none;
+}
+.btn-blanco:disabled, .btn-blanco.disabled {
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 .btn-hueso {
   font-family: "alexandria", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: center;
+  gap: 0.8rem;
   font-size: 1.6rem;
-  letter-spacing: 0.24rem;
+  line-height: 1.25;
+  letter-spacing: 0;
   border: 2px solid #DBC8B6;
-  border-radius: 24px;
-  margin: 0 3px;
-  padding: 6px 18px 6px 18px;
+  border-radius: 0.8rem;
+  margin: 0;
+  padding: 1.2rem 2.4rem;
   background-color: #DBC8B6;
   color: #646B47;
-  text-transform: uppercase;
+  text-transform: none;
   text-decoration: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
-.btn-hueso:hover {
+.btn-hueso:hover, .btn-hueso:focus-visible {
   border-color: #FAF7EE;
   background-color: #FAF7EE;
   color: #646B47;
   text-decoration: none;
 }
+.btn-hueso:disabled, .btn-hueso.disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
 
-/* @mixin button-styles($bg-colour, $bg-colour-hover, $text-colour, $text-colour-hover) {
-    @include fonts.font(fonts.$text-prose, fonts.$fw-500); */
 .btn-brand-main-dark-light {
   font-family: "alexandria", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: center;
+  gap: 0.8rem;
   font-size: 1.6rem;
-  letter-spacing: 0.24rem;
+  line-height: 1.25;
+  letter-spacing: 0;
   border: 2px solid #ffffff;
-  border-radius: 24px;
-  margin: 0 3px;
-  padding: 6px 18px 6px 18px;
+  border-radius: 0.8rem;
+  margin: 0;
+  padding: 1.2rem 2.4rem;
   background-color: #ffffff;
   color: #CB9828;
-  text-transform: uppercase;
+  text-transform: none;
   text-decoration: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  font-size: 2.1rem;
+  font-weight: 300;
 }
-.btn-brand-main-dark-light:hover {
+.btn-brand-main-dark-light:hover, .btn-brand-main-dark-light:focus-visible {
   border-color: #77915D;
   background-color: #77915D;
   color: #CB9828;
   text-decoration: none;
 }
-.btn-brand-main-dark-light {
-  font-size: 2.1rem;
-  font-weight: 300;
+.btn-brand-main-dark-light:disabled, .btn-brand-main-dark-light.disabled {
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 .btn-posidonia {
   font-family: "alexandria", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: center;
+  gap: 0.8rem;
   font-size: 1.6rem;
-  letter-spacing: 0.24rem;
+  line-height: 1.25;
+  letter-spacing: 0;
   border: 2px solid #0D2C6B;
-  border-radius: 24px;
-  margin: 0 3px;
-  padding: 6px 18px 6px 18px;
+  border-radius: 0.8rem;
+  margin: 0;
+  padding: 1.2rem 2.4rem;
   background-color: #0D2C6B;
   color: #FAF7EE;
-  text-transform: uppercase;
+  text-transform: none;
   text-decoration: none;
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 }
-.btn-posidonia:hover {
+.btn-posidonia:hover, .btn-posidonia:focus-visible {
   border-color: #0A1F4A;
   background-color: #0A1F4A;
   color: #eaeaea;
   text-decoration: none;
 }
+.btn-posidonia:disabled, .btn-posidonia.disabled {
+  opacity: 0.55;
+  pointer-events: none;
+}
 
 .btn-hero {
   font-family: "alexandria", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   display: inline-flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 24px;
+  justify-content: center;
+  gap: 0.8rem;
   font-size: 1.6rem;
-  letter-spacing: 0.24rem;
+  line-height: 1.25;
+  letter-spacing: 0;
   border: 2px solid #ffffff;
-  border-radius: 24px;
-  margin: 0 3px;
-  padding: 6px 18px 6px 18px;
+  border-radius: 0.8rem;
+  margin: 0;
+  padding: 1.2rem 2.4rem;
   background-color: #ffffff;
   color: #0A0203;
-  text-transform: uppercase;
+  text-transform: none;
   text-decoration: none;
-}
-.btn-hero:hover {
-  border-color: #232D4B;
-  background-color: #232D4B;
-  color: #0A0203;
-  text-decoration: none;
-}
-.btn-hero {
+  box-shadow: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
   justify-content: center;
   padding: 24px 18px;
   min-height: 105px !important;
@@ -3997,6 +4339,16 @@ html {
   letter-spacing: 0rem;
   font-family: "alexandria", sans-serif;
   font-weight: 500;
+}
+.btn-hero:hover, .btn-hero:focus-visible {
+  border-color: #232D4B;
+  background-color: #232D4B;
+  color: #0A0203;
+  text-decoration: none;
+}
+.btn-hero:disabled, .btn-hero.disabled {
+  opacity: 0.55;
+  pointer-events: none;
 }
 .btn-hero:hover, .btn-hero:focus, .btn-hero.is-active, .btn-hero.is-active:focus {
   border-color: #232D4B;
@@ -5329,3 +5681,5 @@ body.modal-open {
     padding: 30px 39px 9px 39px !important;
   }
 }
+
+/*# sourceMappingURL=style.css.map */

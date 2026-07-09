@@ -44,7 +44,7 @@
 
             <div class="container d-flex justify-content-center px-0">
                 <div class="row  d-flex justify-content-center w-100">
-                    <div class="col-11 col-lg-10">
+                    <div class="col-12">
 
 
                         <!-- White pill container -->

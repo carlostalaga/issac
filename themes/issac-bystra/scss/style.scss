@@ -1005,28 +1005,47 @@ $corner-radius: 50px;
 }
 
 
-@mixin button-styles($bg-colour, $bg-colour-hover, $text-colour, $text-colour-hover, $border-colour, $border-colour-hover) {
-    @include fonts.font(fonts.$text-prose, fonts.$fw-600);
+@mixin button-styles(
+    $bg-colour,
+    $bg-colour-hover,
+    $text-colour,
+    $text-colour-hover,
+    $border-colour,
+    $border-colour-hover,
+    $shadow: none
+) {
+    @include fonts.font(fonts.$text-prose, fonts.$fw-700);
     display: inline-flex;
     align-items: center;
-    justify-content: space-between;
-    gap: 24px;
+    justify-content: center;
+    gap: 0.8rem;
     font-size: 1.6rem;
-    letter-spacing: 0.24rem;
+    line-height: 1.25;
+    letter-spacing: 0;
     border: 2px solid $border-colour;
-    border-radius: 24px;
-    margin: 0 3px;
-    padding: 6px 18px 6px 18px;
+    border-radius: 0.8rem;
+    margin: 0;
+    padding: 1.2rem 2.4rem;
     background-color: $bg-colour;
     color: $text-colour;
-    text-transform: uppercase;
+    text-transform: none;
     text-decoration: none;
+    box-shadow: $shadow;
+    cursor: pointer;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
 
-    &:hover {
+    &:hover,
+    &:focus-visible {
         border-color: $border-colour-hover;
         background-color: $bg-colour-hover;
         color: $text-colour-hover;
         text-decoration: none;
+    }
+
+    &:disabled,
+    &.disabled {
+        opacity: 0.55;
+        pointer-events: none;
     }
 }
 
@@ -1036,16 +1055,58 @@ $corner-radius: 50px;
     max-width: 100%;
 }
 
-
-.btn-brand-main {
-    @include button-styles(colours.$brand-main, colours.$hueso, colours.$hueso, colours.$brand-main, colours.$brand-main, colours.$brand-main);
-}
-
-
+// Primary — Midnight Navy fill, white label (e.g. "Go to your assessment")
 .btn-brand-accent {
-    @include button-styles(colours.$brand-accent, colours.$hueso, colours.$blanco, colours.$brand-accent, colours.$brand-accent, colours.$brand-accent);
+    @include button-styles(
+        colours.$brand-accent,
+        color.adjust(colours.$brand-accent, $lightness: -6%),
+        colours.$blanco,
+        colours.$blanco,
+        colours.$brand-accent,
+        color.adjust(colours.$brand-accent, $lightness: -6%),
+        0 4px 14px color.change(colours.$brand-accent, $alpha: 0.28)
+    );
+
+    &:hover,
+    &:focus-visible {
+        box-shadow: 0 6px 18px color.change(colours.$brand-accent, $alpha: 0.34);
+    }
 }
 
+// Secondary — white fill, navy border and label (e.g. "Review domain")
+.btn-brand-accent-outline {
+    @include button-styles(
+        colours.$blanco,
+        colours.$brand-accent,
+        colours.$brand-accent,
+        colours.$blanco,
+        colours.$brand-accent,
+        colours.$brand-accent
+    );
+}
+
+// Gold — Flinders Gold fill, navy label (milestone / rare emphasis)
+.btn-brand-main {
+    @include button-styles(
+        colours.$brand-main,
+        colours.$brand-main-dark,
+        colours.$brand-accent,
+        colours.$brand-accent,
+        colours.$brand-main,
+        colours.$brand-main-dark
+    );
+}
+
+.btn-sm.btn-brand-accent,
+.btn-sm.btn-brand-accent-outline,
+.btn-sm.btn-brand-main,
+.btn-sm.btn-blanco,
+.btn-sm.btn-hueso,
+.btn-sm.btn-brand-main-dark-light,
+.btn-sm.btn-posidonia {
+    padding: 0.6rem 1.6rem;
+    font-size: 1.4rem;
+}
 
 .btn-blanco {
     @include button-styles(colours.$blanco, colours.$hueso, colours.$tinta, colours.$tinta, colours.$blanco, colours.$hueso);
@@ -1055,8 +1116,6 @@ $corner-radius: 50px;
     @include button-styles(colours.$hueso-dark, colours.$hueso, colours.$tinta, colours.$tinta, colours.$hueso-dark, colours.$hueso);
 }
 
-/* @mixin button-styles($bg-colour, $bg-colour-hover, $text-colour, $text-colour-hover) {
-    @include fonts.font(fonts.$text-prose, fonts.$fw-500); */
 .btn-brand-main-dark-light {
     @include button-styles(colours.$blanco, colours.$brand-accent-light, colours.$brand-main-dark, colours.$brand-main-dark, colours.$blanco, colours.$brand-accent-light);
     font-size: 2.1rem;

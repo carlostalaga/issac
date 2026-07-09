@@ -1,5 +1,261 @@
 // ISSAC Assessment — Theme-level page styles
 
+@use 'sass:color';
+@use 'colours' as colours;
+@use 'fonts' as fonts;
+
+// ── Front page hero ──────────────────────────────────────────────
+
+.issac-front-hero {
+    --heading-colour: #{colours.$blanco};
+    --text-colour: #{colours.$hueso};
+
+    position: relative;
+    isolation: isolate;
+    padding-top: 12rem;
+    padding-bottom: 8rem;
+    overflow: hidden;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: -25%;
+        right: -5%;
+        width: min(70rem, 80%);
+        height: min(70rem, 90%);
+        background: radial-gradient(ellipse at center,
+                color.change(colours.$brand-main, $alpha: 0.18) 0%,
+                transparent 68%);
+        pointer-events: none;
+        z-index: 0;
+    }
+
+    >.container {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+.issac-front-hero__tag {
+    display: inline-block;
+    margin: 0 0 2.4rem;
+    padding: 0.5rem 1.4rem;
+    border: 1px solid colours.$brand-main;
+    border-radius: 50rem;
+    @include fonts.font(fonts.$text-prose, fonts.$fw-600);
+    font-size: 1.5rem;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: colours.$brand-main;
+}
+
+.issac-front-hero__title {
+    margin-bottom: 2rem;
+    color: colours.$blanco;
+}
+
+.issac-front-hero__lead {
+    max-width: 84rem;
+    margin: 0 0 4rem;
+    @include fonts.font(fonts.$text-prose, fonts.$fw-400);
+    font-size: 1.8rem;
+    line-height: 1.5;
+    color: color.change(colours.$hueso, $alpha: 0.82);
+}
+
+.issac-front-hero__stats {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3rem 4.5rem;
+}
+
+.issac-front-hero__stat-value {
+    display: block;
+    @include fonts.font(fonts.$text-drama, fonts.$fw-700);
+    font-size: 4.8rem;
+    line-height: 1;
+    color: colours.$brand-main;
+}
+
+.issac-front-hero__stat-label {
+    display: block;
+    margin-top: 0.8rem;
+    @include fonts.font(fonts.$text-prose, fonts.$fw-400);
+    font-size: 1.4rem;
+    line-height: 1.3;
+    color: color.change(colours.$hueso, $alpha: 0.82);
+}
+
+@media (max-width: 992px) {
+    .issac-front-hero {
+        padding-top: 8rem;
+        padding-bottom: 6rem;
+    }
+
+    .issac-front-hero__stat-value {
+        font-size: 4rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .issac-front-hero {
+        padding-top: 6rem;
+        padding-bottom: 5rem;
+    }
+
+    .issac-front-hero__stats {
+        gap: 2.4rem 3rem;
+    }
+
+    .issac-front-hero__stat-value {
+        font-size: 3.6rem;
+    }
+}
+
+// ── Front page intro (two-column) ────────────────────────────────
+
+.issac-intro {
+    padding: 8rem 0;
+    background-color: colours.$blanco;
+}
+
+.issac-intro__title {
+    margin-bottom: 2.4rem;
+    color: colours.$brand-accent;
+}
+
+.issac-intro__content {
+    p {
+        margin-bottom: 2rem;
+        @include fonts.font(fonts.$text-prose, fonts.$fw-400);
+        font-size: 1.8rem;
+        line-height: 1.6;
+        color: colours.$tinta;
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    strong {
+        color: colours.$brand-accent;
+        font-weight: fonts.$fw-700;
+    }
+}
+
+.issac-intro__artifact {
+    padding: 4rem;
+    background-color: colours.$hueso;
+    border: 1px solid color.change(colours.$hueso-dark, $alpha: 0.35);
+    border-radius: 2rem;
+}
+
+.issac-intro__artifact-heading {
+    margin: 0 0 3.2rem;
+    @include fonts.font(fonts.$text-prose, fonts.$fw-600);
+    font-size: 1.8rem;
+    letter-spacing: 0.1em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: colours.$posidonia;
+}
+
+.issac-intro__steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.issac-intro__step {
+    display: flex;
+    gap: 1.8rem;
+    align-items: flex-start;
+    margin-bottom: 3.2rem;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.issac-intro__step-num {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 3rem;
+    height: 3rem;
+    border-radius: 0.6rem;
+    @include fonts.font(fonts.$text-drama, fonts.$fw-700);
+    font-size: 1.5rem;
+    line-height: 1;
+    color: colours.$blanco;
+
+    &--1 {
+        background-color: colours.$brand-accent;
+    }
+
+    &--2 {
+        background-color: colours.$brand-main;
+        color: colours.$brand-accent;
+    }
+
+    &--3 {
+        background-color: colours.$brand-main-dark;
+    }
+
+    &--4 {
+        background-color: colours.$brand-support;
+    }
+}
+
+.issac-intro__step-body {
+    flex: 1;
+    min-width: 0;
+}
+
+.issac-intro__step-title {
+    display: block;
+    margin-bottom: 0.4rem;
+    @include fonts.font(fonts.$text-drama, fonts.$fw-700);
+    font-size: 1.7rem;
+    line-height: 1.3;
+    color: colours.$brand-accent;
+}
+
+.issac-intro__step-text {
+    display: block;
+    @include fonts.font(fonts.$text-prose, fonts.$fw-400);
+    font-size: 1.5rem;
+    line-height: 1.5;
+    color: colours.$tinta;
+}
+
+@media (max-width: 992px) {
+    .issac-intro {
+        padding: 6rem 0;
+    }
+
+    .issac-intro__artifact {
+        margin-top: 1rem;
+        padding: 3.2rem;
+    }
+
+    .issac-intro__step {
+        margin-bottom: 2.8rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .issac-intro {
+        padding: 5rem 0;
+    }
+
+    .issac-intro__artifact {
+        padding: 2.4rem;
+    }
+}
+
 .issac-domain {
     max-width: 900px;
     margin: 0 auto;

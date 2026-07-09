@@ -81,7 +81,12 @@ $offset     = $circumference - ($circumference * $completion / 100);
                             <?php endif; ?>
                         </div>
 
-                        <a href="<?= esc_url($domainUrl) ?>" class="btn btn-primary mt-auto issac-dashboard__cta"><?= esc_html($ctaLabel) ?></a>
+                        <?php
+                        $ctaClass = $dCompletion >= 100.0
+                            ? 'btn btn-brand-accent-outline'
+                            : 'btn btn-brand-accent';
+                        ?>
+                        <a href="<?= esc_url($domainUrl) ?>" class="<?= esc_attr($ctaClass) ?> mt-auto issac-dashboard__cta"><?= esc_html($ctaLabel) ?></a>
                     </div>
                 </div>
             </div>
@@ -95,11 +100,11 @@ $offset     = $circumference - ($circumference * $completion / 100);
         $reportUrl     = wp_nonce_url(rest_url('issac/v1/report'), 'wp_rest');
         ?>
         <?php if ($answered >= 1) : ?>
-            <a href="<?= esc_url($reportUrl) ?>" class="btn btn-outline-secondary issac-dashboard__download">
+            <a href="<?= esc_url($reportUrl) ?>" class="btn btn-brand-accent-outline issac-dashboard__download">
                 <?= esc_html($downloadLabel) ?>
             </a>
         <?php else : ?>
-            <button type="button" class="btn btn-outline-secondary issac-dashboard__download" disabled
+            <button type="button" class="btn btn-brand-accent-outline issac-dashboard__download" disabled
                     aria-disabled="true">
                 <?= esc_html($downloadLabel) ?>
             </button>

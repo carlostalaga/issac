@@ -72,15 +72,6 @@
                                 </div>
 
 
-                                <?php
-                                /* -------------------------------------------------------------------------- */
-                                /*                                    Idea                                   */
-                                /* -------------------------------------------------------------------------- */
-                                ?>
-                                <div class="mb-5 text-center">
-                                    <span class="text-hueso">Lorem Ipsum</span>
-                                </div>
-
 
 
 
@@ -90,93 +81,7 @@
 
 
                             <div class="col-md-12 col-lg-8 col-xl-9 col-xxl-10">
-                                <div class="row g-5">
 
-
-                                    <div class="col-12 text-lg-end" style="margin-top: 90px; margin-bottom: 0px;">
-                                        &nbsp;
-                                    </div>
-
-
-
-                                    <?php
-                                    /* -------------------------------------------------------------------------- */
-                                    /*                                 Quick Links                                */
-                                    /* -------------------------------------------------------------------------- */
-                                    ?>
-                                    <div class="col-6 col-lg-6 col-xl-3 col-xxl-2 offset-xxl-1">
-
-                                        <div class="titles-footer mb-4">
-                                            Quick Links
-                                        </div>
-                                        <nav aria-label="Footer primary navigation" id="footer-menu" class="mb-5">
-                                            <?php /* Footer Menu */
-                                    wp_nav_menu( array(
-                                        'menu' => 'footer-menu',
-                                        'theme_location' => 'footer-menu',
-                                        'fallback_cb'    => false
-                                    ) );
-                                ?>
-                                        </nav>
-
-                                    </div>
-
-
-                                    <?php
-                                    /* -------------------------------------------------------------------------- */
-                                    /*                                                            */
-                                    /* -------------------------------------------------------------------------- */
-                                    ?>
-                                    <div class="col-6 col-lg-6 col-xl-3 col-xxl-3">
-
-                                        <div class="titles-footer mb-4">
-                                            Acknowledgements
-                                        </div>
-                                        <div class="text-white">
-                                            <?php $footer_locations = get_field('locations', 'option'); ?>
-                                            <?php if ($footer_locations) : ?>
-                                            <?php foreach ($footer_locations as $footer_location) : ?>
-                                            <?php
-                                            $footer_location_name = $footer_location['location'] ?? '';
-                                            $footer_location_address = $footer_location['address'] ?? '';
-                                            $footer_location_phone = $footer_location['phone'] ?? '';
-                                            $footer_location_phone_link = $footer_location_phone ? preg_replace('/[^0-9+]/', '', $footer_location_phone) : '';
-                                            ?>
-                                            <div class="mb-4">
-                                                <?php if ($footer_location_name) : ?>
-                                                <div class="text-drama-700"><?php echo esc_html($footer_location_name); ?></div>
-                                                <?php endif; ?>
-                                                <?php if ($footer_location_address) : ?>
-                                                <div class="text-prose-400"><?php echo wp_kses_post($footer_location_address); ?></div>
-                                                <?php endif; ?>
-                                                <?php if ($footer_location_phone) : ?>
-                                                <div class="text-prose-400">P: <a href="tel:<?php echo esc_attr($footer_location_phone_link); ?>" class="text-white"><?php echo esc_html($footer_location_phone); ?></a></div>
-                                                <?php endif; ?>
-                                            </div>
-                                            <?php endforeach; ?>
-                                            <?php endif; ?>
-                                        </div>
-                                    </div>
-
-
-                                    <?php
-                                    /* -------------------------------------------------------------------------- */
-                                    /*                                Get in Touch                                */
-                                    /* -------------------------------------------------------------------------- */
-                                    ?>
-                                    <div class="col-12  col-xl-6 col-xxl-5 offset-xxl-1">
-
-                                        <div class="titles-footer mb-4">
-                                            Get in Touch
-                                        </div>
-                                        <div>
-                                            <?php echo do_shortcode('[contact-form-7 id="21764f5" title="Contact form 1"]'); ?>
-                                        </div>
-                                    </div>
-
-
-
-                                </div>
                             </div>
 
 
