@@ -277,13 +277,20 @@
 }
 
 .issac-item {
-    border: 1px solid var(--bs-border-color, #dee2e6);
+    border: 1px solid var(--bs-border-color, #CB9828);
     border-radius: 0.5rem;
 }
 
 .issac-item__code {
     font-weight: 700;
     margin-right: 0.25rem;
+    color: colours.$brand-support-light;
+}
+
+.issac-item__prompt {
+    font-weight: 600;
+    margin-right: 0.25rem;
+    color: colours.$brand-accent;
 }
 
 .issac-login-prompt,

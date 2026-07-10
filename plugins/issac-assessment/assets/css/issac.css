@@ -6,8 +6,8 @@
   padding: 0;
 }
 .issac-item__scores .issac-score__btn {
-  width: 2.5rem;
-  height: 2.5rem;
+  width: 4.5rem;
+  height: 5rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -52,7 +52,7 @@
 
 .issac-domain__progress-text {
   display: block;
-  font-size: 1.5rem;
+  font-size: 0.85rem;
   margin-top: 0.25rem;
   color: var(--bs-secondary-color, #6c757d);
 }
@@ -101,5 +101,3 @@
   background-color: var(--colour-brand-support-light, #1E7D74);
   border-radius: 50rem;
 }
-
-/*# sourceMappingURL=issac.css.map */

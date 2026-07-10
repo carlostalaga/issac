@@ -42,17 +42,17 @@ defined('ABSPATH') || exit;
                     default            => 0,
                 };
             ?>
-        <article class="issac-item p-3 mb-3" data-item-code="<?= esc_attr($item->itemCode) ?>">
+        <article class="issac-item p-5 my-5" data-item-code="<?= esc_attr($item->itemCode) ?>">
             <div class="issac-item__prompt mb-2">
                 <span class="issac-item__code"><?= esc_html($item->itemCode) ?></span>
-                <?= esc_html($item->prompt) ?>
+                <span class="issac-item__prompt"><?= esc_html($item->prompt) ?></span>
             </div>
 
-            <fieldset class="issac-item__scores mb-3">
+            <fieldset class="issac-item__scores my-5">
                 <legend class="visually-hidden">Score for item <?= esc_attr($item->itemCode) ?></legend>
                 <?php for ($score = 1; $score <= 5; $score++) : ?>
                 <input type="radio" class="btn-check" name="score_<?= esc_attr($item->itemCode) ?>" id="score_<?= esc_attr($item->itemCode) ?>_<?= $score ?>" value="<?= $score ?>" autocomplete="off" <?php checked($currentScore, $score); ?>>
-                <label class="btn btn-outline-primary issac-score__btn" for="score_<?= esc_attr($item->itemCode) ?>_<?= $score ?>"><?= $score ?></label>
+                <label class="btn btn-brand-accent issac-score__btn" for="score_<?= esc_attr($item->itemCode) ?>_<?= $score ?>"><?= $score ?></label>
                 <?php endfor; ?>
             </fieldset>
 

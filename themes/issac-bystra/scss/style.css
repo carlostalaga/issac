@@ -23,7 +23,7 @@ Text Domain: bystra
   --colour-brand-support-dark: #CB9828;
   --colour-hueso: #FAF7EE;
   --colour-humo: #eaeaea;
-  --colour-tinta: #212121;
+  --colour-tinta: #646B47;
   --colour-blanco: #ffffff;
   --colour-text: var(--colour-tinta);
   --colour-text-inverse: var(--colour-blanco);
@@ -320,15 +320,15 @@ Text Domain: bystra
 
 .tinta,
 .text-tinta {
-  color: #212121;
+  color: #646B47;
 }
 
 .bg-tinta {
-  background-color: #212121;
+  background-color: #646B47;
 }
 
 .border-tinta {
-  border-color: #212121;
+  border-color: #646B47;
 }
 
 .humo,
@@ -568,7 +568,7 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 1.6rem;
-  color: #212121;
+  color: #646B47;
 }
 
 a {
@@ -1166,7 +1166,7 @@ blockquote {
   font-style: normal;
   font-size: 2.2rem;
   line-height: 1;
-  color: #212121;
+  color: #646B47;
 }
 .accordion-title:visited, .accordion-title:hover, .accordion-title:active {
   color: #FFD300;
@@ -1265,7 +1265,7 @@ Text Domain: bystra
   padding: 6px 18px;
   border-radius: 9999px;
   background-color: #FAF7EE;
-  color: #212121;
+  color: #646B47;
   font-size: 1.8rem;
   font-weight: 400;
   font-family: inherit;
@@ -1279,7 +1279,7 @@ Text Domain: bystra
   -webkit-appearance: none;
   -moz-appearance: none;
   background-color: #FAF7EE;
-  color: #212121;
+  color: #646B47;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16'%3E%3Cpolyline points='2 5 8 11 14 5' style='fill:none;stroke:%238CC63E;stroke-width:2.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 2rem center;
@@ -1294,7 +1294,7 @@ Text Domain: bystra
   border: 1px solid #FFD300;
   border-radius: 16px;
   background-color: #FAF7EE;
-  color: #212121;
+  color: #646B47;
   box-sizing: border-box;
   min-height: 120px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
@@ -1334,7 +1334,7 @@ Text Domain: bystra
   border-radius: 9999px;
   padding: 12px 28px;
   background-color: #FAF7EE !important;
-  color: #212121 !important;
+  color: #646B47 !important;
   margin-top: 0.5rem;
   cursor: pointer;
   appearance: none;
@@ -1405,7 +1405,7 @@ Text Domain: bystra
 
 .custom-mailchimp-input-wider {
   background: #F9F7F5;
-  color: #212121;
+  color: #646B47;
   border: 2px solid #FAF7EE;
   border-radius: 3px;
   padding: 6px 12px;
@@ -1430,7 +1430,7 @@ Text Domain: bystra
 /* Hover effect for Mailchimp button */
 .custom-mailchimp-button:hover {
   background: transparent;
-  color: #212121;
+  color: #646B47;
 }
 
 /* 
@@ -2196,7 +2196,7 @@ Icon-style tabs for homepage navigation buttons
   font-weight: 600;
   font-size: 0.75rem;
   text-transform: uppercase;
-  color: #212121;
+  color: #646B47;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -2348,7 +2348,7 @@ Text Domain: bystra
 }
 .block-slider__card-inner .text-slider-tagline,
 .block-slider__card-inner .text-slider-content {
-  color: #212121;
+  color: #646B47;
 }
 
 .block-slider__bottom-shape {
@@ -2685,7 +2685,7 @@ Swiper Thumbs pill nav + content slider
   border: 2px solid #eaeaea;
   border-radius: 9999px;
   background-color: #ffffff;
-  color: #212121;
+  color: #646B47;
   font-family: inherit;
   font-weight: 500;
   font-size: 1.6rem;
@@ -2705,7 +2705,7 @@ Swiper Thumbs pill nav + content slider
 .slider-tabs__pill--active, .swiper-slide-thumb-active .slider-tabs__pill {
   background-color: #232D4B;
   border-color: #232D4B;
-  color: #212121;
+  color: #646B47;
 }
 
 .swiper-slider-tabs-content .swiper-wrapper {
@@ -3019,7 +3019,7 @@ Text Domain: bystra
   font-style: normal;
   font-size: 1.8rem;
   line-height: 1.6;
-  color: #212121;
+  color: #646B47;
 }
 .issac-intro__content p:last-child {
   margin-bottom: 0;
@@ -3116,7 +3116,7 @@ Text Domain: bystra
   font-style: normal;
   font-size: 1.5rem;
   line-height: 1.5;
-  color: #212121;
+  color: #646B47;
 }
 
 @media (max-width: 992px) {
@@ -3160,20 +3160,13 @@ Text Domain: bystra
 }
 
 .issac-item {
-  border: 1px solid var(--bs-border-color, #CB9828);
+  border: 1px solid var(--bs-border-color, #dee2e6);
   border-radius: 0.5rem;
 }
 
 .issac-item__code {
   font-weight: 700;
   margin-right: 0.25rem;
-  color: #1E7D74;
-}
-
-.issac-item__prompt {
-  font-weight: 600;
-  margin-right: 0.25rem;
-  color: #232D4B;
 }
 
 .issac-login-prompt,
@@ -3312,7 +3305,7 @@ html {
 .wp-caption-text {
   margin: 0.5em 0;
   font-size: 1.4rem;
-  color: #212121;
+  color: #646B47;
   text-align: center;
 }
 
@@ -3593,7 +3586,7 @@ html {
 /* -------------------- 3. Default link states (desktop look) -------------------- */
 € #main-menu-mobile,
 #menu-main-menu-desktop {
-  color: #212121;
+  color: #646B47;
 }
 € #main-menu-mobile a:link,
 #menu-main-menu-desktop a:link {
@@ -3650,7 +3643,7 @@ html {
     font-size: 1.8rem;
   }
   #main-menu-mobile a:link, #main-menu-mobile a:visited {
-    color: #212121 !important;
+    color: #646B47 !important;
   }
   #main-menu-mobile a:hover {
     color: #CB9828 !important;
@@ -3665,7 +3658,7 @@ html {
     color: #CB9828 !important;
   }
   #main-menu-mobile .dropdown-item:link, #main-menu-mobile .dropdown-item:visited {
-    color: #212121 !important;
+    color: #646B47 !important;
   }
   #main-menu-mobile .dropdown-item:hover {
     color: #FFD300 !important;
@@ -3751,7 +3744,7 @@ html {
   font-family: "alexandria", sans-serif;
   font-weight: 500;
   font-style: normal;
-  color: #212121 !important;
+  color: #646B47 !important;
   background: transparent;
   padding-right: 2rem;
 }
@@ -4002,12 +3995,12 @@ html {
   font-style: normal;
   display: block;
   padding: 0.95rem 1.15rem;
-  color: #212121;
+  color: #646B47;
   text-decoration: none;
   line-height: 1.25;
 }
 .sidebar-menu a:hover, .sidebar-menu a:focus-visible {
-  color: #212121;
+  color: #646B47;
   text-decoration: none;
 }
 
@@ -4078,7 +4071,7 @@ html {
   margin: 0;
   padding: 1.2rem 2.4rem;
   background-color: #232D4B;
-  color: #FFD300;
+  color: #ffffff;
   text-transform: none;
   text-decoration: none;
   box-shadow: 0 4px 14px rgba(35, 45, 75, 0.28);
@@ -4088,7 +4081,7 @@ html {
 .btn-brand-accent:hover, .btn-brand-accent:focus-visible {
   border-color: rgb(25.2636363636, 32.4818181818, 54.1363636364);
   background-color: rgb(25.2636363636, 32.4818181818, 54.1363636364);
-  color: #FFD300;
+  color: #ffffff;
   text-decoration: none;
 }
 .btn-brand-accent:disabled, .btn-brand-accent.disabled {
@@ -4194,7 +4187,7 @@ html {
   margin: 0;
   padding: 1.2rem 2.4rem;
   background-color: #ffffff;
-  color: #212121;
+  color: #646B47;
   text-transform: none;
   text-decoration: none;
   box-shadow: none;
@@ -4204,7 +4197,7 @@ html {
 .btn-blanco:hover, .btn-blanco:focus-visible {
   border-color: #FAF7EE;
   background-color: #FAF7EE;
-  color: #212121;
+  color: #646B47;
   text-decoration: none;
 }
 .btn-blanco:disabled, .btn-blanco.disabled {
@@ -4228,7 +4221,7 @@ html {
   margin: 0;
   padding: 1.2rem 2.4rem;
   background-color: #DBC8B6;
-  color: #212121;
+  color: #646B47;
   text-transform: none;
   text-decoration: none;
   box-shadow: none;
@@ -4238,7 +4231,7 @@ html {
 .btn-hueso:hover, .btn-hueso:focus-visible {
   border-color: #FAF7EE;
   background-color: #FAF7EE;
-  color: #212121;
+  color: #646B47;
   text-decoration: none;
 }
 .btn-hueso:disabled, .btn-hueso.disabled {
@@ -4903,7 +4896,7 @@ body.modal-open {
   margin: 0 5px;
   padding: 5px 10px;
   background-color: #F9F7F5;
-  color: #212121;
+  color: #646B47;
   text-decoration: none;
 }
 
@@ -4928,7 +4921,7 @@ body.modal-open {
 
 .pagination a:has(> .fas.fa-chevron-left) {
   background-color: #FAF7EE;
-  color: #212121;
+  color: #646B47;
 }
 .pagination a:has(> .fas.fa-chevron-left):hover {
   background-color: #eaeaea;
@@ -4937,7 +4930,7 @@ body.modal-open {
 
 .pagination a:has(> .fas.fa-chevron-right) {
   background-color: #FAF7EE;
-  color: #212121;
+  color: #646B47;
 }
 .pagination a:has(> .fas.fa-chevron-right):hover {
   background-color: #eaeaea;
@@ -5376,7 +5369,7 @@ body.modal-open {
   border-bottom: 1px solid #eaeaea;
 }
 .conditions-sidebar__item a {
-  color: #212121;
+  color: #646B47;
 }
 .conditions-sidebar__item a:hover {
   color: #CB9828;
@@ -5398,7 +5391,7 @@ body.modal-open {
   border-bottom: 1px solid #eaeaea;
 }
 .section-sidebar__item a {
-  color: #212121;
+  color: #646B47;
 }
 .section-sidebar__item a:hover {
   color: #0A1F4A;
@@ -5688,5 +5681,3 @@ body.modal-open {
     padding: 30px 39px 9px 39px !important;
   }
 }
-
-/*# sourceMappingURL=style.css.map */

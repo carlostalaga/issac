@@ -1005,15 +1005,13 @@ $corner-radius: 50px;
 }
 
 
-@mixin button-styles(
-    $bg-colour,
+@mixin button-styles($bg-colour,
     $bg-colour-hover,
     $text-colour,
     $text-colour-hover,
     $border-colour,
     $border-colour-hover,
-    $shadow: none
-) {
+    $shadow: none) {
     @include fonts.font(fonts.$text-prose, fonts.$fw-700);
     display: inline-flex;
     align-items: center;
@@ -1057,15 +1055,13 @@ $corner-radius: 50px;
 
 // Primary — Midnight Navy fill, white label (e.g. "Go to your assessment")
 .btn-brand-accent {
-    @include button-styles(
+    @include button-styles(colours.$brand-accent,
+        color.adjust(colours.$brand-accent, $lightness: -6%),
+        colours.$brand-main,
+        colours.$brand-main,
         colours.$brand-accent,
         color.adjust(colours.$brand-accent, $lightness: -6%),
-        colours.$blanco,
-        colours.$blanco,
-        colours.$brand-accent,
-        color.adjust(colours.$brand-accent, $lightness: -6%),
-        0 4px 14px color.change(colours.$brand-accent, $alpha: 0.28)
-    );
+        0 4px 14px color.change(colours.$brand-accent, $alpha: 0.28));
 
     &:hover,
     &:focus-visible {
@@ -1075,26 +1071,22 @@ $corner-radius: 50px;
 
 // Secondary — white fill, navy border and label (e.g. "Review domain")
 .btn-brand-accent-outline {
-    @include button-styles(
-        colours.$blanco,
+    @include button-styles(colours.$blanco,
         colours.$brand-accent,
         colours.$brand-accent,
         colours.$blanco,
         colours.$brand-accent,
-        colours.$brand-accent
-    );
+        colours.$brand-accent );
 }
 
 // Gold — Flinders Gold fill, navy label (milestone / rare emphasis)
 .btn-brand-main {
-    @include button-styles(
-        colours.$brand-main,
+    @include button-styles(colours.$brand-main,
         colours.$brand-main-dark,
         colours.$brand-accent,
         colours.$brand-accent,
         colours.$brand-main,
-        colours.$brand-main-dark
-    );
+        colours.$brand-main-dark );
 }
 
 .btn-sm.btn-brand-accent,
