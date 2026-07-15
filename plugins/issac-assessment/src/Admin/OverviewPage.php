@@ -31,6 +31,12 @@ final class OverviewPage
                 .issac-domain-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #c3c4c7; }
                 .issac-domain-table th { background: #f0f0f1; }
                 .issac-domain-table td.num { text-align: right; }
+                .issac-item-table { border-collapse: collapse; width: 100%; margin-top: 20px; }
+                .issac-item-table th,
+                .issac-item-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid #c3c4c7; }
+                .issac-item-table th { background: #f0f0f1; }
+                .issac-item-table td.num { text-align: right; }
+                .issac-item-table .issac-group-header th { background: #e5e5e5; font-size: 14px; }
             </style>
 
             <div class="issac-stats">
@@ -70,14 +76,46 @@ final class OverviewPage
                     <?php endif; ?>
                 </tbody>
             </table>
+
+            <h2><?php esc_html_e('Per-Item Statistics', 'issac-assessment'); ?></h2>
+
+            <table class="issac-item-table widefat striped">
+                <thead>
+                    <tr>
+                        <th><?php esc_html_e('Item', 'issac-assessment'); ?></th>
+                        <th><?php esc_html_e('Avg Score', 'issac-assessment'); ?></th>
+                        <th><?php esc_html_e('Answered', 'issac-assessment'); ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php if (empty($stats['items'])): ?>
+                        <tr>
+                            <td colspan="3"><?php esc_html_e('No items found.', 'issac-assessment'); ?></td>
+                        </tr>
+                    <?php else: ?>
+                        <?php foreach ($stats['items'] as $domain): ?>
+                            <tr class="issac-group-header">
+                                <th colspan="3"><?php echo esc_html($domain['title']); ?></th>
+                            </tr>
+                            <?php foreach ($domain['items'] as $item): ?>
+                                <tr>
+                                    <td><?php echo esc_html($item['label']); ?></td>
+                                    <td class="num"><?php echo esc_html($item['avg_score']); ?></td>
+                                    <td class="num"><?php echo esc_html((string) $item['answered']); ?></td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php endforeach; ?>
+                    <?php endif; ?>
+                </tbody>
+            </table>
         </div>
         <?php
     }
 
     /**
-     * Gather headline counters and per-domain aggregate stats.
+     * Gather headline counters and per-domain / per-item aggregate stats.
      *
-     * @return array{counters: list<array{label: string, value: int}>, domains: list<array>}
+     * @return array{counters: list<array{label: string, value: int}>, domains: list<array>, items: list<array>}
      */
     private static function gatherStats(): array
     {
@@ -165,7 +203,39 @@ final class OverviewPage
             ];
         }
 
-        return ['counters' => $counters, 'domains' => $domainStats];
+        // Per-item stats: one aggregate query, then a PHP lookup against the tree.
+        $rows = $wpdb->get_results(
+            "SELECT item_code, ROUND(AVG(score), 1) AS avg_score, COUNT(*) AS answered
+             FROM {$responses}
+             GROUP BY item_code",
+            OBJECT_K
+        );
+
+        $itemStats = [];
+        foreach ($tree as $domain) {
+            $domainItems = [];
+            foreach ($domain->subsections as $sub) {
+                foreach ($sub->items as $item) {
+                    if (!$item->isActive) {
+                        continue;
+                    }
+                    $row = $rows[$item->itemCode] ?? null;
+                    $domainItems[] = [
+                        'label'     => $item->itemCode . '. ' . $item->label,
+                        'avg_score' => $row !== null && $row->avg_score !== null
+                            ? number_format((float) $row->avg_score, 1)
+                            : '—',
+                        'answered'  => $row !== null ? (int) $row->answered : 0,
+                    ];
+                }
+            }
+            $itemStats[] = [
+                'title' => $domain->code . '. ' . $domain->title,
+                'items' => $domainItems,
+            ];
+        }
+
+        return ['counters' => $counters, 'domains' => $domainStats, 'items' => $itemStats];
     }
 
     /**

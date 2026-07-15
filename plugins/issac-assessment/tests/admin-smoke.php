@@ -109,6 +109,9 @@ $overviewHtml = ob_get_clean();
 issac_admin_assert(str_contains($overviewHtml, 'issac-stat-card'), 'Overview contains stat cards');
 issac_admin_assert(str_contains($overviewHtml, 'issac-domain-table'), 'Overview contains domain table');
 issac_admin_assert(str_contains($overviewHtml, 'Total Participants') || str_contains($overviewHtml, 'ISSAC Overview'), 'Overview contains expected content');
+issac_admin_assert(str_contains($overviewHtml, 'issac-item-table'), 'Overview contains per-item table');
+issac_admin_assert(str_contains($overviewHtml, 'issac-group-header'), 'Per-item table has domain group headers');
+issac_admin_assert(str_contains($overviewHtml, esc_html($testCodes[0])), 'Per-item table contains the test item code');
 
 // ── 5. UsersListTable ───────────────────────────────────────────────
 echo "\n5. UsersListTable\n";
