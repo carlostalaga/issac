@@ -32,7 +32,7 @@
                 ['value' => (string) count($tree), 'label' => __('Domains', 'bystra')],
                 ['value' => (string) $subsection_count, 'label' => __('Subsections', 'bystra')],
                 ['value' => (string) $item_count, 'label' => __('Reflection items', 'bystra')],
-                ['value' => '1–5', 'label' => __('Maturity scale', 'bystra')],
+                ['value' => '1–5', 'label' => __('Development scale', 'bystra')],
             ];
         }
 
@@ -61,7 +61,7 @@
         ];
         ?>
 
-        <section class="issac-front-hero container-fluid px-5 px-md-0 card-rounded-top corner-fill bg-brand-accent">
+        <section class="issac-front-hero container-fluid px-5 px-md-0 bg-brand-accent">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-8">

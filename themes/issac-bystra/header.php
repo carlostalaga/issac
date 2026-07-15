@@ -12,7 +12,7 @@
 <body <?php body_class(); ?>>
     <?php wp_body_open(); ?>
 
-    <header class="site-header bg-brand-accent py-5 px-0 px-md-0">
+    <header class="site-header bg-brand-accent-dark">
 
         <!-- Super Menu -->
         <!-- d-none for now, to be removed -->

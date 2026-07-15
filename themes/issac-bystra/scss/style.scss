@@ -16,7 +16,6 @@ Text Domain: bystra
 @use 'fonts' as fonts;
 @use 'vendors';
 @use 'fx';
-@use 'swiper';
 @use 'issac';
 
 body,
@@ -35,7 +34,7 @@ html {
 //}
 
 .logo-constraint {
-    max-width: 231px;
+    max-width: 90px;
 }
 
 .logo-constraint-extrawide {
@@ -48,13 +47,13 @@ html {
 
 @media (max-width: 992px) {
     .logo-constraint {
-        max-width: 180px;
+        max-width: 90px;
     }
 }
 
 @media (max-width: 576px) {
     .logo-constraint {
-        max-width: 162px;
+        max-width: 84px;
     }
 }
 
