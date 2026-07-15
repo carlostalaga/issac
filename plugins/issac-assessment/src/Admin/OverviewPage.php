@@ -221,7 +221,7 @@ final class OverviewPage
                     }
                     $row = $rows[$item->itemCode] ?? null;
                     $domainItems[] = [
-                        'label'     => $item->itemCode . '. ' . $item->label,
+                        'label'     => $item->label,
                         'avg_score' => $row !== null && $row->avg_score !== null
                             ? number_format((float) $row->avg_score, 1)
                             : '—',
