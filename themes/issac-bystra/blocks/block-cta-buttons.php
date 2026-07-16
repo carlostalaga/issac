@@ -7,13 +7,12 @@
  ██████    ██    ██   ██     ██████   ██████     ██       ██     ██████  ██   ████ ███████
 */
 
-$bg = get_block_background();
 $cta_buttons_repeater = get_sub_field('cta_buttons_repeater');
 if (empty($cta_buttons_repeater) || !is_array($cta_buttons_repeater)):
     return;
 endif;
 ?>
-<div class="container-fluid <?php echo esc_attr($bg['class']); ?>"<?php echo $bg['style_attr']; ?>>
+<div class="container-fluid">
     <div class="container cta-buttons-container">
         <div class="row nav-hero-tabs d-flex justify-content-center pb-4 pb-lg-0">
             <?php foreach ($cta_buttons_repeater as $cta_buttons_row): ?>

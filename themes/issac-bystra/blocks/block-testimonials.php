@@ -7,7 +7,6 @@
    ██    ███████ ███████    ██    ██ ██      ██  ██████  ██   ████ ██ ██   ██ ███████ ███████
 */
 
-$bg = get_block_background();
 $testimonials_headline = get_sub_field('testimonials_headline');
 $testimonials_segment = get_sub_field('testimonials_segment');
 
@@ -38,7 +37,7 @@ $quote_shape_url = get_template_directory_uri() . '/img/shape-quotes.svg';
 
 // Begin HTML output
 ?>
-<div id="<?php echo esc_attr($testimonials_block_id); ?>" class="container-fluid py-5 card-rounded-top corner-fill <?php echo esc_attr($bg['class']); ?>" <?php echo $bg['style_attr']; ?>>
+<div id="<?php echo esc_attr($testimonials_block_id); ?>" class="container-fluid py-5">
 
     <div class="container">
         <div class="row d-flex justify-content-center">

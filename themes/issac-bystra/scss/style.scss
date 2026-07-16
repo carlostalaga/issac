@@ -34,7 +34,7 @@ html {
 //}
 
 .logo-constraint {
-    max-width: 90px;
+    max-width: 240px;
 }
 
 .logo-constraint-extrawide {
@@ -498,7 +498,7 @@ $corner-radius: 50px;
     .current_page_item>a,
     .current_page_parent>a,
     .current_page_ancestor>a {
-        color: colours.$hueso-dark !important;
+        color: colours.$blanco !important;
         background-color: transparent !important;
     }
 }
@@ -2468,81 +2468,7 @@ body.modal-open {
 }
 
 
-/*
-██████  ██████  ███████ ███████ ███████ ███    ██ ████████  █████  ████████ ██  ██████  ███    ██
-██   ██ ██   ██ ██      ██      ██      ████   ██    ██    ██   ██    ██    ██ ██    ██ ████   ██
-██████  ██████  █████   ███████ █████   ██ ██  ██    ██    ███████    ██    ██ ██    ██ ██ ██  ██
-██      ██   ██ ██           ██ ██      ██  ██ ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██
-██      ██   ██ ███████ ███████ ███████ ██   ████    ██    ██   ██    ██    ██  ██████  ██   ████
 
-
-*/
-
-.presentation-content-wrapper {
-    z-index: 1;
-    position: relative;
-    margin-top: -90px;
-    border-top-left-radius: 50px;
-    border-top-right-radius: 50px;
-}
-
-.presentation-content-container {
-    top: -120px;
-    margin-bottom: -0px;
-    position: relative;
-}
-
-@media (max-width: 768px) {
-
-    .presentation-content-wrapper {
-        margin-top: -30px;
-        border-top-left-radius: 25px;
-        border-top-right-radius: 25px;
-    }
-
-    .presentation-content-container {
-        top: -45px;
-        margin-bottom: 60px;
-    }
-}
-
-
-
-.block-presentation__card-inner {
-    padding: 60px 64px 36px 64px;
-    border-radius: 50px;
-    background-color: colours.$hueso;
-    height: 100%;
-    width: 100%;
-}
-
-.block-presentation__marquee-wrapper {
-    position: relative;
-    z-index: 2 !important;
-    padding-bottom: 300px;
-}
-
-@media (max-width: 1200px) {
-    .block-presentation__card-inner {
-        border-radius: 25px;
-        padding: 30px 39px 18px 39px !important;
-    }
-
-    .block-presentation__marquee-wrapper {
-        padding-bottom: 270px;
-    }
-}
-
-@media (max-width: 992px) {
-    .block-presentation__card-inner {
-        border-radius: 25px;
-        padding: 30px 39px 9px 39px !important;
-    }
-
-    .block-presentation__marquee-wrapper {
-        padding-bottom: 210px;
-    }
-}
 
 /*
 ██████   █████  ███    ██ ███    ██ ███████ ██████

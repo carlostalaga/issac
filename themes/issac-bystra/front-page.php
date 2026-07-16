@@ -85,7 +85,7 @@
 
 
                         <div>
-                            <a href="<?php echo esc_url(home_url('/assesment')); ?>" class="btn btn-brand-main"><?php esc_html_e('Go to your assesment', 'bystra'); ?></a>
+                            <a href="<?php echo esc_url(home_url('/assesment')); ?>" class="btn btn-brand-main"><?php esc_html_e('Go to your responses', 'bystra'); ?></a>
                         </div>
 
 
@@ -100,14 +100,20 @@
         <section class="issac-intro container-fluid px-5 px-md-0">
             <div class="container">
                 <div class="row g-5 align-items-start">
-                    <div class="col-lg-7">
+                    <div class="col-lg-7 g-5">
                         <div class="issac-intro__content">
-                            <h2 class="issac-intro__title headline-2"><?php esc_html_e('ISSAC — A Space to Reflect on Inclusive Education, Together', 'bystra'); ?></h2>
+                            <h2 class=""><?php esc_html_e('ISSAC — A Space to Reflect on Inclusive Education, Together', 'bystra'); ?></h2>
                             <p><?php esc_html_e('The purpose of ISSAC is to encourage Australian school/site leaders to (1) reflect on and collectively self-evaluate current practices related to inclusive education, and (2) to identify priorities for future focus, including professional learning.', 'bystra'); ?></p>
                             <p><?php esc_html_e('Whilst inclusive education is a broad term, the ISSAC is particularly relevant to the education of academically diverse students—including those with disability, those at risk of or already experiencing academic and/or behavioural difficulties, and those with advanced academic abilities—as part of an overall, inclusive approach. It is therefore not intended to address every aspect of inclusive practice and could be used with complementary instruments for a more holistic assessment.', 'bystra'); ?></p>
                             <div class="my-5">
-                                <h4 class="mb-3">Expression of Interest</h4>
-                                <?php echo do_shortcode('[contact-form-7 id="880fe1b" title="Contact form 1"]'); ?>
+                                <div class="my-5">
+                                    <h4 class="mb-3">Expression of Interest</h4>
+                                    <div class="mb-5">
+                                        If you would like to enquire about using the 'ISSAC' assesment in your school, please fill out the form below with your details and we will get back to you as soon as possible.
+                                    </div>
+                                    <?php echo do_shortcode('[contact-form-7 id="880fe1b" title="Contact form 1"]'); ?>
+
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -128,7 +134,6 @@
                         </aside>
                     </div>
                 </div>
-            </div>
         </section>
 
 

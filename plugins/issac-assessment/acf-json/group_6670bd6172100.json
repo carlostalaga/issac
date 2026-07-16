@@ -297,7 +297,7 @@
                             "name": "hero_headline",
                             "aria-label": "",
                             "type": "wysiwyg",
-                            "instructions": "Keep it short \u2014 Less than 12 words",
+                            "instructions": "Keep it short — Less than 12 words",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -360,7 +360,7 @@
                             "name": "hero_content_reversed",
                             "aria-label": "",
                             "type": "true_false",
-                            "instructions": "Reverse the content layout \u2014 tagline narrow on the right, content wide on the left.",
+                            "instructions": "Reverse the content layout — tagline narrow on the right, content wide on the left.",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -417,7 +417,7 @@
                             "name": "presentation_headline_column_a",
                             "aria-label": "",
                             "type": "wysiwyg",
-                            "instructions": "Keep it short \u2014 Less than 12 words",
+                            "instructions": "Keep it short — Less than 12 words",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -459,7 +459,7 @@
                             "name": "presentation_headline_column_b",
                             "aria-label": "",
                             "type": "wysiwyg",
-                            "instructions": "Keep it short \u2014 Less than 12 words",
+                            "instructions": "Keep it short — Less than 12 words",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -527,27 +527,6 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_6a0bc702bf324",
-                            "label": "Content Basic Hero",
-                            "name": "content_basic_hero",
-                            "aria-label": "",
-                            "type": "true_false",
-                            "instructions": "Adds vertical space. Ideal for top content.",
-                            "required": 0,
-                            "conditional_logic": 0,
-                            "wrapper": {
-                                "width": "",
-                                "class": "",
-                                "id": ""
-                            },
-                            "message": "",
-                            "default_value": 0,
-                            "allow_in_bindings": 0,
-                            "ui_on_text": "",
-                            "ui_off_text": "",
-                            "ui": 1
-                        },
-                        {
                             "key": "field_66ea327087d77",
                             "label": "Content Basic Columns",
                             "name": "content_basic_columns",
@@ -575,6 +554,27 @@
                             "placeholder": "",
                             "create_options": 0,
                             "save_options": 0
+                        },
+                        {
+                            "key": "field_6a587a56c1145",
+                            "label": "Content Basic Label",
+                            "name": "content_basic_label",
+                            "aria-label": "",
+                            "type": "text",
+                            "instructions": "",
+                            "required": 0,
+                            "conditional_logic": 0,
+                            "wrapper": {
+                                "width": "",
+                                "class": "",
+                                "id": ""
+                            },
+                            "default_value": "",
+                            "maxlength": "",
+                            "allow_in_bindings": 1,
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
                         },
                         {
                             "key": "field_6685ec7ee2cfc",
@@ -935,7 +935,7 @@
                                     "name": "cards_image",
                                     "aria-label": "",
                                     "type": "image",
-                                    "instructions": "Regular size 576px by 432px \u2014\u2014 For logos 576px by 193px",
+                                    "instructions": "Regular size 576px by 432px —— For logos 576px by 193px",
                                     "required": 0,
                                     "conditional_logic": 0,
                                     "wrapper": {
@@ -1418,12 +1418,12 @@
                     "display": "block",
                     "sub_fields": [
                         {
-                            "key": "field_697ffd49b4b13",
-                            "label": "Quote Image",
-                            "name": "quote_image",
+                            "key": "field_6a587640fa04f",
+                            "label": "Quote Label",
+                            "name": "quote_label",
                             "aria-label": "",
-                            "type": "image",
-                            "instructions": "Size 432px by 576px (Aspect ratio 3:4)",
+                            "type": "text",
+                            "instructions": "",
                             "required": 0,
                             "conditional_logic": 0,
                             "wrapper": {
@@ -1431,17 +1431,12 @@
                                 "class": "",
                                 "id": ""
                             },
-                            "return_format": "array",
-                            "library": "all",
-                            "min_width": "",
-                            "min_height": "",
-                            "min_size": "",
-                            "max_width": "",
-                            "max_height": "",
-                            "max_size": "",
-                            "mime_types": "",
+                            "default_value": "",
+                            "maxlength": "",
                             "allow_in_bindings": 0,
-                            "preview_size": "medium"
+                            "placeholder": "",
+                            "prepend": "",
+                            "append": ""
                         },
                         {
                             "key": "field_697ffd72b4b14",
@@ -2328,5 +2323,5 @@
     "display_title": "",
     "allow_ai_access": false,
     "ai_description": "",
-    "modified": 1784181784
+    "modified": 1784183503
 }

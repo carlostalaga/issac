@@ -8,9 +8,8 @@
 
 */
 
-$bg = get_block_background();
 ?>
-<div id="tabs-<?php echo $iBlock; ?>" class="container-fluid tabs-block py-0 px-0 <?php echo esc_attr($bg['class']); ?>"<?php echo $bg['style_attr']; ?>>
+<div id="tabs-<?php echo $iBlock; ?>" class="container-fluid tabs-block py-0 px-0">
     <div class="container tabsBox py-0">
 
         <?php if (have_rows('tabs_repeater')): $tabIndex = 0; ?>

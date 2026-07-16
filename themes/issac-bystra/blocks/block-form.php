@@ -8,12 +8,11 @@
 
 
 */
-$bg = get_block_background();
 $form_headline = get_sub_field('form_headline');
 $form_shortcode = get_sub_field('form_shortcode');
 ?>
 
-<div id="contact-<?php echo $iBlock; ?>" class="container-fluid py-5 <?php echo esc_attr($bg['class']); ?>"<?php echo $bg['style_attr']; ?>>
+<div id="contact-<?php echo $iBlock; ?>" class="container-fluid py-5">
     <div class="container bg-white img-contact p-5">
         <div class="row d-flex justify-content-center">
             <div class="col-lg-10 pt-5">

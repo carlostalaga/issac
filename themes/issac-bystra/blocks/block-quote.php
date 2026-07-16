@@ -9,33 +9,19 @@
 
 */
 
-$bg = get_block_background();
-
-$quote_image = get_sub_field('quote_image');
-if($quote_image):
-    $quote_image_url = $quote_image['sizes']['3-4r576'];
-    $quote_image_alt = $quote_image['alt'];
-    $quote_image_title = $quote_image['title'];
-endif;
-
+$quote_label = get_sub_field('quote_label');
 $quote_content = get_sub_field('quote_content');
 ?>
 
-<div class="container-fluid py-5 <?php echo esc_attr($bg['class']); ?>"<?php echo $bg['style_attr']; ?>>
-    <div class="container">
+<div class="container-fluid py-5">
+    <div class="container rounded-5 bg-hueso px-5 pt-5 pb-3">
         <div class="row d-flex justify-content-center">
-            <div class="col-12 col-lg-10">
-                <div class="row">
-                    <div class="col-12 col-md-4 pe-md-5 pb-5 pb-md-0">
-                        <?php if($quote_image): ?>
-                        <img src="<?php echo esc_url($quote_image_url); ?>" alt="<?php echo esc_attr($quote_image_alt); ?>" class="img-fluid img-rounded-max">
-                        <?php endif; ?>
-                    </div>
-                    <div class="col-12 col-md-8 d-flex align-items-center">
-                        <div>
-                            <strong><?php echo $quote_content; ?></strong>
-                        </div>
-                    </div>
+            <div class="col-12">
+                <div class="mb-3">
+                    <h6 class="text-uppercase"><?php echo $quote_label; ?></h6>
+                </div>
+                <div>
+                    <?php echo $quote_content; ?>
                 </div>
             </div>
         </div>

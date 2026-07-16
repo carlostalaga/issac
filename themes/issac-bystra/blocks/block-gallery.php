@@ -9,13 +9,12 @@
 
 */
 
-$bg = get_block_background();
 $gallery_headline = get_sub_field('gallery_headline');
 $gallery_content = get_sub_field('gallery_content');
 $gallery = get_sub_field('gallery');
 ?>
 
-<div id="gallery-<?php echo $iBlock; ?>" class="container-fluid <?php echo esc_attr($bg['class']); ?> py-5"<?php echo $bg['style_attr']; ?>>
+<div id="gallery-<?php echo $iBlock; ?>" class="container-fluid py-5">
     <div class="container">
         <?php if($gallery_headline): ?>
         <div class="mb-5">

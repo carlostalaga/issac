@@ -15,7 +15,7 @@ Template Name: My Assessment
                 <div class="row">
                     <div class="col-12">
                         <div>
-                            <h1>My Assessment</h1>
+                            <h1>My Responses</h1>
                         </div>
 
                         <div>

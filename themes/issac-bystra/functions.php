@@ -58,7 +58,7 @@ function add_theme_scripts() {
     wp_enqueue_style('fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css', array(), '6.2.0');
     wp_enqueue_style('animatecss', 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css', array(), '4.1.1');
 
-    wp_enqueue_style('adobe-fonts', 'https://use.typekit.net/rif1jjc.css', array(), null);
+    wp_enqueue_style('adobe-fonts', 'https://use.typekit.net/oqg7amv.css', array(), null);
     
     wp_enqueue_style('lightgallerycss', 'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lightgallery-bundle.min.css', array(), '2.7.2');
     wp_enqueue_style('lightgalleryAutoplay', 'https://cdnjs.cloudflare.com/ajax/libs/lightgallery/2.7.2/css/lg-autoplay.min.css', array(), '2.7.2');

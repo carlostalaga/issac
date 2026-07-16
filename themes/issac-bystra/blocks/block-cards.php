@@ -8,12 +8,11 @@
 
 */
 
-$bg = get_block_background();
 $cards_columns = get_sub_field('cards_columns');
 $cards_image_border = get_sub_field('cards_image_border');
 ?>
 
-<div id="cardsBlock-<?php echo $iBlock; ?>" class="container-fluid py-5 px-5 px-md-0 <?php echo esc_attr($bg['class']); ?>"<?php echo $bg['style_attr']; ?>>
+<div id="cardsBlock-<?php echo $iBlock; ?>" class="container-fluid py-5 px-5 px-md-0">
 
     <div class="container py-5 ">
 

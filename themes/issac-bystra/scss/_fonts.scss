@@ -3,7 +3,7 @@
 
 // Font family variables
 $text-prose: 'alexandria', sans-serif; // 400 regular
-$text-drama: 'alexandria', sans-serif; // 600, 700, 800, 900
+$text-drama: 'alexandria', sans-serif; // 700, 800, 900
 // $text-epic: 'times', serif;
 
 // Font weight variables
@@ -15,7 +15,7 @@ $fw-700: 700;
 $fw-800: 800;
 $fw-900: 900;
 
-$body-font-size: 1.6rem;
+$body-font-size: 1.7rem;
 
 
 // Mixin for font properties
@@ -65,7 +65,7 @@ ol {
 }
 
 li {
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.0rem;
 
     &:last-child {
         margin-bottom: 0;
@@ -80,12 +80,12 @@ li {
 //   <h2 class="text-posidonia">...</h2>
 // This allows sensible defaults while enabling easy per-case overrides.
 $base-font-sizes: (
-    h1: (family: $text-drama, size: 4.8rem, weight: $fw-600, line-height: 1.2, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.6rem),
-    h2: (family: $text-drama, size: 4.5rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.6rem),
-    h3: (family: $text-drama, size: 4.2rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.4rem),
-    h4: (family: $text-drama, size: 3.6rem, weight: $fw-600, line-height: 0.96, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.4rem),
-    h5: (family: $text-drama, size: 2.6rem, weight: $fw-600, line-height: 1.23, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.3rem),
-    h6: (family: $text-drama, size: 1.8rem, weight: $fw-600, line-height: 1.14, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.3rem)
+    h1: (family: $text-drama, size: 4.8rem, weight: $fw-900, line-height: 1.2, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.6rem),
+    h2: (family: $text-drama, size: 4.5rem, weight: $fw-800, line-height: 0.96, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.6rem),
+    h3: (family: $text-drama, size: 4.2rem, weight: $fw-700, line-height: 0.96, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.4rem),
+    h4: (family: $text-drama, size: 3.6rem, weight: $fw-700, line-height: 0.96, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.4rem),
+    h5: (family: $text-drama, size: 2.6rem, weight: $fw-700, line-height: 1.23, letter-spacing: 0, color: colours.$brand-accent, margin-bottom: 0.3rem),
+    h6: (family: $text-drama, size: 1.8rem, weight: $fw-600, line-height: 1.14, letter-spacing: 0, color: colours.$brand-support-light, margin-bottom: 0.3rem)
 );
 
 $breakpoints: (

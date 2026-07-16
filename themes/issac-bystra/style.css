@@ -34,119 +34,119 @@ Text Domain: bystra
 
 .brand-main,
 .text-brand-main {
-  color: #FFD300;
+  color: #FFD300 !important;
 }
 
 .bg-brand-main {
-  background-color: #FFD300;
+  background-color: #FFD300 !important;
 }
 
 .border-brand-main {
-  border-color: #FFD300;
+  border-color: #FFD300 !important;
 }
 
 .brand-main-light,
 .text-brand-main-light {
-  color: #F6EEE1;
+  color: #F6EEE1 !important;
 }
 
 .bg-brand-main-light {
-  background-color: #F6EEE1;
+  background-color: #F6EEE1 !important;
 }
 
 .border-brand-main-light {
-  border-color: #F6EEE1;
+  border-color: #F6EEE1 !important;
 }
 
 .brand-main-dark,
 .text-brand-main-dark {
-  color: #CB9828;
+  color: #CB9828 !important;
 }
 
 .bg-brand-main-dark {
-  background-color: #CB9828;
+  background-color: #CB9828 !important;
 }
 
 .border-brand-main-dark {
-  border-color: #CB9828;
+  border-color: #CB9828 !important;
 }
 
 .brand-accent,
 .text-brand-accent {
-  color: #232D4B;
+  color: #232D4B !important;
 }
 
 .bg-brand-accent {
-  background-color: #232D4B;
+  background-color: #232D4B !important;
 }
 
 .border-brand-accent {
-  border-color: #232D4B;
+  border-color: #232D4B !important;
 }
 
 .brand-accent-light,
 .text-brand-accent-light {
-  color: #3e4f84;
+  color: #3e4f84 !important;
 }
 
 .bg-brand-accent-light {
-  background-color: #3e4f84;
+  background-color: #3e4f84 !important;
 }
 
 .border-brand-accent-light {
-  border-color: #3e4f84;
+  border-color: #3e4f84 !important;
 }
 
 .brand-accent-dark,
 .text-brand-accent-dark {
-  color: #232D4B;
+  color: #232D4B !important;
 }
 
 .bg-brand-accent-dark {
-  background-color: #232D4B;
+  background-color: #232D4B !important;
 }
 
 .border-brand-accent-dark {
-  border-color: #232D4B;
+  border-color: #232D4B !important;
 }
 
 .brand-support,
 .text-brand-support {
-  color: #DC5300;
+  color: #DC5300 !important;
 }
 
 .bg-brand-support {
-  background-color: #DC5300;
+  background-color: #DC5300 !important;
 }
 
 .border-brand-support {
-  border-color: #DC5300;
+  border-color: #DC5300 !important;
 }
 
 .brand-support-light,
 .text-brand-support-light {
-  color: #1E7D74;
+  color: #1E7D74 !important;
 }
 
 .bg-brand-support-light {
-  background-color: #1E7D74;
+  background-color: #1E7D74 !important;
 }
 
 .border-brand-support-light {
-  border-color: #1E7D74;
+  border-color: #1E7D74 !important;
 }
 
 .brand-support-dark,
 .text-brand-support-dark {
-  color: #CB9828;
+  color: #CB9828 !important;
 }
 
 .bg-brand-support-dark {
-  background-color: #CB9828;
+  background-color: #CB9828 !important;
 }
 
 .border-brand-support-dark {
-  border-color: #CB9828;
+  border-color: #CB9828 !important;
 }
 
 .posidonia,
@@ -567,7 +567,7 @@ body {
   font-family: "alexandria", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   color: #212121;
 }
 
@@ -584,14 +584,14 @@ ol {
   font-family: "alexandria", sans-serif;
   font-weight: 400;
   font-style: normal;
-  font-size: 1.6rem;
+  font-size: 1.7rem;
   line-height: 1.5;
   margin: 0 0 1.5rem 2rem;
   padding-left: 1.5rem;
 }
 
 li {
-  margin-bottom: 0.6rem;
+  margin-bottom: 0rem;
 }
 li:last-child {
   margin-bottom: 0;
@@ -599,7 +599,7 @@ li:last-child {
 
 h1 {
   font-family: "alexandria", sans-serif;
-  font-weight: 600;
+  font-weight: 900;
   font-style: normal;
   font-size: 4.8rem;
   color: #232D4B;
@@ -610,7 +610,7 @@ h1 {
 
 h2 {
   font-family: "alexandria", sans-serif;
-  font-weight: 600;
+  font-weight: 800;
   font-style: normal;
   font-size: 4.5rem;
   color: #232D4B;
@@ -621,7 +621,7 @@ h2 {
 
 h3 {
   font-family: "alexandria", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   font-size: 4.2rem;
   color: #232D4B;
@@ -632,7 +632,7 @@ h3 {
 
 h4 {
   font-family: "alexandria", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   font-size: 3.6rem;
   color: #232D4B;
@@ -643,7 +643,7 @@ h4 {
 
 h5 {
   font-family: "alexandria", sans-serif;
-  font-weight: 600;
+  font-weight: 700;
   font-style: normal;
   font-size: 2.6rem;
   color: #232D4B;
@@ -657,7 +657,7 @@ h6 {
   font-weight: 600;
   font-style: normal;
   font-size: 1.8rem;
-  color: #232D4B;
+  color: #1E7D74;
   line-height: 1.14;
   letter-spacing: 0;
   margin-bottom: 0.3rem;
@@ -665,7 +665,7 @@ h6 {
 
 @media (max-width: 1200px) {
   /* body {
-      font-size: calc(1.6rem * 0.9);
+      font-size: calc(1.7rem * 0.9);
   } */
   h1 {
     font-size: calc(4.8rem * 0.9);
@@ -688,7 +688,7 @@ h6 {
 }
 @media (max-width: 992px) {
   /* body {
-      font-size: calc(1.6rem * 0.85);
+      font-size: calc(1.7rem * 0.85);
   } */
   h1 {
     font-size: calc(4.8rem * 0.85);
@@ -711,7 +711,7 @@ h6 {
 }
 @media (max-width: 768px) {
   /* body {
-      font-size: calc(1.6rem * 0.8);
+      font-size: calc(1.7rem * 0.8);
   } */
   h1 {
     font-size: calc(4.8rem * 0.8);
@@ -734,7 +734,7 @@ h6 {
 }
 @media (max-width: 576px) {
   /* body {
-      font-size: calc(1.6rem * 0.65);
+      font-size: calc(1.7rem * 0.65);
   } */
   h1 {
     font-size: calc(4.8rem * 0.65);
@@ -757,7 +757,7 @@ h6 {
 }
 @media (max-width: 380px) {
   /* body {
-      font-size: calc(1.6rem * 0.6);
+      font-size: calc(1.7rem * 0.6);
   } */
   h1 {
     font-size: calc(4.8rem * 0.6);
@@ -1252,9 +1252,9 @@ Text Domain: bystra
 
 .wpcf7-form label {
   display: block;
-  font-weight: 500;
+  font-weight: 600;
   margin-bottom: 0.5rem;
-  color: #eaeaea;
+  color: #232D4B;
 }
 
 .wpcf7-form input[type=text],
@@ -1263,15 +1263,15 @@ Text Domain: bystra
 .wpcf7-form select {
   width: 100%;
   padding: 6px 18px;
-  border-radius: 9999px;
+  border-radius: 1rem;
   background-color: #FAF7EE;
   color: #212121;
-  font-size: 1.8rem;
+  font-size: 1.7rem;
   font-weight: 400;
   font-family: inherit;
   box-sizing: border-box;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  border: 2px solid #eaeaea !important;
+  border: 1px solid rgba(126, 126, 129, 0.6) !important;
 }
 
 .wpcf7-form select {
@@ -1298,7 +1298,7 @@ Text Domain: bystra
   box-sizing: border-box;
   min-height: 120px;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  border: 2px solid #eaeaea !important;
+  border: 1px solid rgba(126, 126, 129, 0.6) !important;
 }
 
 .wpcf7-form input[type=text]:focus,
@@ -1324,29 +1324,29 @@ Text Domain: bystra
 .wpcf7-form input.wpcf7-submit,
 .wpcf7-form .wpcf7-submit {
   font-family: "alexandria", sans-serif;
-  font-weight: 500;
+  font-weight: 600;
   font-style: normal;
   font-size: 1.6rem;
   letter-spacing: 0.24rem;
-  text-transform: uppercase;
+  text-transform: none;
   letter-spacing: 0.05em;
   border: none !important;
   border-radius: 9999px;
   padding: 12px 28px;
-  background-color: #FAF7EE !important;
-  color: #212121 !important;
+  background-color: #232D4B !important;
+  color: #ffffff !important;
   margin-top: 0.5rem;
   cursor: pointer;
   appearance: none;
   -webkit-appearance: none;
-  border: 2px solid #FFD300 !important;
+  border: 2px solid #3e4f84 !important;
 }
 
 /* Arrow: <input> doesn't support ::after; add " →" in CF7 template if desired: [submit "Submit →"] */
 .wpcf7-form input.wpcf7-submit:hover,
 .wpcf7-form .wpcf7-submit:hover {
-  background-color: #CB9828 !important;
-  color: #FAF7EE !important;
+  background-color: #ffffff !important;
+  color: #232D4B !important;
 }
 
 /*
@@ -2579,7 +2579,7 @@ html {
 }
 
 .logo-constraint {
-  max-width: 90px;
+  max-width: 240px;
 }
 
 .logo-constraint-extrawide {
@@ -2980,7 +2980,7 @@ html {
 #menu-main-menu-desktop .current_page_item > a,
 #menu-main-menu-desktop .current_page_parent > a,
 #menu-main-menu-desktop .current_page_ancestor > a {
-  color: #DBC8B6 !important;
+  color: #ffffff !important;
   background-color: transparent !important;
 }
 
@@ -4949,72 +4949,6 @@ body.modal-open {
   height: auto;
 }
 
-/*
-██████  ██████  ███████ ███████ ███████ ███    ██ ████████  █████  ████████ ██  ██████  ███    ██
-██   ██ ██   ██ ██      ██      ██      ████   ██    ██    ██   ██    ██    ██ ██    ██ ████   ██
-██████  ██████  █████   ███████ █████   ██ ██  ██    ██    ███████    ██    ██ ██    ██ ██ ██  ██
-██      ██   ██ ██           ██ ██      ██  ██ ██    ██    ██   ██    ██    ██ ██    ██ ██  ██ ██
-██      ██   ██ ███████ ███████ ███████ ██   ████    ██    ██   ██    ██    ██  ██████  ██   ████
-
-
-*/
-.presentation-content-wrapper {
-  z-index: 1;
-  position: relative;
-  margin-top: -90px;
-  border-top-left-radius: 50px;
-  border-top-right-radius: 50px;
-}
-
-.presentation-content-container {
-  top: -120px;
-  margin-bottom: 0px;
-  position: relative;
-}
-
-@media (max-width: 768px) {
-  .presentation-content-wrapper {
-    margin-top: -30px;
-    border-top-left-radius: 25px;
-    border-top-right-radius: 25px;
-  }
-  .presentation-content-container {
-    top: -45px;
-    margin-bottom: 60px;
-  }
-}
-.block-presentation__card-inner {
-  padding: 60px 64px 36px 64px;
-  border-radius: 50px;
-  background-color: #FAF7EE;
-  height: 100%;
-  width: 100%;
-}
-
-.block-presentation__marquee-wrapper {
-  position: relative;
-  z-index: 2 !important;
-  padding-bottom: 300px;
-}
-
-@media (max-width: 1200px) {
-  .block-presentation__card-inner {
-    border-radius: 25px;
-    padding: 30px 39px 18px 39px !important;
-  }
-  .block-presentation__marquee-wrapper {
-    padding-bottom: 270px;
-  }
-}
-@media (max-width: 992px) {
-  .block-presentation__card-inner {
-    border-radius: 25px;
-    padding: 30px 39px 9px 39px !important;
-  }
-  .block-presentation__marquee-wrapper {
-    padding-bottom: 210px;
-  }
-}
 /*
 ██████   █████  ███    ██ ███    ██ ███████ ██████
 ██   ██ ██   ██ ████   ██ ████   ██ ██      ██   ██

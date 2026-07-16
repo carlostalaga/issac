@@ -5,14 +5,14 @@
     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 
+        <div class="my-5">
 
-
-        <?php 
+            <?php 
         /* Flexible Content */
         include get_theme_file_path('/blocks/flexible-content.php'); 
         ?>
 
-
+        </div>
 
 
     </article>

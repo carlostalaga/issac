@@ -9,13 +9,6 @@
 
 
 */
-$bg = get_block_background();
-$banner_section_backgrounds = ['bg-3', 'bg-2', 'bg-2a', 'bg-hueso', 'bg-white', 'bg-hero', 'bg-1', 'bg-custom'];
-$banner_is_section_bg = in_array($bg['value'], $banner_section_backgrounds, true);
-$banner_section_class = ($banner_is_section_bg && !empty($bg['class'])) ? $bg['class'] : 'bg-3';
-$banner_card_class = $banner_is_section_bg ? 'bg-brand-main' : (!empty($bg['class']) ? $bg['class'] : 'bg-brand-main');
-$banner_card_is_dark = $banner_is_section_bg ? true : $bg['is_dark'];
-$banner_section_style_attr = !empty($bg['style_attr']) ? $bg['style_attr'] : ' style="--corner-fill-colour:#A48C50;"';
 $banner_headline = get_sub_field('banner_headline');
 $banner_content = get_sub_field('banner_content');
 $banner_link = get_sub_field('banner_link');
@@ -27,7 +20,7 @@ endif;
 ?>
 
 
-<div id="banner-<?php echo $iBlock; ?>" class="container-fluid banner-block-wrap card-rounded-top corner-fill <?php echo esc_attr($banner_section_class); ?>" <?php echo $banner_section_style_attr; ?>>
+<div id="banner-<?php echo $iBlock; ?>" class="container-fluid banner-block-wrap">
 
     <div class="container">
         <div class="row d-flex justify-content-center">
@@ -46,7 +39,7 @@ endif;
                     <div class="col-xxl-10" style="padding-bottom: 100px;">
 
 
-                        <div class="row banner-block <?php echo esc_attr($banner_card_class); ?> my-5 block-banner__card-inner">
+                        <div class="row banner-block bg-brand-main my-5 block-banner__card-inner">
 
                             <div class="col-12 mb-5">
                                 <?php if($banner_headline): ?>
@@ -61,7 +54,7 @@ endif;
 
                                 <?php if($banner_link): ?>
                                 <div class="mb-5 p-3">
-                                    <a href="<?php echo esc_url($banner_link_url); ?>" class="btn <?php echo $banner_card_is_dark ? 'btn-hueso' : 'btn-brand-main'; ?>" target="<?php echo esc_attr($banner_link_target); ?>"><?php echo esc_html($banner_link_title); ?></a>
+                                    <a href="<?php echo esc_url($banner_link_url); ?>" class="btn btn-hueso" target="<?php echo esc_attr($banner_link_target); ?>"><?php echo esc_html($banner_link_title); ?></a>
                                 </div>
                                 <?php endif; ?>
 

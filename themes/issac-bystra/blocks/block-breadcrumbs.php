@@ -9,10 +9,9 @@
 
 */
 
-$bg = get_block_background();
 ?>
 
-<div id="breadcrumbs-<?php echo $iBlock; ?>" class="container-fluid border border-0 border-danger <?php echo esc_attr($bg['class']); ?>"<?php echo $bg['style_attr']; ?>>
+<div id="breadcrumbs-<?php echo $iBlock; ?>" class="container-fluid border border-0 border-danger">
 
     <div class="container">
 

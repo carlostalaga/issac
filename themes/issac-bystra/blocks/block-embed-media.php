@@ -14,7 +14,6 @@
 ╚═╝     ╚═╝╚══════╝╚═════╝ ╚═╝╚═╝  ╚═╝     
 */ 
 
-$bg = get_block_background();
 $format = get_sub_field('format');
 $video_width = get_sub_field('video_width');
 $iframe = get_sub_field('media');
@@ -29,7 +28,7 @@ endif;
 
 
 <div id="block-embed-media">
-    <div class="container-fluid py-5 px-5 px-md-0 <?php echo esc_attr($bg['class']); ?>"<?php echo $bg['style_attr']; ?>>
+    <div class="container-fluid py-5 px-5 px-md-0">
         <div class="container">
             <div class="row px-2 spacer-inner-block-redux d-flex justify-content-center">
 

@@ -32,9 +32,9 @@
 
 .wpcf7-form label {
     display: block;
-    font-weight: fonts.$fw-500;
+    font-weight: fonts.$fw-600;
     margin-bottom: 0.5rem;
-    color: colours.$humo;
+    color: colours.$brand-accent;
 }
 
 .wpcf7-form input[type="text"],
@@ -43,15 +43,15 @@
 .wpcf7-form select {
     width: 100%;
     padding: 6px 18px;
-    border-radius: 9999px;
+    border-radius: 1rem;
     background-color: colours.$hueso;
     color: colours.$tinta;
-    font-size: 1.8rem;
+    font-size: 1.7rem;
     font-weight: fonts.$fw-400;
     font-family: inherit;
     box-sizing: border-box;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    border: 2px solid colours.$humo !important;
+    border: 1px solid colours.$sombra !important;
 }
 
 .wpcf7-form select {
@@ -78,7 +78,7 @@
     box-sizing: border-box;
     min-height: 120px;
     transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    border: 2px solid colours.$humo !important;
+    border: 1px solid colours.$sombra !important;
 }
 
 .wpcf7-form input[type="text"]:focus,
@@ -103,29 +103,29 @@
 
 .wpcf7-form input.wpcf7-submit,
 .wpcf7-form .wpcf7-submit {
-    @include fonts.font(fonts.$text-prose, fonts.$fw-500);
+    @include fonts.font(fonts.$text-prose, fonts.$fw-600);
     font-size: 1.6rem;
     letter-spacing: 0.24rem;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0.05em;
     border: none !important;
     border-radius: 9999px;
     padding: 12px 28px;
-    background-color: colours.$hueso !important;
-    color: colours.$tinta !important;
+    background-color: colours.$brand-accent !important;
+    color: colours.$blanco !important;
     margin-top: 0.5rem;
     cursor: pointer;
     appearance: none;
     -webkit-appearance: none;
-    border: 2px solid colours.$brand-main !important;
+    border: 2px solid colours.$brand-accent-light !important;
 }
 
 /* Arrow: <input> doesn't support ::after; add " →" in CF7 template if desired: [submit "Submit →"] */
 
 .wpcf7-form input.wpcf7-submit:hover,
 .wpcf7-form .wpcf7-submit:hover {
-    background-color: colours.$brand-main-dark !important;
-    color: colours.$hueso !important;
+    background-color: colours.$blanco !important;
+    color: colours.$brand-accent !important;
 }
 
 

@@ -8,7 +8,6 @@
 
 */
 
-$bg = get_block_background();
 $hero_image = get_sub_field('hero_image');
 if($hero_image):
     $hero_image_alt = $hero_image['alt'];
@@ -29,7 +28,7 @@ if ($hero_content_reversed) {
 }
 ?>
 
-<div class="container-fluid pt-0 pb-5 px-0 corner-fill <?php echo esc_attr($bg['class']); ?>" <?php echo $bg['style_attr']; ?>>
+<div class="container-fluid pt-0 pb-5 px-0">
 
     <div class="container">
         <div class="row d-flex justify-content-center">

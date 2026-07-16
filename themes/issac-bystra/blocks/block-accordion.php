@@ -11,10 +11,9 @@
 $accordion_anchor = get_sub_field('accordion_anchor');
 $accordion_headline = get_sub_field('accordion_headline');
 $accordion_content = get_sub_field('accordion_content');
-$bg = get_block_background();
 ?>
 <div id="<?php echo $accordion_anchor; ?>">
-    <div id="accordionBlock-<?php echo $iBlock; ?>" class="container-fluid pb-5 card-rounded-top corner-fill  <?php echo esc_attr($bg['class']); ?>" <?php echo $bg['style_attr']; ?>>
+    <div id="accordionBlock-<?php echo $iBlock; ?>" class="container-fluid pb-5">
 
 
 
@@ -68,7 +67,7 @@ $bg = get_block_background();
 
                                     <div class="accordion-item mb-4 border-0">
 
-                                        <div class="accordion-header <?php echo esc_attr($bg['class']); ?>" id="heading-<?php echo $iBlock; ?>-<?php echo $collapse; ?>" <?php echo $bg['style_attr']; ?>>
+                                        <div class="accordion-header" id="heading-<?php echo $iBlock; ?>-<?php echo $collapse; ?>">
                                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-<?php echo $iBlock; ?>-<?php echo $collapse; ?>" aria-expanded="false" aria-controls="collapse-<?php echo $iBlock; ?>-<?php echo $collapse; ?>">
                                                 <div class="accordion-title text-left  py-1 px-4">
                                                     <?php echo $accordion_headline; ?>
@@ -77,7 +76,7 @@ $bg = get_block_background();
                                             </button>
                                         </div>
 
-                                        <div id="collapse-<?php echo $iBlock; ?>-<?php echo $collapse;?>" class="accordion-collapse collapse text-tinta py-5 <?php echo esc_attr($bg['class']); ?> p-5 py-3" <?php echo $bg['style_attr']; ?> data-bs-parent="#accordionMain-<?php echo $iBlock; ?>">
+                                        <div id="collapse-<?php echo $iBlock; ?>-<?php echo $collapse;?>" class="accordion-collapse collapse text-tinta py-5 p-5 py-3" data-bs-parent="#accordionMain-<?php echo $iBlock; ?>">
 
                                             <div class="row text-start">
 
@@ -98,7 +97,7 @@ $bg = get_block_background();
                                                 <!-- Resources -->
                                                 <?php if($accordion_resource_repeater): ?>
                                                 <div class="col-12 mt-5">
-                                                    <?php display_resources('accordion_resource_repeater', false, false, $bg['use_light_buttons']); ?>
+                                                    <?php display_resources('accordion_resource_repeater'); ?>
                                                 </div>
                                                 <?php endif; ?>
 

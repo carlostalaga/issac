@@ -15,12 +15,11 @@ Locations are managed in General Options:
   acf-json/group_6678ceb7becfe.json -> locations repeater
 */
 
-$bg = get_block_background();
 $locations = get_field('locations', 'option');
 
 ?>
 
-<div id="locationsBlock-<?php echo $iBlock; ?>" class="container-fluid py-5 px-5 px-md-0 <?php echo esc_attr($bg['class']); ?>" <?php echo $bg['style_attr']; ?>>
+<div id="locationsBlock-<?php echo $iBlock; ?>" class="container-fluid py-5 px-5 px-md-0">
 
 
 

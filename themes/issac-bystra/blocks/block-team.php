@@ -8,12 +8,11 @@
 
 
 */
-$bg = get_block_background();
 $team_columns = get_sub_field('team_columns');
 $team_image_border = get_sub_field('team_image_border');
 ?>
 
-<div id="teamBlock-<?php echo $iBlock; ?>" class="container-fluid py-5 px-5 px-md-0 card-rounded-top corner-fill <?php echo esc_attr($bg['class']); ?>" <?php echo $bg['style_attr']; ?>>
+<div id="teamBlock-<?php echo $iBlock; ?>" class="container-fluid py-5 px-5 px-md-0">
 
 
 

@@ -9,13 +9,12 @@
 
 */
 
-$bg = get_block_background();
 $services_columns = get_sub_field('services_columns');
 $services_image_border = get_sub_field('services_image_border');
 $segment = get_sub_field('segment');
 ?>
 
-<div id="servicesBlock-<?php echo $iBlock; ?>" class="container-fluid py-5 px-5 px-md-0 <?php echo esc_attr($bg['class']); ?>"<?php echo $bg['style_attr']; ?>>
+<div id="servicesBlock-<?php echo $iBlock; ?>" class="container-fluid py-5 px-5 px-md-0">
 
     <div class="container py-5">
 

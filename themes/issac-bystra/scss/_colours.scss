@@ -95,19 +95,19 @@ $blanco: #ffffff;
 
 $colors: (
     // Primary brand
-    "brand-main": $brand-main,
-    "brand-main-light": $brand-main-light,
-    "brand-main-dark": $brand-main-dark,
+    "brand-main": $brand-main !important,
+    "brand-main-light": $brand-main-light !important,
+    "brand-main-dark": $brand-main-dark !important,
 
     // Secondary brand
-    "brand-accent": $brand-accent,
-    "brand-accent-light": $brand-accent-light,
-    "brand-accent-dark": $brand-accent-dark,
+    "brand-accent": $brand-accent !important,
+    "brand-accent-light": $brand-accent-light !important,
+    "brand-accent-dark": $brand-accent-dark !important,
 
     // Tertiary brand
-    "brand-support": $brand-support,
-    "brand-support-light": $brand-support-light,
-    "brand-support-dark": $brand-support-dark,
+    "brand-support": $brand-support !important,
+    "brand-support-light": $brand-support-light !important,
+    "brand-support-dark": $brand-support-dark !important,
 
     // Accent and neutrals
     "posidonia": $posidonia,

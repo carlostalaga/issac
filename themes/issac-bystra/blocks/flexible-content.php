@@ -2,7 +2,6 @@
 // Check value exists. test pull!!`¡ !
 if( have_rows('flexible_content') ):
     $iBlock = 0;
-    $iContentBasic = 0;
 
     // Loop through rows.
     while ( have_rows('flexible_content') ) : the_row();
@@ -18,9 +17,7 @@ if( have_rows('flexible_content') ):
         elseif( get_row_layout() == 'contact' ):
             include get_theme_file_path('/blocks/block-contact.php');
         elseif( get_row_layout() == 'content_basic' ):
-            $content_basic_is_first = ($iContentBasic === 0);
             include get_theme_file_path('/blocks/block-content-basic.php');
-            $iContentBasic++;
         elseif( get_row_layout() == 'document_resources' ):
             include get_theme_file_path('/blocks/block-document-resources.php');
         elseif( get_row_layout() == 'embed_media' ):
@@ -33,8 +30,6 @@ if( have_rows('flexible_content') ):
             include get_theme_file_path('/blocks/block-hero.php');
         elseif( get_row_layout() == 'locations' ):
             include get_theme_file_path('/blocks/block-locations.php');
-        elseif( get_row_layout() == 'presentation' ):
-            include get_theme_file_path('/blocks/block-presentation.php');
         elseif( get_row_layout() == 'quote' ):
             include get_theme_file_path('/blocks/block-quote.php');
         elseif( get_row_layout() == 'services' ):

@@ -1,9 +1,7 @@
 <?php
-$bg = get_block_background();
-
 if (have_rows('slider_repeater')): ?>
 
-<div id="slider-wrap-<?php echo esc_attr($iBlock); ?>" class="block-slider-wrap corner-fill" <?php echo $bg['style_attr']; ?>>
+<div id="slider-wrap-<?php echo esc_attr($iBlock); ?>" class="block-slider-wrap">
     <div id="slider-<?php echo esc_attr($iBlock); ?>" class="swiper block-slider block-slider--hero img-rounded-top">
         <div class="swiper-wrapper">
             <?php while (have_rows('slider_repeater')): the_row();

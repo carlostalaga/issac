@@ -14,7 +14,6 @@
 ██████   ██████     ██       ██     ██████  ██   ████
 */
 
-$bg = get_block_background();
 $hero_button_colour = get_sub_field('hero_button_colour');
 $hero_button_link = get_sub_field('hero_button_link');
 $hero_button_reduce_gap = get_sub_field('hero_button_reduce_gap');
@@ -51,7 +50,7 @@ switch ($hero_button_colour) {
 }
 ?>
 
-<div id="hero_button-<?php echo $iBlock; ?>" class="container-fluid <?php echo $hero_button_reduce_gap ? 'pt-3 pb-0' : 'pt-5 pb-4'; ?> border border-0 border-success <?php echo esc_attr($bg['class']); ?>"<?php echo $bg['style_attr']; ?>>
+<div id="hero_button-<?php echo $iBlock; ?>" class="container-fluid <?php echo $hero_button_reduce_gap ? 'pt-3 pb-0' : 'pt-5 pb-4'; ?> border border-0 border-success">
 
     <?php if ($hero_button_link): ?>
     <div class="container">

@@ -17,7 +17,6 @@
 
 */
 
-$bg = get_block_background();
 $document_resources_title = get_sub_field('document_resources_title');
 $document_resources_columns = get_sub_field('document_resources_columns');
 ?>
@@ -42,7 +41,7 @@ $document_resources_columns = get_sub_field('document_resources_columns');
 /* List separator styles moved to style.scss */
 </style>
 
-<div id="documentResources-<?php echo $iBlock; ?>" class="container-fluid py-5 px-5 px-md-0 <?php echo esc_attr($bg['class']); ?>"<?php echo $bg['style_attr']; ?>>
+<div id="documentResources-<?php echo $iBlock; ?>" class="container-fluid py-5 px-5 px-md-0">
     <div class="container">
 
         <?php if($document_resources_title): ?>
@@ -53,7 +52,7 @@ $document_resources_columns = get_sub_field('document_resources_columns');
 
 
             <?php
-                echo display_resources('document_resource_repeater', true, true, $bg['use_light_buttons']);
+                echo display_resources('document_resource_repeater', true, true);
             ?>
 
 
