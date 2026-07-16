@@ -62,7 +62,7 @@ $resources_html = '';
 if (have_rows('content_basic_resource_repeater')):
     ob_start(); ?>
 <div class="mt-5">
-    <?php echo display_resources('content_basic_resource_repeater', true); ?>
+    <?php echo display_resources('content_basic_resource_repeater', true, true); ?>
 </div>
 <?php
     $resources_html = ob_get_clean();

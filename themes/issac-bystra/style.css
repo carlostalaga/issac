@@ -645,7 +645,7 @@ h5 {
   font-family: "alexandria", sans-serif;
   font-weight: 700;
   font-style: normal;
-  font-size: 2.6rem;
+  font-size: 2.4rem;
   color: #232D4B;
   line-height: 1.23;
   letter-spacing: 0;
@@ -680,7 +680,7 @@ h6 {
     font-size: calc(3.6rem * 0.9);
   }
   h5 {
-    font-size: calc(2.6rem * 0.9);
+    font-size: calc(2.4rem * 0.9);
   }
   h6 {
     font-size: calc(1.8rem * 0.9);
@@ -703,7 +703,7 @@ h6 {
     font-size: calc(3.6rem * 0.85);
   }
   h5 {
-    font-size: calc(2.6rem * 0.85);
+    font-size: calc(2.4rem * 0.85);
   }
   h6 {
     font-size: calc(1.8rem * 0.85);
@@ -726,7 +726,7 @@ h6 {
     font-size: calc(3.6rem * 0.8);
   }
   h5 {
-    font-size: calc(2.6rem * 0.8);
+    font-size: calc(2.4rem * 0.8);
   }
   h6 {
     font-size: calc(1.8rem * 0.8);
@@ -749,7 +749,7 @@ h6 {
     font-size: calc(3.6rem * 0.65);
   }
   h5 {
-    font-size: calc(2.6rem * 0.65);
+    font-size: calc(2.4rem * 0.65);
   }
   h6 {
     font-size: calc(1.8rem * 0.65);
@@ -772,7 +772,7 @@ h6 {
     font-size: calc(3.6rem * 0.6);
   }
   h5 {
-    font-size: calc(2.6rem * 0.6);
+    font-size: calc(2.4rem * 0.6);
   }
   h6 {
     font-size: calc(1.8rem * 0.6);

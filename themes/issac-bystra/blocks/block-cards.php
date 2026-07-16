@@ -85,17 +85,7 @@ $cards_image_border = get_sub_field('cards_image_border');
                             <div class="fosforos pb-4 <?php if( ! $cards_image_border ) : echo 'pt-5'; endif; ?>">
                                 <?php if( $cards_headline ):  ?>
                                 <div class="mb-5">
-                                    <?php if( $cards_columns == '2_col' ) : ?>
-                                    <h3><?php echo $cards_headline; ?></h3>
-                                    <?php elseif( $cards_columns == '3_col' ) : ?>
-                                    <h3><?php echo $cards_headline; ?></h3>
-                                    <?php elseif( $cards_columns == '4_col' ) : ?>
-                                    <h4><?php echo $cards_headline; ?></h4>
-                                    <?php elseif( $cards_columns == '5_col' ) : ?>
-                                    <h4><?php echo $cards_headline; ?></h4>
-                                    <?php elseif( $cards_columns == '6_col' ) : ?>
-                                    <h4><?php echo $cards_headline; ?></h4>
-                                    <?php endif; ?>
+                                    <h5><?php echo $cards_headline; ?></h5>
                                 </div>
                                 <?php endif; ?>
 
