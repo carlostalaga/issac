@@ -33,9 +33,6 @@
                                         <img src="<?php echo get_template_directory_uri() ?>/img/logo-light-bystra.png" class="logo-constraint img-fluid" alt="<?php echo get_bloginfo('name'); ?> logo">
                                     </a>
                                 </div>
-                                <div class="mb-5">
-                                    <img src="<?php echo get_template_directory_uri() ?>/img/flinders-60th-white-header.svg" class="img-fluid" alt="Flinders University 60th anniversary">
-                                </div>
                                 <?php
                                 /* -------------------------------------------------------------------------- */
                                 /*                                Social Icons                                */

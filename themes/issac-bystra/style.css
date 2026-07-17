@@ -4538,6 +4538,7 @@ body.modal-open {
 /* cards block */
 .cards-shape {
   border-radius: 30px;
+  border-top: 4px solid var(--colour-brand-support-light) !important;
 }
 
 .cards-shape-top {
@@ -4974,6 +4975,20 @@ body.modal-open {
     border-radius: 25px;
     padding: 30px 39px 9px 39px !important;
   }
+}
+/*
+ ██████  ██    ██  ██████  ████████ ███████
+██    ██ ██    ██ ██    ██    ██    ██
+██    ██ ██    ██ ██    ██    ██    █████
+██ ▄▄ ██ ██    ██ ██    ██    ██    ██
+ ██████   ██████   ██████     ██    ███████
+    ▀▀
+
+*/
+.quote-shape {
+  border-radius: 30px;
+  border: 3px solid var(--colour-hueso-dark);
+  border-left: 4px solid var(--colour-brand-support-light);
 }
 
 /*# sourceMappingURL=style.css.map */
