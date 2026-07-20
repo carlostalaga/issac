@@ -14,18 +14,18 @@
 
     <header class="site-header bg-brand-accent-dark">
 
-        <!-- Super Menu -->
-        <!-- d-none for now, to be removed -->
-        <div class="container-fluid bg-brand-main-light p-0 d-none">
-            <nav aria-label="Secondary navigation: Shortcuts" id="super-menu" class="d-flex flex-wrap justify-content-end">
-                <?php /* Super Menu */
-            wp_nav_menu( array(
-                'menu' => 'super-menu',
-                'theme_location' => 'super-menu',
-                'fallback_cb'    => false
-            ) );
-            ?>
-            </nav>
+        <!-- Super Bar -->
+        <div class="container-fluid bg-brand-main p-0">
+            <div class="container d-flex justify-content-end align-items-center gap-2 py-1 px-5">
+                <i class="fa-regular fa-user brand-accent d-none fs-3"></i><i class="fa-solid fa-user-astronaut brand-accent fs-3 pb-1"></i>
+                <?php if ( is_user_logged_in() ) : $current_user = wp_get_current_user(); ?>
+                <span class="brand-support-light">Hi <?php echo esc_html( $current_user->display_name ); ?>!</span>
+                <span>|</span>
+                <a href="<?php echo esc_url( wp_logout_url( home_url( '/' ) ) ); ?>">Logout</a>
+                <?php else : ?>
+                <a href="<?php echo esc_url( wp_login_url( home_url( '/' ) ) ); ?>">Login</a>
+                <?php endif; ?>
+            </div>
         </div>
 
         <!-- 

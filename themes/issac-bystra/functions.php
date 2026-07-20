@@ -563,3 +563,38 @@ add_filter('acf/fields/flexible_content/layout_title/name=flexible_content', fun
     return $title;
 
 }, 10, 4);
+
+/**
+ * ISSAC Participant: hide admin bar and block wp-admin.
+ * Assessment-page logins keep their frontend redirect; wp-admin landings go home.
+ */
+function bystra_is_issac_participant(): bool
+{
+    $user = wp_get_current_user();
+    return $user->exists() && in_array('issac_participant', (array) $user->roles, true);
+}
+
+add_filter('show_admin_bar', function (bool $show): bool {
+    return bystra_is_issac_participant() ? false : $show;
+});
+
+add_action('admin_init', function (): void {
+    if (!bystra_is_issac_participant() || (defined('DOING_AJAX') && DOING_AJAX)) {
+        return;
+    }
+    wp_safe_redirect(home_url('/'));
+    exit;
+});
+
+add_filter('login_redirect', function (string $redirect_to, string $requested_redirect_to, $user): string {
+    if (!($user instanceof WP_User) || !in_array('issac_participant', (array) $user->roles, true)) {
+        return $redirect_to;
+    }
+    if ($requested_redirect_to && strpos($requested_redirect_to, admin_url()) !== 0) {
+        return $requested_redirect_to;
+    }
+    if (strpos($redirect_to, admin_url()) === 0) {
+        return home_url('/');
+    }
+    return $redirect_to;
+}, 10, 3);

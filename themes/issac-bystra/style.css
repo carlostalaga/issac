@@ -573,10 +573,11 @@ body {
 
 a {
   text-decoration: none;
-  color: #CB9828;
+  color: #232D4B;
 }
 a:hover {
-  color: #CB9828;
+  color: #3e4f84;
+  text-decoration: underline;
 }
 
 ul,

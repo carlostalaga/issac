@@ -48,10 +48,11 @@ body {
 
 a {
     text-decoration: none;
-    color: colours.$brand-main-dark;
+    color: colours.$brand-accent;
 
     &:hover {
-        color: colours.$brand-main-dark;
+        color: colours.$brand-accent-light;
+        text-decoration: underline;
     }
 }
 
