@@ -586,15 +586,32 @@ add_action('admin_init', function (): void {
     exit;
 });
 
+/**
+ * Login redirect for front-end-only roles.
+ *
+ * Copy/adapt on other sites: set $restricted_roles and $fallback_url; leave other
+ * users on WordPress’s default $redirect_to.
+ *
+ * - $restricted_roles: slugs to treat as non-admin (e.g. 'subscriber', 'customer').
+ * - $fallback_url: where to send them when the login would land in wp-admin.
+ * - If the user (or login form) asked for a specific non-admin URL, that wins.
+ */
 add_filter('login_redirect', function (string $redirect_to, string $requested_redirect_to, $user): string {
-    if (!($user instanceof WP_User) || !in_array('issac_participant', (array) $user->roles, true)) {
+    $restricted_roles = ['issac_participant'];
+    $fallback_url     = home_url('/');
+
+    if (!($user instanceof WP_User)) {
+        return $redirect_to;
+    }
+    $has_restricted_role = (bool) array_intersect($restricted_roles, (array) $user->roles);
+    if (!$has_restricted_role) {
         return $redirect_to;
     }
     if ($requested_redirect_to && strpos($requested_redirect_to, admin_url()) !== 0) {
         return $requested_redirect_to;
     }
     if (strpos($redirect_to, admin_url()) === 0) {
-        return home_url('/');
+        return $fallback_url;
     }
     return $redirect_to;
 }, 10, 3);
